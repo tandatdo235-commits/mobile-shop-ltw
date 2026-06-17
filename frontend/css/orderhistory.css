@@ -1,0 +1,171 @@
+/* item, lịch sử cho đơn hàng */
+.order-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    border-left: 4px solid var(--primary);
+    transition: var(--transition);
+}
+
+.order-item:hover {
+    box-shadow: 0 6px 20px rgba(31, 78, 163, 0.08);
+}
+
+.order-item .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+
+.order-id {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--gray-800);
+    font-family: Arial, sans-serif;
+}
+
+.order-date {
+    color: var(--gray-600);
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+
+.order-status {
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+}
+/*trạng thái của đơn hàng*/
+.status-pending { 
+    background: #f59e0b;
+}
+.status-processing { 
+    background: var(--primary);
+}
+.status-completed { 
+    background: var(--primary);
+}
+.status-cancelled { 
+    background: var(--red);
+}
+
+.order-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 20px;
+    font-size: 14px;
+    margin-top: 6px;
+    font-family: Arial, sans-serif;
+}
+
+.order-details .label {
+    font-weight: 600;
+    color: var(--gray-600);
+}
+
+.order-items {
+    margin-top: 12px;
+    border-top: 1px solid var(--gray-200);
+    padding-top: 12px;
+    display: none;
+}
+
+.order-items.show {
+    display: block;
+}
+
+.order-items ul {
+    padding-left: 20px;
+}
+
+.order-items li {
+    list-style: disc;
+    font-size: 14px;
+    color: var(--gray-600);
+    font-family: Arial, sans-serif;
+    padding: 4px 0;
+}
+
+.order-items li::marker {
+    color: var(--primary);
+}
+
+.toggle-detail {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    background: none;
+    border: none;
+    font-family: Arial, sans-serif;
+    transition: var(--transition);
+    padding: 4px 0;
+}
+
+.toggle-detail:hover {
+    text-decoration: underline;
+    color: var(--primary-light);
+}
+
+.empty-orders {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray-600);
+    font-family: Arial, sans-serif;
+}
+
+.empty-orders p {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.empty-orders .btn {
+    margin-top: 12px;
+}
+@media (max-width: 768px) {
+    .order-details {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+    
+    .order-item {
+        padding: 15px;
+    }
+    
+    .order-item .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .order-id {
+        font-size: 16px;
+    }
+    
+    .order-status {
+        font-size: 12px;
+        padding: 3px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-item {
+        padding: 12px;
+    }
+    
+    .order-details {
+        font-size: 13px;
+    }
+    
+    .order-items li {
+        font-size: 13px;
+    }
+}
