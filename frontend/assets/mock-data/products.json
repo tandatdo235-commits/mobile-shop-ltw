@@ -1,0 +1,33 @@
+[
+  {
+    "id":1,
+    "name":"iPhone 16",
+    "price":"21990000",
+    "category":"phone",
+    "image":"https://cdn.tgdd.vn/Products/Images/42/329143/iphone-16-black-thumbnew-600x600.jpg"
+  },
+
+  {
+    "id":2,
+    "name":"Samsung S25 Ultra",
+    "price":"28990000",
+    "category":"phone",
+    "image":"https://cdn.tgdd.vn/Products/Images/42/329149/samsung-galaxy-s25-ultra-grey-thumbnew-600x600.jpg"
+  },
+
+  {
+    "id":3,
+    "name":"Dell Inspiron",
+    "price":"16490000",
+    "category":"laptop",
+    "image":"https://cdn.tgdd.vn/Products/Images/44/321823/dell-inspiron-15-3530-i5-p16wd2-thumb-600x600.jpg"
+  },
+
+  {
+    "id":4,
+    "name":"iPad Air",
+    "price":"15490000",
+    "category":"tablet",
+    "image":"https://cdn.tgdd.vn/Products/Images/522/329133/ipad-air-11-inch-m3-wifi-blue-thumbnew-600x600.jpg"
+  }
+]

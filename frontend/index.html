@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTH Mobile Shop</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+
+        <!-- Logo -->
+        <div class="logo">
+            <h1>Mobile Shop</h1>
+        </div>
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="search-input"
+                placeholder="Tìm sản phẩm...">
+
+            <button id="search-btn">
+                Tìm
+            </button>
+        </div>
+
+        <!-- Actions -->
+        <div class="header-action">
+            <button>Giỏ hàng</button>
+            <button>Đăng nhập</button>
+        </div>
+
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <div class="main-layout">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h3>Danh mục</h3>
+
+            <ul class="category-list">
+                <li>📱 Điện thoại</li>
+                <li>💻 Laptop</li>
+                <li>📟 Máy tính bảng</li>
+            </ul>
+
+        </aside>
+
+        <!-- Content -->
+        <main class="content">
+
+            <!-- Banner -->
+            <section class="banner">
+                <img
+                    src="./assets/images/banner.png"
+                    alt="Banner Mobile Shop">
+            </section>
+
+            <!-- Điện thoại -->
+            <section class="product-section">
+
+                <h2 class="section-title">
+                    Điện thoại nổi bật
+                </h2>
+
+                <div
+                    id="phone-list"
+                    class="product-grid">
+
+                </div>
+
+            </section>
+
+            <!-- Laptop -->
+            <section class="product-section">
+
+                <h2 class="section-title">
+                    Laptop nổi bật
+                </h2>
+
+                <div
+                    id="laptop-list"
+                    class="product-grid">
+
+                </div>
+
+            </section>
+
+            <!-- Tablet -->
+            <section class="product-section">
+
+                <h2 class="section-title">
+                    Máy tính bảng
+                </h2>
+
+                <div
+                    id="tablet-list"
+                    class="product-grid">
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+
+        <h3>Mobile Shop</h3>
+
+        <p>
+            Website thương mại điện tử môn Lập Trình Web
+        </p>
+
+        <p>
+            © 2026 Mobile Shop. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- JS -->
+    <script src="./js/config.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/home.js"></script>
+
+</body>
+
+</html>
