@@ -16,32 +16,22 @@ fetch("./assets/mock-data/products.json")
         const card = `
         <div class="product-card">
 
-            <img src="${product.image}">
+            <img src="${product.image}" alt="${product.name}">
 
             <div class="product-name">
                 ${product.name}
             </div>
 
             <div class="product-price">
-                ${product.price} đ
+                ${product.price.toLocaleString("vi-VN")} đ
             </div>
-
+            <a href="pages/product-detail.html?id=${product.id}">
+                <button class="detail-btn">
+                    Xem chi tiết
+                </button>
+                </a>
         </div>
         `;
-        const phones = [
-    {
-        id: 1,
-        name: "iPhone 16",
-        price: 21990000,
-        image: "./assets/images/iphone16.jpg"
-    },
-    {
-        id: 2,
-        name: "Samsung S25 Ultra",
-        price: 28990000,
-        image: "./assets/images/samsung-s25.jpg"
-    }
-];
 
         if(product.category === "phone"){
             phoneList.innerHTML += card;
