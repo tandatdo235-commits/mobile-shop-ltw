@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/auth.js"></script>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="container" style="text-align:center; padding: 60px 20px;">
+        <h1 style="font-size: 36px; color: var(--gray-800);">Chào mừng đến với UTH Shop</h1>
+        <p style="font-size: 18px; color: var(--gray-600); margin-top: 12px;">Điện thoại, Laptop, Máy tính bảng và phụ kiện chính hãng</p>
+        <div style="margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="login.html" class="btn btn-primary">Đăng nhập</a>
+            <a href="register.html" class="btn btn-outline">Đăng ký</a>
+            <a href="profile.html" class="btn btn-primary">Hồ sơ</a>
+            <a href="order-history.html" class="btn btn-primary">Đơn hàng</a>
+            <a href="chat.html" class="btn btn-primary">Chat hỗ trợ</a>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('../components/header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                updateUI();
+            });
+
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+
+        function updateUI() {
+            if (isLoggedIn()) {
+                const email = getUserEmail();
+                const name = email.split('@')[0];
+                document.getElementById('authButtons').style.display = 'none';
+                const userInfo = document.getElementById('userInfo');
+                userInfo.style.display = 'flex';
+                document.getElementById('userNameDisplay').textContent = name;
+                document.getElementById('userAvatar').src = 'assets/images/default-avatar.png';
+                
+                const avatar = document.getElementById('userAvatar');
+                const dropdown = document.getElementById('dropdownMenu');
+                if (avatar && dropdown) {
+                    avatar.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        dropdown.classList.toggle('show');
+                    });
+                    document.addEventListener('click', function() {
+                        dropdown.classList.remove('show');
+                    });
+                }
+            } else {
+                document.getElementById('authButtons').style.display = 'flex';
+                document.getElementById('userInfo').style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>

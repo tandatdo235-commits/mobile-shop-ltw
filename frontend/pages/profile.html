@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hồ sơ</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/profile.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a> / Hồ sơ
+        </div>
+
+        <div class="profile-header" id="profile-content">
+            <img id="profile-avatar" src="assets/images/default-avatar.png" alt="Avatar" class="profile-avatar">
+            <div class="profile-info">
+                <h1 id="profile-name">Đang tải...</h1>
+                <span class="badge" id="profile-role">user</span>
+                <div class="detail">
+                    <div class="detail-item"><span class="icon">Email:</span> <span id="profile-email">-</span></div>
+                    <div class="detail-item"><span class="icon">Phone:</span> <span id="profile-phone">Chưa cập nhật</span></div>
+                    <div class="detail-item"><span class="icon">Address:</span> <span id="profile-address">Chưa cập nhật</span></div>
+                    <div class="detail-item"><span class="icon">Joined:</span> <span id="profile-joined">Chưa có</span></div>
+                </div>
+                <div class="profile-actions">
+                    <button id="edit-profile-btn" class="btn btn-primary">Chỉnh sửa</button>
+                    <button onclick="logout()" class="btn btn-danger">Đăng xuất</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="edit-form" class="edit-form">
+            <h3>Cập nhật thông tin</h3>
+            <div class="form-group">
+                <label>Họ và tên</label>
+                <input type="text" id="edit-name">
+            </div>
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="edit-phone">
+            </div>
+            <div class="form-group">
+                <label>Địa chỉ</label>
+                <input type="text" id="edit-address">
+            </div>
+            <div class="btn-group">
+                <button id="update-profile-btn" class="btn btn-primary">Lưu thay đổi</button>
+                <button onclick="document.getElementById('edit-form').classList.remove('show')" class="btn btn-outline">Hủy</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('../components/header.html')
+            .then(res => res.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+
+</body>
+</html>

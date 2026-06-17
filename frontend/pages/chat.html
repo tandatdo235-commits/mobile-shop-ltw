@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat hỗ trợ</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/chat.css">
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/chat.js"></script>
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <main class="container">
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a> / Hỗ trợ
+        </div>
+        <div class="chat-container">
+            <div class="chat-header">
+                <h3>Chat với nhân viên hỗ trợ</h3>
+                <span class="status"><span class="dot"></span> Đang hoạt động</span>
+            </div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="Nhập tin nhắn...">
+                <button id="send-btn">Gửi</button>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        fetch('../components/header.html')
+            .then(res => res.text())
+            .then(data => document.getElementById('header-container').innerHTML = data);
+        fetch('../components/footer.html')
+            .then(res => res.text())
+            .then(data => document.getElementById('footer-container').innerHTML = data);
+    </script>
+
+</body>
+</html>
