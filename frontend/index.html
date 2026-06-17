@@ -27,15 +27,19 @@
                 type="text"
                 id="search-input"
                 placeholder="Tìm sản phẩm...">
-
             <button id="search-btn">
                 Tìm
+            </button>
+            <button id="reset-btn">
+                Tất cả
             </button>
         </div>
 
         <!-- Actions -->
         <div class="header-action">
-            <button>Giỏ hàng</button>
+            <a href="./pages/cart.html">
+                <button>Giỏ hàng</button>
+            </a>
             <button>Đăng nhập</button>
         </div>
 
@@ -48,11 +52,19 @@
         <aside class="sidebar">
 
             <h3>Danh mục</h3>
-
-            <ul class="category-list">
-                <li>📱 Điện thoại</li>
-                <li>💻 Laptop</li>
-                <li>📟 Máy tính bảng</li>
+            <ul>
+                <li data-category="all">
+                    Tất cả
+                </li>
+                <li data-category="phone">
+                    Điện thoại
+                </li>
+                <li data-category="laptop">
+                    Laptop
+                </li>
+                <li data-category="tablet">
+                    Máy tính bảng
+                </li>
             </ul>
 
         </aside>
@@ -63,8 +75,14 @@
             <!-- Banner -->
             <section class="banner">
                 <img
-                    src="./assets/images/banner.png"
-                    alt="Banner Mobile Shop">
+                    id="banner-image"
+                    src="./assets/images/banner1.jpg"
+                    alt="banner">
+                <div class="banner-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
             </section>
 
             <!-- Điện thoại -->
@@ -75,9 +93,7 @@
                 </h2>
 
                 <div
-                    id="phone-list"
-                    class="product-grid">
-
+                    id="phone-list" class="product-grid">
                 </div>
 
             </section>
@@ -118,17 +134,13 @@
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
-
         <h3>Mobile Shop</h3>
-
         <p>
             Website thương mại điện tử môn Lập Trình Web
         </p>
-
         <p>
             © 2026 Mobile Shop. All Rights Reserved.
         </p>
-
     </footer>
 
     <!-- JS -->

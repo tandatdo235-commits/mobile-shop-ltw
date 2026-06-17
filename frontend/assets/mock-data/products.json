@@ -1,47 +1,108 @@
 [
   {
-    "id":1,
-    "name":"iPhone 16",
-    "price":"21.990.000",
-    "category":"phone",
-    "image":"./assets/images/iphone16.jpg"
+    "id": 1,
+    "name": "iPhone 16",
+    "price": "21.990.000",
+    "category": "phone",
+    "image": "./assets/images/iphone16.jpg",
+    "description": "iPhone 16 sử dụng chip A18 mới nhất."
+  },
+  {
+    "id": 2,
+    "name": "Samsung S25 Ultra",
+    "price": "28.990.000",
+    "category": "phone",
+    "image": "./assets/images/samsung-s25.jpg",
+    "description": "Flagship Samsung với camera AI."
+  },
+  {
+    "id": 3,
+    "name": "Xiaomi 14T Pro 512GB",
+    "price": "12.990.000",
+    "category": "phone",
+    "image": "./assets/images/xiaomi 14T pro.png",
+    "description": "Dimensity 9300+, sạc nhanh 120W."
+  },
+  {
+    "id": 4,
+    "name": "OPPO Find X8 16GB 512GB",
+    "price": "19.990.000",
+    "category": "phone",
+    "image": "./assets/images/oppo find x8.jpg",
+    "description": "Thiết kế cao cấp, camera Hasselblad."
+  },
+  {
+    "id": 5,
+    "name": "Google Pixel 9 Pro XL 12GB 256GB",
+    "price": "22.990.000",
+    "category": "phone",
+    "image": "./assets/images/pixel9 pro.jpg",
+    "description": "Android thuần, AI Gemini."
   },
 
   {
-    "id":2,
-    "name":"Samsung S25 Ultra",
-    "price":"28.990.000",
-    "category":"phone",
-    "image":"./assets/images/samsung-s25.jpg"
+    "id": 6,
+    "name": "Dell Inspiron 3511",
+    "price": "16.490.000",
+    "category": "laptop",
+    "image": "./assets/images/dell inspiron.png",
+    "description": "Laptop văn phòng Core i5."
   },
-{
-    "id":3,
-    "name":"Xiaomi 14T pro 12GB 512GB",
-    "price":"12.990.000",
-    "category":"phone",
-    "image":"./assets/images/xiaomi 14T pro.png"
+  {
+    "id": 7,
+    "name": "ASUS Zenbook A14",
+    "price": "28.490.000",
+    "category": "laptop",
+    "image": "./assets/images/asus zenbook.png",
+    "description": "Thiết kế mỏng nhẹ, pin lâu."
+  },
+  {
+    "id": 8,
+    "name": "MacBook Air M4 13 inch 2025 10CPU 10GPU 16GB 512GB Sạc 70W ",
+    "price": "31.990.000",
+    "category": "laptop",
+    "image": "./assets/images/macbook-air-m4.jpg",
+    "description": "Chip Apple M4 mạnh mẽ."
+  },
+  {
+    "id": 9,
+    "name": "Laptop HP Pavilion 15-EG3093TU 8C5L4PA",
+    "price": "18.490.000",
+    "category": "laptop",
+    "image": "./assets/images/hp-pavilion.jpg",
+    "description": "Laptop học tập và văn phòng."
+  },
+  {
+    "id": 10,
+    "name": "Laptop Lenovo Gaming Legion 5 15ACH6",
+    "price": "29.990.000",
+    "category": "laptop",
+    "image": "./assets/images/legion5.jpg",
+    "description": "Laptop gaming RTX mạnh mẽ."
   },
 
   {
-    "id":4,
-    "name":"Dell Inspiron 3511 15.6-inches 11th Gen Core i5 Win10 (8GB RAM- 1TB SATA)",
-    "price":"16.490.000",
-    "category":"laptop",
-    "image":"./assets/images/dell inspiron.png"
+    "id": 11,
+    "name": "iPad Air",
+    "price": "15.490.000",
+    "category": "tablet",
+    "image": "./assets/images/ipad air.png",
+    "description": "Máy tính bảng Apple mỏng nhẹ."
   },
-{
-    "id":5,
-    "name":"Laptop ASUS Zenbook A14 UX3407QA-QD299WS",
-    "price":"28.490.000",
-    "category":"laptop",
-    "image":"./assets/images/asus zenbook.png"
-  },
-
   {
-    "id":6,
-    "name":"iPad Air",
-    "price":"15.490.000",
-    "category":"tablet",
-    "image":"./assets/images/ipad air.png"
+    "id": 12,
+    "name": "Samsung Galaxy Tab S10 FE Wifi 8GB 128GB",
+    "price": "11.990.000",
+    "category": "tablet",
+    "image": "./assets/images/tab-s10.png",
+    "description": "Màn hình AMOLED sắc nét."
+  },
+  {
+    "id": 13,
+    "name": "Xiaomi Pad 7 Wifi 8GB 256GB",
+    "price": "10.990.000",
+    "category": "tablet",
+    "image": "./assets/images/xiaomi-pad7.jpg",
+    "description": "Hiệu năng mạnh trong tầm giá."
   }
 ]
