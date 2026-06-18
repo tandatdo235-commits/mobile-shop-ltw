@@ -2,7 +2,9 @@ const CONFIG = {
     API_BASE_URL: 'http://localhost:8000/api',
     TOKEN_KEY: 'access_token',
     USER_EMAIL_KEY: 'user_email',
-    USER_DATA_KEY: 'user_data'
+    USER_DATA_KEY: 'user_data',
+    // Chế độ mock để test khi backend chưa sẵn sàng
+    USE_MOCK: true // Set false khi có backend thật
 };
 
 function getToken() {
