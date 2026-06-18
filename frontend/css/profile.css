@@ -19,6 +19,33 @@
     object-fit: cover;
     border: 4px solid var(--primary);
 }
+.avatar-container {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-container .change-avatar-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--primary);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.avatar-container .change-avatar-btn:hover {
+    background: var(--primary-light);
+    transform: scale(1.1);
+}
 
 .profile-info h1 {
     font-size: 28px;
@@ -129,8 +156,6 @@
 .edit-form .btn-group .btn {
     min-width: 120px;
 }
-
-/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .profile-header {
         flex-direction: column;

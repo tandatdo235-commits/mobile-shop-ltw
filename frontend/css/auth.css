@@ -124,7 +124,6 @@
     accent-color: var(--primary);
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 480px) {
     .auth-card {
         padding: 30px 20px;

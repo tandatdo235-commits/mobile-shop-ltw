@@ -136,7 +136,6 @@
     40% { transform: scale(1); }
 }
 
-/* ===== CHAT INPUT ===== */
 .chat-input-area {
     display: flex;
     padding: 12px 16px;
