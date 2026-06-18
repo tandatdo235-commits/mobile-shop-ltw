@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/config.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/auth.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
 </head>
 <body>
     <div id="header-container"></div>
@@ -19,7 +19,7 @@
             <a href="login.html" class="btn btn-primary">Đăng nhập</a>
             <a href="register.html" class="btn btn-outline">Đăng ký</a>
             <a href="profile.html" class="btn btn-primary">Hồ sơ</a>
-            <a href="order-history.html" class="btn btn-primary">Đơn hàng</a>
+            <a href="orderhistory.html" class="btn btn-primary">Đơn hàng</a>
             <a href="chat.html" class="btn btn-primary">Chat hỗ trợ</a>
         </div>
     </main>
@@ -28,40 +28,127 @@
 
     <script>
         fetch('../components/header.html')
-            .then(res => res.text())
+            .then(res => {
+                if (!res.ok) throw new Error('Không tìm thấy header.html');
+                return res.text();
+            })
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
+                updateUI();
+            })
+            .catch(() => {
+                document.getElementById('header-container').innerHTML = `
+                    <header>
+                        <div class="header-container">
+                            <div class="logo"><a href="index.html">UTH</a></div>
+                            <ul class="nav-menu">
+                                <li><a href="index.html">Trang chủ</a></li>
+                                <li><a href="#">Điện thoại</a></li>
+                                <li><a href="#">Tablet</a></li>
+                                <li><a href="#">MacBook & Laptop</a></li>
+                            </ul>
+                            <div class="auth-buttons" id="authButtons">
+                                <a href="login.html" class="btn btn-outline">Đăng nhập</a>
+                                <a href="register.html" class="btn btn-primary">Đăng ký</a>
+                            </div>
+                            <div class="user-info" id="userInfo" style="display:none;">
+                                <span class="user-name" id="userNameDisplay"></span>
+                                <img src="../assets/images/avatar.jpg" style="display:none;">
+                                <div class="dropdown-menu" id="dropdownMenu">
+                                    <a href="profile.html">Hồ sơ</a>
+                                    <a href="orderhistory.html">Đơn hàng</a>
+                                    <a href="chat.html">Hỗ trợ</a>
+                                    <button onclick="logout()">Đăng xuất</button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                `;
                 updateUI();
             });
 
         fetch('../components/footer.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(res => {
+                if (!res.ok) throw new Error('Không tìm thấy footer.html');
+                return res.text();
+            })
+            .then(data => document.getElementById('footer-container').innerHTML = data)
+            .catch(() => {
+                document.getElementById('footer-container').innerHTML = `
+                    <footer>
+                        <div class="footer-container">
+                            <div class="footer-col">
+                                <h3>UTH</h3>
+                                <p>Cửa hàng điện thoại, laptop và phụ kiện chính hãng.</p>
+                            </div>
+                            <div class="footer-col">
+                                <h3>Danh mục</h3>
+                                <a href="#">Điện thoại</a>
+                                <a href="#">Laptop</a>
+                                <a href="#">Máy tính bảng</a>
+                                <a href="#">Phụ kiện</a>
+                            </div>
+                            <div class="footer-col">
+                                <h3>Hỗ trợ</h3>
+                                <a href="#">Chính sách bảo hành</a>
+                                <a href="#">Vận chuyển</a>
+                                <a href="#">Đổi trả</a>
+                                <a href="#">Liên hệ</a>
+                            </div>
+                            <div class="footer-col">
+                                <h3>Kết nối</h3>
+                                <p>hotline@uthshop.vn</p>
+                                <p>1900 1234</p>
+                                <div style="display: flex; gap: 12px; margin-top: 8px;">
+                                    <a href="#">FB</a>
+                                    <a href="#">YT</a>
+                                    <a href="#">IG</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-bottom">
+                            &copy; 2026 UTH. Bản quyền thuộc về chúng tôi.
+                        </div>
+                    </footer>
+                `;
+            });
 
         function updateUI() {
-            if (isLoggedIn()) {
-                const email = getUserEmail();
-                const name = email.split('@')[0];
-                document.getElementById('authButtons').style.display = 'none';
-                const userInfo = document.getElementById('userInfo');
-                userInfo.style.display = 'flex';
-                document.getElementById('userNameDisplay').textContent = name;
-                document.getElementById('userAvatar').src = 'assets/images/default-avatar.png';
+            if (typeof isLoggedIn !== 'undefined' && isLoggedIn()) {
+                const email = typeof getUserEmail !== 'undefined' ? getUserEmail() : null;
+                const userData = typeof getUserData !== 'undefined' ? getUserData() : null;
+                const name = userData?.full_name || email?.split('@')[0] || 'User';
                 
-                const avatar = document.getElementById('userAvatar');
-                const dropdown = document.getElementById('dropdownMenu');
-                if (avatar && dropdown) {
-                    avatar.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        dropdown.classList.toggle('show');
-                    });
-                    document.addEventListener('click', function() {
-                        dropdown.classList.remove('show');
-                    });
+                const authButtons = document.getElementById('authButtons');
+                const userInfo = document.getElementById('userInfo');
+                
+                if (authButtons) authButtons.style.display = 'none';
+                if (userInfo) {
+                    userInfo.style.display = 'flex';
+                    const nameDisplay = document.getElementById('userNameDisplay');
+                    if (nameDisplay) nameDisplay.textContent = name;
+                    
+                    const avatar = document.getElementById('userAvatar');
+                    if (avatar) {
+                        avatar.src = userData?.avatar || '../assets/images/avatar.jpg';
+                    }
+                    
+                    const dropdown = document.getElementById('dropdownMenu');
+                    if (avatar && dropdown) {
+                        avatar.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            dropdown.classList.toggle('show');
+                        });
+                        document.addEventListener('click', function() {
+                            dropdown.classList.remove('show');
+                        });
+                    }
                 }
             } else {
-                document.getElementById('authButtons').style.display = 'flex';
-                document.getElementById('userInfo').style.display = 'none';
+                const authButtons = document.getElementById('authButtons');
+                const userInfo = document.getElementById('userInfo');
+                if (authButtons) authButtons.style.display = 'flex';
+                if (userInfo) userInfo.style.display = 'none';
             }
         }
     </script>

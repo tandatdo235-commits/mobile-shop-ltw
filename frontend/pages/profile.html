@@ -3,28 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hồ sơ</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profile.css">
-    <script src="js/config.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/profile.js"></script>
+    <title>Hồ sơ cá nhân</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/profile.js"></script>
+    <img src="../assets/images/avatar.jpg" style="display:none;">
+    <style>
+
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .stat-card {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            border-top: 3px solid var(--primary);
+        }
+        .stat-card .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-card .label {
+            font-size: 14px;
+            color: var(--gray-600);
+            margin-top: 4px;
+        }
+        .profile-tabs {
+            display: flex;
+            gap: 8px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .profile-tabs .tab-btn {
+            padding: 10px 24px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            background: var(--gray-100);
+        }
+        .profile-tabs .tab-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+        .tab-content {
+            display: none;
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .info-row {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        .info-row .label {
+            width: 120px;
+            font-weight: 600;
+            color: var(--gray-600);
+            flex-shrink: 0;
+        }
+        .info-row .value {
+            color: var(--gray-800);
+        }
+        @media (max-width: 480px) {
+            .info-row {
+                flex-direction: column;
+                gap: 4px;
+            }
+            .info-row .label {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-
     <div id="header-container"></div>
 
     <main class="container">
         <div class="breadcrumb">
             <a href="index.html">Trang chủ</a> / Hồ sơ
         </div>
-
         <div class="profile-header" id="profile-content">
-            <img id="profile-avatar" src="assets/images/default-avatar.png" alt="Avatar" class="profile-avatar">
+            <div class="avatar-container">
+                <img id="profile-avatar" src="../assets/images/default-avatar.png" class="profile-avatar">
+                <input type="file" id="avatar-input" accept="image/*" style="display: none;">
+                <button id="change-avatar-btn" class="change-avatar-btn" title="Đổi ảnh đại diện">+</button>
+            </div>
             <div class="profile-info">
                 <h1 id="profile-name">Đang tải...</h1>
-                <span class="badge" id="profile-role">user</span>
+                <span class="badge" id="profile-role">Thành viên</span>
                 <div class="detail">
                     <div class="detail-item"><span class="icon">Email:</span> <span id="profile-email">-</span></div>
                     <div class="detail-item"><span class="icon">Phone:</span> <span id="profile-phone">Chưa cập nhật</span></div>
@@ -38,6 +120,88 @@
             </div>
         </div>
 
+        <!-- THỐNG KÊ -->
+        <div class="profile-stats" id="profile-stats">
+            <div class="stat-card">
+                <div class="number" id="stat-orders">0</div>
+                <div class="label">Đơn hàng</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="stat-reviews">0</div>
+                <div class="label">Đánh giá</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="stat-favorites">0</div>
+                <div class="label">Yêu thích</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" id="stat-points">0</div>
+                <div class="label">Điểm tích lũy</div>
+            </div>
+        </div>
+
+        <!-- TABS -->
+        <div class="profile-tabs">
+            <button class="tab-btn active" data-tab="tab-info">Thông tin</button>
+            <button class="tab-btn" data-tab="tab-orders">Đơn hàng</button>
+            <button class="tab-btn" data-tab="tab-security">Bảo mật</button>
+        </div>
+
+        <!-- TAB 1: Thông tin -->
+        <div id="tab-info" class="tab-content active">
+            <h3 style="margin-bottom: 16px;">Thông tin chi tiết</h3>
+            <div class="info-row">
+                <span class="label">Họ và tên</span>
+                <span class="value" id="info-fullname">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Email</span>
+                <span class="value" id="info-email">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Số điện thoại</span>
+                <span class="value" id="info-phone">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Địa chỉ</span>
+                <span class="value" id="info-address">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Ngày tham gia</span>
+                <span class="value" id="info-joined">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Vai trò</span>
+                <span class="value" id="info-role">-</span>
+            </div>
+        </div>
+        <div id="tab-orders" class="tab-content">
+            <h3 style="margin-bottom: 16px;">Lịch sử đơn hàng</h3>
+            <div id="order-list">
+                <p style="color: var(--gray-600);">Đang tải đơn hàng...</p>
+            </div>
+        </div>
+        <!-- chỉnh sửa bảo mật -->
+        <div id="tab-security" class="tab-content">
+            <h3 style="margin-bottom: 16px;">Đổi mật khẩu</h3>
+            <form id="changePasswordForm">
+                <div class="form-group">
+                    <label>Mật khẩu hiện tại</label>
+                    <input type="password" id="current-password" placeholder="Nhập mật khẩu hiện tại" required>
+                </div>
+                <div class="form-group">
+                    <label>Mật khẩu mới</label>
+                    <input type="password" id="new-password" placeholder="Mật khẩu mới (ít nhất 6 ký tự)" required>
+                </div>
+                <div class="form-group">
+                    <label>Xác nhận mật khẩu mới</label>
+                    <input type="password" id="confirm-new-password" placeholder="Nhập lại mật khẩu mới" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+            </form>
+        </div>
+
+        <!-- form để chỉnh sửa thông tin -->
         <div id="edit-form" class="edit-form">
             <h3>Cập nhật thông tin</h3>
             <div class="form-group">
@@ -53,7 +217,7 @@
                 <input type="text" id="edit-address">
             </div>
             <div class="btn-group">
-                <button id="update-profile-btn" class="btn btn-primary">Lưu thay đổi</button>
+                <button id="update-profile-btn" class="btn btn-primary">💾 Lưu thay đổi</button>
                 <button onclick="document.getElementById('edit-form').classList.remove('show')" class="btn btn-outline">Hủy</button>
             </div>
         </div>
@@ -68,7 +232,32 @@
         fetch('../components/footer.html')
             .then(res => res.text())
             .then(data => document.getElementById('footer-container').innerHTML = data);
-    </script>
 
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+                document.getElementById(this.dataset.tab).classList.add('active');
+            });
+        });
+        document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const current = document.getElementById('current-password').value;
+            const newPass = document.getElementById('new-password').value;
+            const confirm = document.getElementById('confirm-new-password').value;
+
+            if (newPass.length < 6) {
+                showToast('Mật khẩu mới phải có ít nhất 6 ký tự');
+                return;
+            }
+            if (newPass !== confirm) {
+                showToast('Mật khẩu xác nhận không khớp');
+                return;
+            }
+            showToast('Đổi mật khẩu thành công!');
+            this.reset();
+        });
+    </script>
 </body>
 </html>

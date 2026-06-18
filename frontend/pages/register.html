@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng ký</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/auth.css">
-    <script src="js/config.js"></script>
-    <script src="js/common.js"></script>
-    <script src="js/auth.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
 </head>
 <body>
-
     <div id="header-container"></div>
 
     <div class="auth-wrapper">
@@ -37,7 +36,7 @@
                 </div>
                 <div class="terms-group">
                     <input type="checkbox" id="terms" required>
-                    <label for="terms">Tôi đồng ý với Điều khoản và Điều kiện</label>
+                    <label for="terms">Tôi đồng ý với các Điều khoản và Điều kiện</label>
                 </div>
                 <button type="submit" class="btn-submit">Đăng ký</button>
             </form>
@@ -79,17 +78,16 @@
             }
 
             const btn = this.querySelector('.btn-submit');
-            btn.textContent = 'Dang dang ky...';
+            btn.textContent = 'Đang đăng ký...';
             btn.disabled = true;
             await register(fullName, email, password, 'user');
-            btn.textContent = 'Dang ky';
+            btn.textContent = 'Đăng ký';
             btn.disabled = false;
         });
 
-        if (isLoggedIn()) {
+        if (typeof isLoggedIn !== 'undefined' && isLoggedIn()) {
             window.location.href = 'profile.html';
         }
     </script>
-
 </body>
 </html>
