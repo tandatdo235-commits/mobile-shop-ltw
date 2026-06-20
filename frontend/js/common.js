@@ -175,3 +175,41 @@ async function mockApiRequest(endpoint, method = 'GET', body = null, requiresAut
     showToast(`API ${endpoint} chưa được hỗ trợ trong chế độ mock`);
     return null;
 }
+const PRODUCT_DB =
+JSON.parse(
+localStorage.getItem("products")
+|| "[]"
+);
+
+const ORDER_DB =
+JSON.parse(
+localStorage.getItem("orders")
+|| "[]"
+);
+
+const CART_DB =
+JSON.parse(
+localStorage.getItem("cart")
+|| "[]"
+);
+
+function saveProducts(data){
+    localStorage.setItem(
+        "products",
+        JSON.stringify(data)
+    );
+}
+
+function saveOrders(data){
+    localStorage.setItem(
+        "orders",
+        JSON.stringify(data)
+    );
+}
+
+function saveCart(data){
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(data)
+    );
+}
