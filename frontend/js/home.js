@@ -9,6 +9,11 @@ function renderProducts(products){
     const laptopList = document.getElementById("laptop-list");
     const tabletList = document.getElementById("tablet-list");
 
+    document.querySelectorAll(".product-section")
+    .forEach(section => {
+        section.style.display = "none";
+    });
+
     phoneList.innerHTML = "";
     laptopList.innerHTML = "";
     tabletList.innerHTML = "";
@@ -32,16 +37,19 @@ function renderProducts(products){
         </div>
         `;
 
-        if(product.category === "phone"){
+       if(product.category === "phone"){
             phoneList.innerHTML += card;
+            phoneList.parentElement.style.display = "block";
         }
 
         if(product.category === "laptop"){
             laptopList.innerHTML += card;
+            laptopList.parentElement.style.display = "block";
         }
 
         if(product.category === "tablet"){
             tabletList.innerHTML += card;
+            tabletList.parentElement.style.display = "block";
         }
 
     });
@@ -79,9 +87,7 @@ const dots = document.querySelectorAll(".dot");
 function showBanner(index){
 
     if(!bannerImage) return;
-
     bannerImage.src = banners[index];
-
     dots.forEach(dot =>
         dot.classList.remove("active")
     );
@@ -94,9 +100,7 @@ function showBanner(index){
 if(bannerImage){
 
     setInterval(() => {
-
         currentBanner++;
-
         if(currentBanner >= banners.length){
             currentBanner = 0;
         }
@@ -104,19 +108,12 @@ if(bannerImage){
         showBanner(currentBanner);
 
     }, 3000);
-
     dots.forEach((dot,index) => {
-
         dot.addEventListener("click", () => {
-
             currentBanner = index;
-
             showBanner(currentBanner);
-
         });
-
     });
-
 }
 
 /* ======================
@@ -145,13 +142,33 @@ document
 });
 
 document
+.querySelectorAll(".sidebar li")
+.forEach(item => {
+
+    item.addEventListener("click", () => {
+        const category =
+        item.dataset.category;
+        if(category === "all"){
+            renderProducts(allProducts);
+            return;
+        }
+
+        const filtered =
+        allProducts.filter(product =>
+            product.category === category
+        );
+        renderProducts(filtered);
+
+    });
+
+});
+
+document
 .getElementById("reset-btn")
 .addEventListener("click",()=>{
-
     document
     .getElementById("search-input")
     .value = "";
-
     renderProducts(allProducts);
 
 });
@@ -159,9 +176,7 @@ document
 document
 .getElementById("search-input")
 .addEventListener("keyup", (e) => {
-
     if(e.key === "Enter"){
-
         document
         .getElementById("search-btn")
         .click();

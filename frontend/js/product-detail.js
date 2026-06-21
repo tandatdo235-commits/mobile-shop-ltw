@@ -18,10 +18,57 @@ fetch("../assets/mock-data/products.json")
     product.name;
 
     document.getElementById("product-price").innerText =
-    product.price + " đ";
+    Number(product.price).toLocaleString("vi-VN") + " đ";
 
     document.getElementById("product-description").innerText =
-    product.description;
+    product.description ||
+    "Sản phẩm chính hãng, bảo hành đầy đủ.";
+
+    const specsDiv =
+        document.getElementById("product-specs");
+        if(product.specs){
+            let specsHTML = "<table>";
+            for(let key in product.specs){
+                specsHTML += `
+                <tr>
+                    <td><b>${key}</b></td>
+                    <td>${product.specs[key]}</td>
+                </tr>
+                `;
+            }
+
+            specsHTML += "</table>";
+
+            specsDiv.innerHTML = specsHTML;
+        }
+
+    document.getElementById("product-promotion")
+    .innerText = product.promotion;
+
+    const relatedProducts =
+        products.filter(item =>
+            item.category === product.category &&
+            item.id !== product.id
+        );
+
+    const relatedBox =
+        document.getElementById(
+            "related-products"
+        );
+        relatedProducts.forEach(item => {
+            relatedBox.innerHTML += `
+                <div class="related-card">
+                    <img src="${item.image.replace("./assets","../assets")}">
+                    <h3>${item.name}</h3>
+                    <p>${Number(item.price).toLocaleString("vi-VN")} đ</p>
+                    <a href="product-detail.html?id=${item.id}">
+                        <button>
+                            Xem chi tiết
+                        </button>
+                    </a>
+                </div>
+            `;
+        });
 
     document
     .getElementById("add-cart-btn")
@@ -42,3 +89,4 @@ fetch("../assets/mock-data/products.json")
     });
 
 });
+

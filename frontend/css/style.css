@@ -25,3 +25,26 @@ ul{
 button{
     cursor:pointer;
 }
+
+.cart-item{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    padding:15px;
+}
+
+.cart-item img{
+    width:200px;
+    height:200px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.cart-item button{
+    background:#c40000;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    cursor:pointer;
+    border-radius:5px;
+}
