@@ -292,7 +292,7 @@
 
   {
     "id": 19,
-    "name": "Acer Nitro V",
+    "name": "Laptop Acer Gaming Nitro V 15 ANV15-41-R732",
     "price": "19990000",
     "category": "laptop",
     "image": "./assets/images/nitrov.jpg",
@@ -308,7 +308,7 @@
   },
   {
     "id": 20,
-    "name": "MSI Katana 15",
+    "name": "Laptop MSI Katana 15 B13UDXK-2437VN",
     "price": "24990000",
     "category": "laptop",
     "image": "./assets/images/msikatana.jpg",
@@ -324,7 +324,7 @@
   },
   {
     "id": 21,
-    "name": "ASUS ROG Strix G16",
+    "name": "Laptop ASUS ROG Strix G16 G614JIR-N4046W",
     "price": "32990000",
     "category": "laptop",
     "image": "./assets/images/rogg16.jpg",
@@ -340,7 +340,7 @@
   },
   {
     "id": 22,
-    "name": "Lenovo ThinkPad E14",
+    "name": "Laptop Lenovo ThinkPad E14 Gen 5 21JK00PEVN",
     "price": "18990000",
     "category": "laptop",
     "image": "./assets/images/thinkpad.jpg",
@@ -351,7 +351,7 @@
       "RAM": "16GB",
       "SSD": "512GB",
       "Màn hình": "14 inch FHD",
-      "Pin": "57Wh"
+      "Pin": "47Wh"
     }
   },
   {
@@ -373,15 +373,15 @@
 
   {
     "id": 24,
-    "name": "iPad Pro M4 11 inch",
+    "name": "iPad Pro M5 11 inch Wifi 256GB",
     "price": "24990000",
     "category": "tablet",
-    "image": "./assets/images/ipadprom4.jpg",
+    "image": "./assets/images/ipadprom5.jpg",
     "promotion": "Tặng Apple Pencil",
     "description": "Tablet mạnh nhất của Apple.",
     "specs": {
       "Màn hình": "11 inch OLED",
-      "Chip": "Apple M4",
+      "Chip": "Apple M5",
       "RAM": "8GB",
       "Bộ nhớ": "256GB",
       "Pin": "8160mAh"
