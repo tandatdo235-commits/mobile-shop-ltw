@@ -52,20 +52,26 @@
         <aside class="sidebar">
 
             <h3>Danh mục</h3>
-            <ul>
-                <li data-category="all">
+                <div class="category-list">
+               <a href="pages/products.html">
                     Tất cả
-                </li>
-                <li data-category="phone">
+                </a>
+
+                <a href="./pages/products.html?category=phone">
                     Điện thoại
-                </li>
-                <li data-category="laptop">
+                </a>           
+
+                <a href="./pages/products.html?category=laptop">
                     Laptop
-                </li>
-                <li data-category="tablet">
+                </a>
+
+                <a href="./pages/products.html?category=tablet">
                     Máy tính bảng
-                </li>
-            </ul>
+                </a>
+                <a href="./pages/products.html?discount=true">
+                    Khuyến mãi
+                </a>
+                </div>
 
         </aside>
 
@@ -91,7 +97,8 @@
                 <h2 class="section-title">
                     Điện thoại nổi bật
                 </h2>
-
+                
+                
                 <div
                     id="phone-list" class="product-grid">
                 </div>

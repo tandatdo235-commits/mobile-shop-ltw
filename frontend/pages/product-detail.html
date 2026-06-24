@@ -10,34 +10,56 @@
 <body>
 
     <div class="product-detail">
-        <img id="product-image">
+
+        <!-- Gallery ảnh -->
+        <div class="gallery">
+            <button id="prev-btn" class="slider-btn">❮</button>
+
+            <img id="product-image" alt="Sản phẩm">
+
+            <button id="next-btn" class="slider-btn">❯</button>
+        </div>
+
+        <!-- Thông tin sản phẩm -->
         <div class="detail-info">
+
             <h1 id="product-name"></h1>
+
             <h2 id="product-price"></h2>
+
             <p id="product-description"></p>
+
             <button
                 class="buy-btn"
                 id="add-cart-btn">
                 Thêm vào giỏ hàng
             </button>
+
             <a href="../index.html">
                 <button class="back-btn">
                     Quay lại
                 </button>
             </a>
+
         </div>
+
     </div>
 
+    <!-- Khuyến mãi -->
     <h3>Khuyến mãi</h3>
     <p id="product-promotion"></p>
-    <h3>Thông số kỹ thuật</h3>
-    <table id="product-specs">
-    </table>
 
+    <!-- Thông số kỹ thuật -->
+    <h3>Thông số kỹ thuật</h3>
+    <table id="product-specs"></table>
+
+    <!-- Sản phẩm liên quan -->
     <h2 class="related-title">Sản phẩm liên quan</h2>
-        <div id="related-products"
-            class="product-grid">
-        </div>
+
+    <div
+        id="related-products"
+        class="product-grid">
+    </div>
 
     <script src="../js/product-detail.js"></script>
 

@@ -10,9 +10,56 @@ fetch("../assets/mock-data/products.json")
 
     const product =
     products.find(p => p.id == productId);
+    console.log(product);
 
+    let currentImage = 0;
+    const images = Array.isArray(product.image)
+        ? product.image
+        : [product.image];
     document.getElementById("product-image").src =
-    product.image.replace("./assets","../assets");
+    images[currentImage].replace(
+        "./assets",
+        "../assets"
+    );
+
+    document
+    .getElementById("next-btn")
+    .addEventListener("click", () => {
+        currentImage++;
+        if(currentImage >= images.length){
+            currentImage = 0;
+        }
+
+        document.getElementById(
+            "product-image"
+        ).src =
+        images[currentImage].replace(
+            "./assets",
+            "../assets"
+        );
+
+    });
+
+    document
+    .getElementById("prev-btn")
+    .addEventListener("click", () => {
+        currentImage--;
+        if(currentImage < 0){
+            currentImage =
+            images.length - 1;
+        }
+
+        document.getElementById(
+            "product-image"
+        ).src =
+        images[currentImage].replace(
+            "./assets",
+            "../assets"
+        );
+
+    });
+
+    
 
     document.getElementById("product-name").innerText =
     product.name;
@@ -43,7 +90,7 @@ fetch("../assets/mock-data/products.json")
         }
 
     document.getElementById("product-promotion")
-    .innerText = product.promotion;
+    .innerText = product.promotion || "Không có khuyến mãi";
 
     const relatedProducts =
         products.filter(item =>
@@ -56,9 +103,12 @@ fetch("../assets/mock-data/products.json")
             "related-products"
         );
         relatedProducts.forEach(item => {
+            const imageSrc = Array.isArray(item.image)
+        ? item.image[0]
+        : item.image;
             relatedBox.innerHTML += `
                 <div class="related-card">
-                    <img src="${item.image.replace("./assets","../assets")}">
+                    <img src="${item.image[0].replace("./assets","../assets")}">
                     <h3>${item.name}</h3>
                     <p>${Number(item.price).toLocaleString("vi-VN")} đ</p>
                     <a href="product-detail.html?id=${item.id}">

@@ -1,0 +1,52 @@
+.container{
+    width:90%;
+    margin:auto;
+}
+
+#page-title{
+    margin:20px 0;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.product-card{
+    width: 220px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card img{
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    margin: auto;
+    display: block;
+}
+
+.product-card button{
+    background:#c40000;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+#pagination{
+    margin:30px 0;
+    text-align:center;
+}
+
+.page-btn{
+    margin:5px;
+    padding:8px 15px;
+    cursor:pointer;
+}

@@ -4,9 +4,14 @@
     "name": "iPhone 16 Plus 128GB",
     "price": "21990000",
     "category": "phone",
-    "image": "./assets/images/iphone16.jpg",
+    "images": "./assets/images/iphone16.jpg",
+    "image": [
+      "./assets/images/iphone16.jpg",
+      "./assets/images/iphone16-2.jpg",
+      "./assets/images/iphone16-3.jpg"
+    ],
     "promotion":"Tặng sạc nhanh 20W và ốp lưng",
-
+    "discount": 10,
     "specs":{
       "Màn hình": "6.7 inch OLED",
       "Chip": "Apple A18",
@@ -21,7 +26,13 @@
     "name": "Samsung S25 Ultra",
     "price": "28990000",
     "category": "phone",
-    "image": "./assets/images/samsung-s25.jpg",
+    "image": [
+      "./assets/images/samsung-s25.jpg",
+      "./assets/images/samsung-s25-2.jpg",
+      "./assets/images/samsung-s25-3.jpg"
+    ],
+    "promotion":"Tặng Galaxy Buds FE, giảm 1.000.000đ và trả góp 0%",
+    "discount": 15,
     "specs": {
       "Màn hình": "6.9 inch AMOLED",
       "Chip": "Snapdragon 8 Elite",
@@ -36,7 +47,11 @@
     "name": "Xiaomi 14T Pro 512GB",
     "price": "12990000",
     "category": "phone",
-    "image": "./assets/images/xiaomi 14T pro.png",
+    "image": [
+      "./assets/images/xiaomi 14T pro.png",
+      "./assets/images/xiaomi 14T pro-2.png",
+      "./assets/images/xiaomi 14T pro-3.png"
+    ],
     "promotion":"Tặng tai nghe Bluetooth",
     "specs":{
       "Màn hình":"6.67 inch AMOLED 144Hz",
@@ -52,8 +67,13 @@
     "name": "OPPO Find X8 16GB 512GB",
     "price": "19990000",
     "category": "phone",
-    "image": "./assets/images/oppo find x8.jpg",
+    "image": [
+      "./assets/images/oppo find x8.jpg",
+      "./assets/images/oppo find x8-2.jpg",
+      "./assets/images/oppo find x8-3.jpg"
+    ],
     "promotion":"Giảm trực tiếp 1.000.000đ",
+    "discount": 10,
     "specs":{
       "Màn hình":"6.78 inch AMOLED",
       "Chip":"Dimensity 9400",
@@ -120,6 +140,7 @@
     "image": "./assets/images/macbook-air-m4.jpg",
     "description": "Chip Apple M4 mạnh mẽ.",
     "promotion":"Tặng túi chống sốc",
+    "discount": 8,
     "specs":{
       "CPU":"Apple M4",
       "RAM":"16GB",
@@ -453,7 +474,7 @@
   },
   {
     "id": 29,
-    "name": "Honor Pad 9",
+    "name": "Honor Pad 9 (8GB - 256GB) - Chip Snapdragon 6 Gen 1",
     "price": "6990000",
     "category": "tablet",
     "image": "./assets/images/honorpad9.jpg",
@@ -469,7 +490,7 @@
   },
   {
     "id": 30,
-    "name": "OPPO Pad 3 Pro",
+    "name": "OPPO Pad 3 Pro (Snapdragon 8 Gen 3)",
     "price": "12990000",
     "category": "tablet",
     "image": "./assets/images/oppopad3.jpg",
