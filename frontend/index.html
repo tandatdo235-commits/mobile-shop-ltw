@@ -4,86 +4,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UTH Mobile Shop</title>
+    <title>Mobile Shop</title>
 
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/home.css">
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
     <header class="header">
+        <div class="header-main">
+            <div class="logo">
+                <i class="fa-solid fa-cart-shopping logo-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-brand">SHOP</span>
+                    <span class="logo-sub">Mobile</span>
+                </div>
+            </div>
 
-        <!-- Logo -->
-        <div class="logo">
-            <h1>Mobile Shop</h1>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Bạn muốn mua gì?">
+                <button id="search-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <div class="header-action">
+                <a href="./pages/cart.html" class="action-btn">
+                    Giỏ hàng (0) <i class="fa-solid fa-cart-arrow-down"></i>
+                </a>
+                <a href="#" class="action-btn">
+                    Lịch sử <i class="fa-solid fa-clock-rotate-left"></i>
+                </a>
+                <a href="#" class="action-btn">
+                    Đăng nhập <i class="fa-regular fa-circle-user"></i>
+                </a>
+            </div>
         </div>
 
-        <!-- Search -->
-        <div class="search-box">
-            <input
-                type="text"
-                id="search-input"
-                placeholder="Tìm sản phẩm...">
-            <button id="search-btn">
-                Tìm
-            </button>
-            <button id="reset-btn">
-                Tất cả
-            </button>
+        <div class="header-ticker">
+            <marquee behavior="scroll" direction="left" scrollamount="5">
+                <i class="fa-solid fa-phone-volume"></i> Nhanh tay kẻo lỡ! 
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+                <i class="fa-solid fa-cart-shopping"></i> Chào mừng bạn đến với UTH Mobile Shop! 
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
+                <i class="fa-solid fa-tags"></i> Siêu ưu đãi tháng 11 - Giảm giá tất cả các sản phẩm lên đến 15%
+            </marquee>
         </div>
-
-        <!-- Actions -->
-        <div class="header-action">
-            <a href="./pages/cart.html">
-                <button>Giỏ hàng</button>
-            </a>
-            <button>Đăng nhập</button>
-        </div>
-
     </header>
 
-    <!-- ================= MAIN ================= -->
     <div class="main-layout">
 
-        <!-- Sidebar -->
         <aside class="sidebar">
-
-            <h3>Danh mục</h3>
-                <div class="category-list">
-               <a href="pages/products.html">
-                    Tất cả
-                </a>
-
-                <a href="./pages/products.html?category=phone">
-                    Điện thoại
-                </a>           
-
-                <a href="./pages/products.html?category=laptop">
-                    Laptop
-                </a>
-
-                <a href="./pages/products.html?category=tablet">
-                    Máy tính bảng
-                </a>
-                <a href="./pages/products.html?discount=true">
-                    Khuyến mãi
-                </a>
+            <div class="category-list">
+                <div class="menu-item">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Trang chủ </span>
+                    <div class="menu-header">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Điện thoại</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=phone&brand=iphone">iPhone</a></li>
+                        <li><a href="pages/products.html?category=phone&brand=samsung">Samsung</a></li>
+                        <li><a href="pages/products.html?category=phone&brand=xiaomi">Xiaomi</a></li>
+                        <li><a href="pages/products.html?category=phone&brand=oppo">Oppo</a></li>
+                        <li><a href="pages/products.html?category=phone&brand=vivo">Vivo</a></li>
+                    </ul>
                 </div>
 
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-laptop"></i>
+                        <span>Laptop</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=laptop&brand=asus">Asus</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=macbook">Macbook</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=dell">Dell</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=hp">HP</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=lenovo">Lenovo</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-bullhorn"></i> 
+                        <span>Máy tính bảng</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=tablet&brand=samsung">Samsung</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=ipad">iPad</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=xiaomi">Xiaomi</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=Lenovo">Lenovo</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=oppo">Oppo</a></li>
+                    </ul>
+                </div>
+            </div>
         </aside>
 
-        <!-- Content -->
         <main class="content">
-
-            <!-- Banner -->
             <section class="banner">
-                <img
-                    id="banner-image"
-                    src="./assets/images/banner1.jpg"
-                    alt="banner">
+                <img id="banner-image" src="./assets/images/banner1.jpg" alt="banner">
                 <div class="banner-dots">
                     <span class="dot active"></span>
                     <span class="dot"></span>
@@ -91,70 +118,32 @@
                 </div>
             </section>
 
-            <!-- Điện thoại -->
             <section class="product-section">
-
-                <h2 class="section-title">
-                    Điện thoại nổi bật
-                </h2>
-                
-                
-                <div
-                    id="phone-list" class="product-grid">
-                </div>
-
+                <h2 class="section-title">Điện thoại</h2>
+                <div id="phone-list" class="product-grid"></div>
             </section>
 
-            <!-- Laptop -->
             <section class="product-section">
-
-                <h2 class="section-title">
-                    Laptop nổi bật
-                </h2>
-
-                <div
-                    id="laptop-list"
-                    class="product-grid">
-
-                </div>
-
+                <h2 class="section-title">Laptop</h2>
+                <div id="laptop-list" class="product-grid"></div>
             </section>
 
-            <!-- Tablet -->
             <section class="product-section">
-
-                <h2 class="section-title">
-                    Máy tính bảng
-                </h2>
-
-                <div
-                    id="tablet-list"
-                    class="product-grid">
-
-                </div>
-
+                <h2 class="section-title">Máy tính bảng</h2>
+                <div id="tablet-list" class="product-grid"></div>
             </section>
-
         </main>
-
     </div>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="footer">
         <h3>Mobile Shop</h3>
-        <p>
-            Website thương mại điện tử môn Lập Trình Web
-        </p>
-        <p>
-            © 2026 Mobile Shop. All Rights Reserved.
-        </p>
+        <p>Website thương mại điện tử môn Lập Trình Web</p>
+        <p>© 2026 Mobile Shop. All Rights Reserved.</p>
     </footer>
 
-    <!-- JS -->
     <script src="./js/config.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/home.js"></script>
 
 </body>
-
 </html>

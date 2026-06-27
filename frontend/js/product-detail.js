@@ -64,6 +64,10 @@ fetch("../assets/mock-data/products.json")
     document.getElementById("product-name").innerText =
     product.name;
 
+    document.getElementById("product-description").innerText = product.description || "Sản phẩm chính hãng, bảo hành đầy đủ.";
+    document.getElementById("product-promotion").innerText = product.promotion || "Đang cập nhật chương trình khuyến mãi.";
+
+
     document.getElementById("product-price").innerText =
     Number(product.price).toLocaleString("vi-VN") + " đ";
 
@@ -103,22 +107,42 @@ fetch("../assets/mock-data/products.json")
             "related-products"
         );
         relatedProducts.forEach(item => {
-            const imageSrc = Array.isArray(item.image)
-        ? item.image[0]
-        : item.image;
-            relatedBox.innerHTML += `
-                <div class="related-card">
-                    <img src="${item.image[0].replace("./assets","../assets")}">
-                    <h3>${item.name}</h3>
-                    <p>${Number(item.price).toLocaleString("vi-VN")} đ</p>
-                    <a href="product-detail.html?id=${item.id}">
-                        <button>
-                            Xem chi tiết
-                        </button>
-                    </a>
+        // 1. Xử lý ảnh
+        let itemImgData = item.image || item.images;
+        let imageSrc = Array.isArray(itemImgData) ? itemImgData[0] : itemImgData;
+        imageSrc = imageSrc.replace("./assets", "../assets");
+
+        // 2. Tính toán giá tiền (Logic giống hệt trang chủ)
+        let newPriceNum = Number(item.price);
+        // Nếu có discount, tính ngược lại giá cũ (giá gốc)
+        let oldPriceNum = item.discount ? Math.round(newPriceNum / (1 - item.discount / 100)) : newPriceNum;
+
+        let newPriceStr = newPriceNum.toLocaleString("vi-VN");
+        let oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
+
+        // 3. Tạo các thành phần HTML (Dùng lại class từ style.css)
+        let badgeHTML = item.discount ? `<div class="sale-badge">Giảm ${item.discount}%</div>` : '';
+        let oldPriceHTML = item.discount ? `<span class="old-price">${oldPriceStr} VNĐ</span>` : '';
+        let promoHTML = item.promotion ? `<p class="promotion-text">${item.promotion}</p>` : '';
+
+        // 4. Render vào HTML
+        relatedBox.innerHTML += `
+        <a href="product-detail.html?id=${item.id}" class="related-card-link">
+            <div class="product-card">
+                ${badgeHTML}
+                <img src="${imageSrc}" alt="${item.name}">
+                <h3 class="product-name">${item.name}</h3>
+                
+                <div class="price-box">
+                    <span class="new-price">${newPriceStr} VNĐ</span>
+                    ${oldPriceHTML}
                 </div>
-            `;
-        });
+                
+                ${promoHTML}
+            </div>
+        </a>
+        `;
+    });
 
     document
     .getElementById("add-cart-btn")

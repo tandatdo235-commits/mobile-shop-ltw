@@ -102,3 +102,25 @@ button{
     background: #fb0404;
     color: rgb(250, 248, 248);
 }
+
+/* ================= STYLE DÀNH CHO LOGO (THAY THẾ INLINE STYLE) ================= */
+.logo-icon {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.logo-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo-sub {
+    font-size: 16px;
+    letter-spacing: 2px;
+}
