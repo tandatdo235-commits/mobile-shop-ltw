@@ -1,0 +1,1781 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 16 Plus 128GB | Chính hãng VN/A",
+    "price": "21990000",
+    "discount": 5,
+    "brand":"iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone16.jpg",
+    "image": [
+      "./assets/images/iphone16.jpg",
+      "./assets/images/iphone16-2.jpg",
+      "./assets/images/iphone16-3.jpg"
+    ],
+    "promotion":"Tặng sạc nhanh 20W và ốp lưng",
+    "specs":{
+      "Màn hình": "Super Retina XDR OLED 6.7 inches, 2796 x 1290 pixels, Dynamic Island",
+      "Chip": "Apple A18",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "Li-Ion (Ước tính), xem video đến 27 giờ, sạc nhanh 25W",
+      "Camera sau": "Chính 48MP + 12MP (Siêu rộng) | Trước: 12MP",
+      "Trọng lượng":	"205g (Ước tính)"
+    },
+    "description": "iPhone 16 Plus là phiên bản màn hình lớn 6.7 inch của dòng iPhone 16, tích hợp chip A18 hiệu năng siêu nhanh và Apple Intelligence. Máy nổi bật với thời lượng pin 'khủng' lên đến 27 giờ xem video, Nút Tác Vụ mới, và hệ thống camera 48MP được xếp dọc tiên tiến."
+  },
+  {
+    "id": 2,
+    "name": "Samsung S25 Ultra 12GB 512GB",
+    "price": "28990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/samsung-s25.jpg",
+    "image": [
+      "./assets/images/samsung-s25.jpg",
+      "./assets/images/samsung-s25-2.jpg",
+      "./assets/images/samsung-s25-3.jpg"
+    ],
+    "promotion": "Tặng Galaxy Buds FE, giảm 1.000.000đ và trả góp 0%",
+    "discount": 15,
+    "specs": {
+      "Màn hình": "6.9 inch AMOLED",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "12GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "5000mAh",
+      "Camera sau": "Camera siêu rộng 50MP | Camera góc rộng 200 MP | Camera Tele (5x) 50MP | Camera Tele (3x) 10MP",
+      "Trọng lượng": "218g"
+    },
+    "description": "Samsung Galaxy S25 Ultra tái định nghĩa trải nghiệm dòng Galaxy S Ultra với siêu chip Snapdragon 8 Elite cấu hình cực đại và màn hình 6.9 inch mãn nhãn. Không chỉ lột xác với thiết kế viền Titanium bo cong, khắc phục hoàn toàn vết cấn tay của S24 Ultra, siêu phẩm này còn nâng cấp camera siêu rộng lên 50MP đỉnh cao cùng hệ thống Galaxy AI thông minh thế hệ mới. Khám phá ngay những nâng cấp đáng giá hàng đầu của S25 Ultra ngay dưới đây để thấy vì sao đây là chiếc smartphone đáng mua nhất năm nay."
+  },
+  {
+    "id": 3,
+    "name": "Xiaomi 14T Pro 512GB",
+    "price": "12990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/xiaomi 14T pro.png",
+    "image": [
+      "./assets/images/xiaomi 14T pro.png",
+      "./assets/images/xiaomi 14T pro-2.png",
+      "./assets/images/xiaomi 14T pro-3.png"
+    ],
+    "promotion": "Tặng tai nghe Bluetooth",
+    "discount": 15,
+    "specs": {
+      "Màn hình": "6.67 inch AMOLED 144Hz",
+      "Chip": "Dimensity 9300+",
+      "RAM": "12GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "5000mAh",
+      "Camera sau": "50MP + 50MP + 12MP",
+      "Trọng lượng": "209g"
+    },
+    "description": "Dimensity 9300+, sạc nhanh 120W."
+  },
+  {
+    "id": 4,
+    "name": "OPPO Find X8 16GB 512GB",
+    "price": "19990000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/oppo find x8.jpg",
+    "image": [
+      "./assets/images/oppo find x8.jpg",
+      "./assets/images/oppo find x8-2.jpg",
+      "./assets/images/oppo find x8-3.jpg"
+    ],
+    "promotion": "Giảm trực tiếp 1.000.000đ",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.78 inch AMOLED",
+      "Chip": "Dimensity 9400",
+      "RAM": "16GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "5630mAh",
+      "Camera sau": "50MP + 50MP + 50MP",
+      "Trọng lượng": "193g"
+    },
+    "description": "Thiết kế cao cấp, camera Hasselblad."
+  },
+  {
+    "id": 5,
+    "name": "iPhone 15 Pro 128GB | Chính hãng VN/A",
+    "price": "24990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone15pro.jpg",
+    "image": [
+      "./assets/images/iphone15pro.jpg",
+      "./assets/images/iphone15pro-2.jpg",
+      "./assets/images/iphone15pro-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 20W",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "Super Retina XDR OLED 6.1 inch 120Hz",
+      "Chip": "Apple A17 Pro",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "3274mAh",
+      "Camera sau": "48MP + 12MP + 12MP",
+      "Trọng lượng": "187g"
+    },
+    "description": "iPhone 15 Pro sử dụng khung Titanium, chip Apple A17 Pro và camera chuyên nghiệp."
+  },
+  {
+    "id": 6,
+    "name": "Laptop Dell Inspiron 3511",
+    "price": "16490000",
+    "brand": "dell",
+    "category": "laptop",
+    "images": "./assets/images/dell inspiron.png",
+    "image": [
+      "./assets/images/dell inspiron.png",
+      "./assets/images/dell inspiron-2.png",
+      "./assets/images/dell inspiron-3.png"
+    ],
+    "description": "Laptop văn phòng Core i5.",
+    "promotion": "Tặng chuột không dây",
+    "discount": 5,
+    "specs": {
+      "CPU": "Intel Core i5",
+      "RAM": "8GB",
+      "SSD": "512GB",
+      "Màn hình": "15.6 inch FHD",
+      "Pin": "41Wh",
+      "Webcam": "HD 720p",
+      "Trọng lượng": "1.73kg"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Laptop ASUS Zenbook A14",
+    "price": "28490000",
+    "brand":"asus",
+    "category": "laptop",
+    "images": "./assets/images/asus zenbook.png",
+    "image": [
+      "./assets/images/asus zenbook.png",
+      "./assets/images/asus zenbook-2.png",
+      "./assets/images/asus zenbook-3.png"
+    ],
+    "description": "Thiết kế mỏng nhẹ, pin lâu.",
+    "discount":10,
+    "promotion": "Tặng balo ASUS",
+    "specs": {
+      "CPU": "Snapdragon X Elite",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "14 inch OLED",
+      "Pin": "70Wh",
+      "Webcam": "FHD 1080p",
+      "Trọng lượng": "1.20kg"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Laptop MacBook Air M4 13 inch 2025 10CPU 10GPU 16GB 512GB Sạc 70W",
+    "price": "31990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbook-air-m4.png",
+    "image": [
+      "./assets/images/macbook-air-m4.png",
+      "./assets/images/macbook-air-m4-2.png",
+      "./assets/images/macbook-air-m4-3.png"
+    ],
+    "description": "Chip Apple M4 mạnh mẽ.",
+    "promotion": "Tặng túi chống sốc",
+    "discount": 8,
+    "specs": {
+      "CPU": "Apple M4",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "13.6 inch Retina",
+      "Pin": "18 giờ",
+      "Webcam": "1080p FaceTime HD",
+      "Trọng lượng": "1.24kg"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Laptop HP Pavilion 15-EG3093TU 8C5L4PA",
+    "price": "18490000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/hp-pavilion.jpg",
+    "image": [
+      "./assets/images/hp-pavilion.jpg",
+      "./assets/images/hp-pavilion-2.jpg",
+      "./assets/images/hp-pavilion-3.jpg"
+    ],
+    "description": "Laptop học tập và văn phòng.",
+    "discount":10,
+    "promotion": "Tặng Office 365",
+    "specs": {
+      "CPU": "Intel Core i5",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "15.6 inch FHD",
+      "Pin": "43Wh",
+      "Webcam": "HD 720p",
+      "Trọng lượng": "1.74kg"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Laptop Lenovo Gaming Legion 5 15ACH6",
+    "price": "29990000",
+    "brand": "lenovo",
+    "category": "laptop",
+    "images": "./assets/images/legion5.jpg",
+    "image": [
+      "./assets/images/legion5.jpg",
+      "./assets/images/legion5-2.jpg",
+      "./assets/images/legion5-3.jpg"
+    ],
+    "description": "Laptop gaming RTX mạnh mẽ.",
+    "discount":12,
+    "promotion": "Tặng chuột gaming",
+    "specs": {
+      "CPU": "Ryzen 7 5800H",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 3060",
+      "Màn hình": "15.6 inch 165Hz",
+      "Webcam": "HD 720p",
+      "Trọng lượng": "2.40kg"
+    }
+  },
+  {
+    "id": 11,
+    "name": "iPad Air 11 inch M4 Wifi 128GB 2026",
+    "price": "15490000",
+    "brand": "ipad",
+    "category": "tablet",
+    "images": "./assets/images/ipad air.png",
+    "image": [
+      "./assets/images/ipad air.png",
+      "./assets/images/ipad air-2.png",
+      "./assets/images/ipad air-3.png"
+    ],
+    "description": "Máy tính bảng Apple mỏng nhẹ.",
+    "discount": 8,
+    "promotion": "Tặng bao da",
+    "specs": {
+      "Màn hình": "11 inch Liquid Retina",
+      "Chip": "Apple M4",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "7606mAh",
+      "Camera sau": "12MP",
+      "Trọng lượng": "462g"
+    }
+  },
+  {
+    "id": 12,
+    "name": "Samsung Galaxy Tab S10 FE Wifi 8GB 128GB",
+    "price": "11990000",
+    "brand":"samsung_tablet",
+    "category": "tablet",
+    "images": "./assets/images/tab-s10.png",
+    "image": [
+      "./assets/images/tab-s10.png",
+      "./assets/images/tab-s10-2.png",
+      "./assets/images/tab-s10-3.png"
+    ],
+    "description": "Màn hình AMOLED sắc nét.",
+    "discount":8,
+    "promotion": "Tặng bút S-Pen",
+    "specs": {
+      "Màn hình": "10.9 inch",
+      "Chip": "Exynos 1580",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "8000mAh",
+      "Camera sau": "8MP",
+      "Trọng lượng": "520g"
+    }
+  },
+  {
+    "id": 13,
+    "name": "Xiaomi Pad 7 Wifi 8GB 256GB",
+    "price": "10990000",
+    "brand":"xiaomi_tablet",
+    "category": "tablet",
+    "images": "./assets/images/xiaomi-pad7.jpg",
+    "image": [
+      "./assets/images/xiaomi-pad7.jpg",
+      "./assets/images/xiaomi-pad7-2.jpg",
+      "./assets/images/xiaomi-pad7-3.jpg"
+    ],
+    "description": "Hiệu năng mạnh trong tầm giá.",
+    "discount":10,
+    "promotion": "Tặng bao da",
+    "specs": {
+      "Màn hình": "11.2 inch 144Hz",
+      "Chip": "Snapdragon 8s Gen 3",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "8850mAh",
+      "Camera sau": "13MP",
+      "Trọng lượng": "500g"
+    }
+  },
+  {
+    "id": 14,
+    "name": "iPhone 15 Pro Max 256GB | Chính hãng VN/A",
+    "price": "27990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone15promax.jpg",
+    "image": [
+      "./assets/images/iphone15promax.jpg",
+      "./assets/images/iphone15promax-2.jpg",
+      "./assets/images/iphone15promax-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 20W",
+    "discount": 8,
+    "description": "iPhone 15 Pro Max với thiết kế titan siêu bền, camera zoom 5x và chip A17 Pro mạnh mẽ nhất hiện nay.",
+    "specs": {
+      "Màn hình": "OLED 6.7 inches, Super Retina XDR, 120Hz",
+      "Chip": "Apple A17 Pro 6 Nhân",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "4422mAh, sạc nhanh 27W",
+      "Camera sau": "48MP + 12MP + 12MP",
+      "Trọng lượng": "221g"
+    }
+  },
+  {
+    "id": 15,
+    "name": "Samsung Galaxy Z Fold7 1TB",
+    "price": "49990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/zfold7.jpg",
+    "image": [
+      "./assets/images/zfold7.jpg",
+      "./assets/images/zfold7-2.jpg",
+      "./assets/images/zfold7-3.jpg"
+    ],
+    "promotion": "Tặng Galaxy Watch Ultra",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "8.0 inch Dynamic AMOLED 2X",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "16GB",
+      "Bộ nhớ": "1TB",
+      "Pin": "4400mAh",
+      "Camera sau": "200MP + 12MP + 10MP",
+      "Trọng lượng": "239g"
+    },
+    "description": "Galaxy Z Fold7 là flagship màn hình gập cao cấp dành cho công việc và giải trí."
+  },
+  {
+    "id": 16,
+    "name": "Vivo X200 Pro 5G",
+    "price": "24990000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/vivox200.jpg",
+    "image": [
+      "./assets/images/vivox200.jpg",
+      "./assets/images/vivox200-2.jpg",
+      "./assets/images/vivox200-3.jpg"
+    ],
+    "promotion": "Giảm 1.000.000đ",
+    "discount": 8,
+    "description": "Camera ZEISS chuyên nghiệp.",
+    "specs": {
+      "Màn hình": "6.8 inch AMOLED",
+      "Chip": "Dimensity 9400",
+      "RAM": "16GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "6000mAh",
+      "Camera sau": "50MP + 50MP + 200MP",
+      "Trọng lượng": "228g"
+    }
+  },
+  {
+    "id": 17,
+    "name": "iPhone 15 Plus 256GB | Chính hãng VN/A",
+    "price": "23990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone15plus.jpg",
+    "image": [
+      "./assets/images/iphone15plus.jpg",
+      "./assets/images/iphone15plus-2.jpg",
+      "./assets/images/iphone15plus-3.jpg"
+    ],
+    "promotion": "Giảm trực tiếp 1.000.000đ",
+    "discount": 8,
+    "specs": {
+      "Màn hình": "6.7 inch OLED",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "4383mAh",
+      "Camera sau": "48MP + 12MP",
+      "Trọng lượng": "201g"
+    },
+    "description": "iPhone 15 Plus sở hữu màn hình lớn 6.7 inch, camera 48MP và cổng USB-C."
+  },
+  {
+    "id": 18,
+    "name": "iPhone 15 128GB | Chính hãng VN/A",
+    "price": "19990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone15.jpg",
+    "image": [
+      "./assets/images/iphone15.jpg",
+      "./assets/images/iphone15-2.jpg",
+      "./assets/images/iphone15-3.jpg"
+    ],
+    "promotion": "Tặng ốp lưng cao cấp",
+    "discount": 7,
+    "specs": {
+      "Màn hình": "6.1 inch OLED",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "3349mAh",
+      "Camera sau": "48MP + 12MP",
+      "Trọng lượng": "171g"
+    },
+    "description": "iPhone 15 có Dynamic Island, camera 48MP và cổng USB-C tiện lợi."
+  },
+  {
+    "id": 19,
+    "name": "Laptop MacBook Pro 14 inch M4 Pro",
+    "price": "49990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbook-pro-14.jpg",
+    "image": [
+      "./assets/images/macbook-pro-14.jpg",
+      "./assets/images/macbook-pro-14-2.jpg",
+      "./assets/images/macbook-pro-14-3.jpg"
+    ],
+    "promotion": "Tặng chuột Magic Mouse",
+    "discount": 5,
+    "description": "Hiệu năng đỉnh cao cho dân chuyên nghiệp, màn hình Liquid Retina XDR tuyệt đẹp.",
+    "specs": {
+      "CPU": "Apple M4 Pro",
+      "RAM": "18GB",
+      "SSD": "512GB",
+      "Màn hình": "14.2 inch Liquid Retina XDR",
+      "Pin": "22 giờ",
+      "Webcam": "1080p FaceTime HD",
+      "Trọng lượng": "1.61kg"
+    }
+  },
+  {
+    "id": 20,
+    "name": "Laptop HP Pavilion 15-EG3093TU",
+    "price": "18490000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/hp-pavilion.jpg",
+    "image": [
+      "./assets/images/hp-pavilion.jpg",
+      "./assets/images/hp-pavilion-2.jpg",
+      "./assets/images/hp-pavilion-3.jpg"
+    ],
+    "promotion": "Tặng Office 365 bản quyền",
+    "discount":10,
+    "description": "Laptop học tập và văn phòng mỏng nhẹ, hiệu năng ổn định.",
+    "specs": {
+      "CPU": "Intel Core i5",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "15.6 inch FHD",
+      "Pin": "43Wh",
+      "Webcam": "HD 720p",
+      "Trọng lượng": "1.74kg"
+    }
+  },
+  {
+    "id": 21,
+    "name": "Laptop ASUS ROG Strix G16 G614JIR-N4046W",
+    "price": "32990000",
+    "brand": "asus",
+    "category": "laptop",
+    "images": "./assets/images/rogg16.jpg",
+    "image": [
+      "./assets/images/rogg16.jpg",
+      "./assets/images/rogg16-2.jpg",
+      "./assets/images/rogg16-3.jpg"
+    ],
+    "promotion": "Tặng chuột ROG",
+    "discount":12,
+    "description": "Laptop gaming cao cấp.",
+    "specs": {
+      "CPU": "Intel Core i9",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4070",
+      "Màn hình": "16 inch 240Hz",
+      "Webcam": "HD 720p",
+      "Trọng lượng": "2.50kg"
+    }
+  },
+  {
+    "id": 22,
+    "name": "Laptop Lenovo ThinkPad E14 Gen 5 21JK00PEVN",
+    "price": "18990000",
+    "brand": "lenovo",
+    "category": "laptop",
+    "images": "./assets/images/thinkpad.jpg",
+    "image": [
+      "./assets/images/thinkpad.jpg",
+      "./assets/images/thinkpad-2.jpg",
+      "./assets/images/thinkpad-3.jpg"
+    ],
+    "promotion": "Tặng Office 365",
+    "discount":8,
+    "description": "Laptop doanh nhân.",
+    "specs": {
+      "CPU": "Intel Core i5",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "14 inch FHD",
+      "Pin": "47Wh",
+      "Webcam": "FHD 1080p",
+      "Trọng lượng": "1.41kg"
+    }
+  },
+  {
+    "id": 23,
+    "name": "Dell XPS 13 9340 Core Ultra 7",
+    "price": "35990000",
+    "brand": "dell",
+    "category": "laptop",
+    "images": "./assets/images/xps13.jpg",
+    "image": [
+      "./assets/images/xps13.jpg",
+      "./assets/images/xps13-2.jpg",
+      "./assets/images/xps13-3.jpg"
+    ],
+    "promotion": "Tặng túi chống sốc",
+    "discount":5,
+    "description": "Laptop ultrabook cao cấp.",
+    "specs": {
+      "CPU": "Intel Core Ultra 7",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "Màn hình": "13.4 inch OLED",
+      "Pin": "55Wh",
+      "Webcam": "FHD 1080p",
+      "Trọng lượng": "1.19kg"
+    }
+  },
+  {
+    "id": 24,
+    "name": "iPad Pro M5 11 inch Wifi 256GB",
+    "price": "24990000",
+    "brand":"ipad",
+    "category": "tablet",
+    "images": "./assets/images/ipadprom5.jpg",
+    "image": [
+      "./assets/images/ipadprom5.jpg",
+      "./assets/images/ipadprom5-2.jpg",
+      "./assets/images/ipadprom5-3.jpg"
+    ],
+    "promotion": "Tặng Apple Pencil",
+    "discount":8,
+    "description": "Tablet mạnh nhất của Apple.",
+    "specs": {
+      "Màn hình": "11 inch OLED",
+      "Chip": "Apple M5",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "8160mAh",
+      "Camera sau": "12MP",
+      "Trọng lượng": "444g"
+    }
+  },
+  {
+    "id": 25,
+    "name": "Samsung Galaxy Tab S10 Ultra",
+    "price": "26990000",
+    "brand":"samsung_tablet",
+    "category": "tablet",
+    "images": "./assets/images/tabs10ultra.jpg",
+    "image": [
+      "./assets/images/tabs10ultra.jpg",
+      "./assets/images/tabs10ultra-2.jpg",
+      "./assets/images/tabs10ultra-3.jpg"
+    ],
+    "promotion": "Tặng bàn phím",
+    "discount":9,
+    "description": "Tablet Android cao cấp.",
+    "specs": {
+      "Màn hình": "14.6 inch AMOLED",
+      "Chip": "Dimensity 9300+",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "11200mAh",
+      "Camera sau": "13MP + 8MP",
+      "Trọng lượng": "718g"
+    }
+  },
+  {
+    "id": 26,
+    "name": "Lenovo Tab P12",
+    "price": "8990000",
+    "brand":"lenovo_tablet",
+    "category": "tablet",
+    "images": "./assets/images/tabp12.jpg",
+    "image": [
+      "./assets/images/tabp12.jpg",
+      "./assets/images/tabp12-2.jpg",
+      "./assets/images/tabp12-3.jpg"
+    ],
+    "promotion": "Tặng bao da",
+    "discount":10,
+    "description": "Tablet học tập và giải trí.",
+    "specs": {
+      "Màn hình": "12.7 inch",
+      "Chip": "Dimensity 7050",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "10200mAh",
+      "Camera sau": "8MP",
+      "Trọng lượng": "615g"
+    }
+  },
+  {
+    "id": 27,
+    "name": "OPPO Pad 3 8GB/128GB",
+    "price": "9990000",
+    "brand": "oppo_tablet",
+    "category": "tablet",
+    "images": "./assets/images/oppo-pad3.jpg",
+    "image": [
+      "./assets/images/oppo-pad3.jpg",
+      "./assets/images/oppo-pad3-2.jpg",
+      "./assets/images/oppo-pad3-3.jpg"
+    ],
+    "promotion": "Giảm 500k khi mua kèm bút",
+    "discount": 10,
+    "description": "Máy tính bảng tầm trung với hiệu năng ổn định, thiết kế mỏng nhẹ tinh tế.",
+    "specs": {
+      "Màn hình": "11.6 inch LCD, 120Hz",
+      "Chip": "Snapdragon 8 Gen 2",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "8000mAh",
+      "Camera sau": "8MP",
+      "Trọng lượng": "530g"
+    }
+  },
+  {
+    "id": 28,
+    "name": "Xiaomi Pad 7 Pro Wifi 12GB 512GB",
+    "price": "14990000",
+    "brand": "xiaomi_tablet",
+    "category": "tablet",
+    "images": "./assets/images/xiaomipad7pro.jpg",
+    "image": [
+      "./assets/images/xiaomipad7pro.jpg",
+      "./assets/images/xiaomipad7pro-2.jpg",
+      "./assets/images/xiaomipad7pro-3.jpg"
+    ],
+    "promotion": "Tặng bao da và bàn phím Bluetooth",
+    "discount": 10,
+    "description": "Máy tính bảng Xiaomi cao cấp với màn hình 144Hz và chip Snapdragon 8s Gen 3.",
+    "specs": {
+      "Màn hình": "11.2 inch 3.2K 144Hz",
+      "Chip": "Snapdragon 8s Gen 3",
+      "RAM": "12GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "8850mAh",
+      "Camera sau": "50MP",
+      "Trọng lượng": "500g"
+    }
+  },
+  {
+    "id": 29,
+    "name": "Lenovo Tab Plus Wifi 8GB 256GB",
+    "price": "9990000",
+    "brand": "lenovo_tablet",
+    "category": "tablet",
+    "images": "./assets/images/lenovotabplus.jpg",
+    "image": [
+      "./assets/images/lenovotabplus.jpg",
+      "./assets/images/lenovotabplus-2.jpg",
+      "./assets/images/lenovotabplus-3.jpg"
+    ],
+    "promotion": "Tặng bao da cao cấp",
+    "discount": 8,
+    "description": "Máy tính bảng Lenovo với hệ thống loa JBL chất lượng cao, phù hợp học tập và giải trí.",
+    "specs": {
+      "Màn hình": "11.5 inch 2K 90Hz",
+      "Chip": "MediaTek Helio G99",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "8600mAh",
+      "Camera sau": "8MP",
+      "Trọng lượng": "650g"
+    }
+  },
+  {
+    "id": 30,
+    "name": "OPPO Pad 3 Pro (Snapdragon 8 Gen 3)",
+    "price": "12990000",
+    "brand":"oppo",
+    "category": "tablet",
+    "images": "./assets/images/oppopad3.jpg",
+    "image": [
+      "./assets/images/oppopad3.jpg",
+      "./assets/images/oppopad3-2.jpg",
+      "./assets/images/oppopad3-3.jpg"
+    ],
+    "promotion": "Tặng bàn phím Bluetooth",
+    "discount":12,
+    "description": "Tablet cao cấp cho công việc.",
+    "specs": {
+      "Màn hình": "12.1 inch 144Hz",
+      "Chip": "Snapdragon 8 Gen 3",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "9510mAh",
+      "Camera sau": "13MP",
+      "Trọng lượng": "589g"
+    }
+  },
+  {
+    "id": 31,
+    "name": "iPhone 16 Pro 128GB | Chính hãng VN/A",
+    "price": "26990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone16pro.jpg",
+    "image": [
+      "./assets/images/iphone16pro.jpg",
+      "./assets/images/iphone16pro-2.jpg",
+      "./assets/images/iphone16pro-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 20W, giảm 500.000đ",
+    "discount": 8,
+    "specs": {
+      "Màn hình": "Super Retina XDR OLED 6.3 inch 120Hz",
+      "Chip": "Apple A18 Pro",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "3582mAh",
+      "Camera sau": "48MP + 48MP + 12MP",
+      "Trọng lượng": "199g"
+    },
+    "description": "iPhone 16 Pro sở hữu chip Apple A18 Pro mạnh mẽ, màn hình ProMotion 120Hz và camera zoom quang học chuyên nghiệp."
+  },
+  {
+    "id": 32,
+    "name": "iPhone 16 Pro Max 256GB | Chính hãng VN/A",
+    "price": "33990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone16promax.jpg",
+    "image": [
+      "./assets/images/iphone16promax.jpg",
+      "./assets/images/iphone16promax-2.jpg",
+      "./assets/images/iphone16promax-3.jpg"
+    ],
+    "promotion": "Tặng AirPods 4, trả góp 0%",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "Super Retina XDR OLED 6.9 inch 120Hz",
+      "Chip": "Apple A18 Pro",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "4685mAh",
+      "Camera sau": "48MP + 48MP + 12MP",
+      "Trọng lượng": "227g"
+    },
+    "description": "Phiên bản cao cấp nhất của dòng iPhone 16 với camera zoom 5x, pin lớn và màn hình 6.9 inch."
+  },
+  {
+    "id": 33,
+    "name": "iPhone 14 Pro Max 256GB | Chính hãng VN/A",
+    "price": "24990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone14promax.jpg",
+    "image": [
+      "./assets/images/iphone14promax.jpg",
+      "./assets/images/iphone14promax-2.jpg",
+      "./assets/images/iphone14promax-3.jpg"
+    ],
+    "promotion": "Tặng AirPods 4",
+    "discount": 12,
+    "specs": {
+      "Màn hình": "6.7 inch OLED 120Hz",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "4323mAh",
+      "Camera sau": "48MP + 12MP + 12MP",
+      "Trọng lượng": "240g"
+    },
+    "description": "iPhone 14 Pro Max nổi bật với Dynamic Island và camera 48MP."
+  },
+  {
+    "id": 34,
+    "name": "iPhone 14 Pro 128GB | Chính hãng VN/A",
+    "price": "21990000",
+    "brand": "iphone",
+    "category": "phone",
+    "images": "./assets/images/iphone14pro.jpg",
+    "image": [
+      "./assets/images/iphone14pro.jpg",
+      "./assets/images/iphone14pro-2.jpg",
+      "./assets/images/iphone14pro-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 20W",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.1 inch OLED 120Hz",
+      "Chip": "Apple A16 Bionic",
+      "RAM": "6GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "3200mAh",
+      "Camera sau": "48MP + 12MP + 12MP",
+      "Trọng lượng": "206g"
+    },
+    "description": "iPhone 14 Pro mang đến hiệu năng mạnh mẽ và màn hình ProMotion 120Hz."
+  },
+  {
+    "id": 35,
+    "name": "Samsung Galaxy S25 256GB",
+    "price": "22990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/samsung-s25.jpg",
+    "image": [
+      "./assets/images/samsung-s25.jpg",
+      "./assets/images/samsung-s25-2.jpg",
+      "./assets/images/samsung-s25-3.jpg"
+    ],
+    "promotion": "Tặng Galaxy Buds FE và giảm 500.000đ",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.2 inch Dynamic AMOLED 2X 120Hz",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "4000mAh",
+      "Camera sau": "50MP + 12MP + 10MP",
+      "Trọng lượng": "162g"
+    },
+    "description": "Samsung Galaxy S25 sở hữu thiết kế nhỏ gọn, hiệu năng mạnh mẽ cùng Galaxy AI thông minh."
+  },
+  {
+    "id": 36,
+    "name": "Samsung Galaxy S25+ 512GB",
+    "price": "26990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/samsung-s25plus.jpg",
+    "image": [
+      "./assets/images/samsung-s25plus.jpg",
+      "./assets/images/samsung-s25plus-2.jpg",
+      "./assets/images/samsung-s25plus-3.jpg"
+    ],
+    "promotion": "Tặng Galaxy Watch7",
+    "discount": 12,
+    "specs": {
+      "Màn hình": "6.7 inch Dynamic AMOLED 2X 120Hz",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "12GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "4900mAh",
+      "Camera sau": "50MP + 12MP + 10MP",
+      "Trọng lượng": "190g"
+    },
+    "description": "Galaxy S25+ có màn hình lớn, pin lâu và hiệu năng cao cho mọi nhu cầu."
+  },
+  {
+    "id": 37,
+    "name": "Samsung Galaxy Z Flip7 512GB",
+    "price": "28990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/zflip7.jpg",
+    "image": [
+      "./assets/images/zflip7.jpg",
+      "./assets/images/zflip7-2.jpg",
+      "./assets/images/zflip7-3.jpg"
+    ],
+    "promotion": "Tặng Galaxy Buds3",
+    "discount": 15,
+    "specs": {
+      "Màn hình": "6.9 inch Dynamic AMOLED 2X",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "12GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "4300mAh",
+      "Camera sau": "50MP + 12MP",
+      "Trọng lượng": "188g"
+    },
+    "description": "Galaxy Z Flip7 là mẫu điện thoại gập thời trang với màn hình phụ lớn và Galaxy AI."
+  },
+  {
+    "id": 38,
+    "name": "Samsung Galaxy A56 5G 256GB",
+    "price": "10990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/galaxy-a56.jpg",
+    "image": [
+      "./assets/images/galaxy-a56.jpg",
+      "./assets/images/galaxy-a56-2.jpg",
+      "./assets/images/galaxy-a56-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 45W",
+    "discount": 8,
+    "specs": {
+      "Màn hình": "6.7 inch Super AMOLED 120Hz",
+      "Chip": "Exynos 1580",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5000mAh",
+      "Camera sau": "50MP + 12MP + 5MP",
+      "Trọng lượng": "198g"
+    },
+    "description": "Galaxy A56 5G mang đến màn hình đẹp, pin lớn và hiệu năng ổn định trong phân khúc tầm trung."
+  },
+  {
+    "id": 39,
+    "name": "Samsung Galaxy S24 FE 256GB",
+    "price": "14990000",
+    "brand": "samsung",
+    "category": "phone",
+    "images": "./assets/images/s24fe.jpg",
+    "image": [
+      "./assets/images/s24fe.jpg",
+      "./assets/images/s24fe-2.jpg",
+      "./assets/images/s24fe-3.jpg"
+    ],
+    "promotion": "Tặng Galaxy Buds FE và trả góp 0%",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.7 inch Dynamic AMOLED 2X 120Hz",
+      "Chip": "Exynos 2400e",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "4700mAh",
+      "Camera sau": "50MP + 12MP + 8MP",
+      "Camera trước": "10MP",
+      "Trọng lượng": "213g"
+    },
+    "description": "Samsung Galaxy S24 FE là phiên bản Fan Edition với màn hình Dynamic AMOLED 120Hz, Galaxy AI, hiệu năng mạnh mẽ và camera chất lượng cao, phù hợp cho học tập, làm việc và giải trí."
+  },
+  {
+    "id": 40,
+    "name": "Xiaomi 15 Ultra 512GB",
+    "price": "28990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/xiaomi15ultra.jpg",
+    "image": [
+      "./assets/images/xiaomi15ultra.jpg",
+      "./assets/images/xiaomi15ultra-2.jpg",
+      "./assets/images/xiaomi15ultra-3.jpg"
+    ],
+    "promotion": "Tặng Xiaomi Watch S4",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.73 inch AMOLED 2K 120Hz",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "16GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "5410mAh",
+      "Camera sau": "50MP + 50MP + 200MP",
+      "Camera trước": "32MP",
+      "Trọng lượng": "229g"
+    },
+    "description": "Flagship Xiaomi với camera Leica chuyên nghiệp và hiệu năng mạnh mẽ."
+  },
+  {
+    "id": 41,
+    "name": "Xiaomi 15 256GB",
+    "price": "21990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/xiaomi15.jpg",
+    "image": [
+      "./assets/images/xiaomi15.jpg",
+      "./assets/images/xiaomi15-2.jpg",
+      "./assets/images/xiaomi15-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 90W",
+    "discount": 8,
+    "specs": {
+      "Màn hình": "6.36 inch AMOLED 120Hz",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5400mAh",
+      "Camera sau": "50MP + 50MP + 50MP",
+      "Camera trước": "32MP",
+      "Trọng lượng": "191g"
+    },
+    "description": "Điện thoại flagship nhỏ gọn với camera Leica cao cấp."
+  },
+  {
+    "id": 42,
+    "name": "Xiaomi 14 Ultra 512GB",
+    "price": "25990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/xiaomi14ultra.jpg",
+    "image": [
+      "./assets/images/xiaomi14ultra.jpg",
+      "./assets/images/xiaomi14ultra-2.jpg",
+      "./assets/images/xiaomi14ultra-3.jpg"
+    ],
+    "promotion": "Tặng tai nghe Xiaomi Buds 5",
+    "discount": 12,
+    "specs": {
+      "Màn hình": "6.73 inch AMOLED LTPO",
+      "Chip": "Snapdragon 8 Gen 3",
+      "RAM": "16GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "5300mAh",
+      "Camera sau": "50MP Leica Quad Camera",
+      "Camera trước": "32MP",
+      "Trọng lượng": "224g"
+    },
+    "description": "Camera Leica chuyên nghiệp cùng Snapdragon 8 Gen 3."
+  },
+  {
+    "id": 43,
+    "name": "Redmi Note 14 Pro+ 5G",
+    "price": "10990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/redminote14proplus.jpg",
+    "image": [
+      "./assets/images/redminote14proplus.jpg",
+      "./assets/images/redminote14proplus-2.jpg",
+      "./assets/images/redminote14proplus-3.jpg"
+    ],
+    "promotion": "Giảm trực tiếp 500.000đ",
+    "discount": 7,
+    "specs": {
+      "Màn hình": "6.67 inch AMOLED 120Hz",
+      "Chip": "Snapdragon 7s Gen 3",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "6200mAh",
+      "Camera sau": "200MP + 8MP + 2MP",
+      "Camera trước": "20MP",
+      "Trọng lượng": "205g"
+    },
+    "description": "Camera 200MP cùng viên pin dung lượng lớn."
+  },
+  {
+    "id": 44,
+    "name": "POCO F7 Pro",
+    "price": "14990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/pocof7pro.jpg",
+    "image": [
+      "./assets/images/pocof7pro.jpg",
+      "./assets/images/pocof7pro-2.jpg",
+      "./assets/images/pocof7pro-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 120W",
+    "discount": 9,
+    "specs": {
+      "Màn hình": "6.67 inch AMOLED 120Hz",
+      "Chip": "Snapdragon 8 Gen 3",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "6000mAh",
+      "Camera sau": "50MP + 8MP",
+      "Camera trước": "20MP",
+      "Trọng lượng": "206g"
+    },
+    "description": "Hiệu năng gaming mạnh mẽ với Snapdragon 8 Gen 3."
+  },
+  {
+    "id": 45,
+    "name": "POCO X7 Pro",
+    "price": "9990000",
+    "brand": "xiaomi",
+    "category": "phone",
+    "images": "./assets/images/pocox7pro.jpg",
+    "image": [
+      "./assets/images/pocox7pro.jpg",
+      "./assets/images/pocox7pro-2.jpg",
+      "./assets/images/pocox7pro-3.jpg"
+    ],
+    "promotion": "Tặng tai nghe Bluetooth",
+    "discount": 6,
+    "specs": {
+      "Màn hình": "6.67 inch AMOLED 120Hz",
+      "Chip": "Dimensity 8400 Ultra",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "6000mAh",
+      "Camera sau": "50MP + 8MP",
+      "Camera trước": "20MP",
+      "Trọng lượng": "198g"
+    },
+    "description": "Điện thoại hiệu năng cao, pin lớn và màn hình AMOLED 120Hz."
+    },
+  {
+    "id": 46,
+    "name": "OPPO Find X8 Pro 16GB 512GB",
+    "price": "24990000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/findx8pro.jpg",
+    "image": [
+      "./assets/images/findx8pro.jpg",
+      "./assets/images/findx8pro-2.jpg",
+      "./assets/images/findx8pro-3.jpg"
+    ],
+    "promotion": "Giảm 1.500.000đ, tặng OPPO Enco Air",
+    "discount": 12,
+    "specs": {
+      "Màn hình": "6.82 inch AMOLED 120Hz",
+      "Chip": "Dimensity 9400",
+      "RAM": "16GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "5910mAh",
+      "Camera sau": "50MP + 50MP + 50MP + 50MP",
+      "Trọng lượng": "215g"
+    },
+    "description": "Flagship OPPO với camera Hasselblad và hiệu năng mạnh mẽ."
+  },
+  {
+    "id": 47,
+    "name": "OPPO Reno14 Pro 5G 12GB 512GB",
+    "price": "18990000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/reno14pro.jpg",
+    "image": [
+      "./assets/images/reno14pro.jpg",
+      "./assets/images/reno14pro-2.jpg",
+      "./assets/images/reno14pro-3.jpg"
+    ],
+    "promotion": "Tặng tai nghe Bluetooth",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.83 inch AMOLED 120Hz",
+      "Chip": "Dimensity 8450",
+      "RAM": "12GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "6200mAh",
+      "Camera sau": "50MP + 50MP + 8MP",
+      "Trọng lượng": "190g"
+    },
+    "description": "Camera AI, sạc nhanh SuperVOOC 80W."
+  },
+  {
+    "id": 48,
+    "name": "OPPO Reno14 5G 12GB 256GB",
+    "price": "14990000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/reno14.jpg",
+    "image": [
+      "./assets/images/reno14.jpg",
+      "./assets/images/reno14-2.jpg",
+      "./assets/images/reno14-3.jpg"
+    ],
+    "promotion": "Giảm 1.000.000đ",
+    "discount": 8,
+    "specs": {
+      "Màn hình": "6.59 inch AMOLED",
+      "Chip": "Dimensity 8350",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "6000mAh",
+      "Camera sau": "50MP + 8MP + 2MP",
+      "Trọng lượng": "185g"
+    },
+    "description": "Thiết kế mỏng nhẹ, camera AI sắc nét."
+  },
+  {
+    "id": 49,
+    "name": "OPPO Reno13 F 5G 12GB 256GB",
+    "price": "9990000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/reno13f.jpg",
+    "image": [
+      "./assets/images/reno13f.jpg",
+      "./assets/images/reno13f-2.jpg",
+      "./assets/images/reno13f-3.jpg"
+    ],
+    "promotion": "Tặng ốp lưng chính hãng",
+    "discount": 7,
+    "specs": {
+      "Màn hình": "6.67 inch AMOLED",
+      "Chip": "Snapdragon 6 Gen 1",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5800mAh",
+      "Camera sau": "50MP + 8MP + 2MP",
+      "Trọng lượng": "177g"
+    },
+    "description": "Điện thoại tầm trung với màn hình AMOLED và pin lớn."
+  },
+  {
+    "id": 50,
+    "name": "OPPO A5 Pro 5G 8GB 256GB",
+    "price": "7490000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/a5pro.jpg",
+    "image": [
+      "./assets/images/a5pro.jpg",
+      "./assets/images/a5pro-2.jpg",
+      "./assets/images/a5pro-3.jpg"
+    ],
+    "promotion": "Trả góp 0%",
+    "discount": 5,
+    "specs": {
+      "Màn hình": "6.67 inch LCD 120Hz",
+      "Chip": "Dimensity 6300",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5800mAh",
+      "Camera sau": "50MP + 2MP",
+      "Trọng lượng": "186g"
+    },
+    "description": "Hiệu năng ổn định, pin khỏe dành cho học sinh sinh viên."
+  },
+  {
+    "id": 51,
+    "name": "OPPO A3 Pro 5G 8GB 256GB",
+    "price": "5990000",
+    "brand": "oppo",
+    "category": "phone",
+    "images": "./assets/images/a3pro.jpg",
+    "image": [
+      "./assets/images/a3pro.jpg",
+      "./assets/images/a3pro-2.jpg",
+      "./assets/images/a3pro-3.jpg"
+    ],
+    "promotion": "Tặng tai nghe có dây",
+    "discount": 5,
+    "specs": {
+      "Màn hình": "6.67 inch HD+ 120Hz",
+      "Chip": "Dimensity 6300",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5100mAh",
+      "Camera sau": "64MP + 2MP",
+      "Trọng lượng": "177g"
+    },
+    "description": "Điện thoại OPPO giá tốt với thiết kế hiện đại và pin bền."
+  },
+  {
+    "id": 52,
+    "name": "Vivo X200 Ultra 16GB 512GB",
+    "price": "29990000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/x200ultra.jpg",
+    "image": [
+      "./assets/images/x200ultra.jpg",
+      "./assets/images/x200ultra-2.jpg",
+      "./assets/images/x200ultra-3.jpg"
+    ],
+    "promotion": "Tặng Vivo TWS 3e, giảm 2.000.000đ",
+    "discount": 12,
+    "specs": {
+      "Màn hình": "6.82 inch AMOLED 2K 120Hz",
+      "Chip": "Snapdragon 8 Elite",
+      "RAM": "16GB",
+      "Bộ nhớ": "512GB",
+      "Pin": "6000mAh",
+      "Camera sau": "50MP + 50MP + 200MP",
+      "Trọng lượng": "229g"
+    },
+    "description": "Flagship Vivo với camera ZEISS và hiệu năng hàng đầu."
+  },
+  {
+    "id": 53,
+    "name": "Vivo X200 12GB 256GB",
+    "price": "20990000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/x200.jpg",
+    "image": [
+      "./assets/images/x200.jpg",
+      "./assets/images/x200-2.jpg",
+      "./assets/images/x200-3.jpg"
+    ],
+    "promotion": "Tặng sạc nhanh 90W",
+    "discount": 10,
+    "specs": {
+      "Màn hình": "6.67 inch AMOLED 120Hz",
+      "Chip": "Dimensity 9400",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5800mAh",
+      "Camera sau": "50MP + 50MP + 50MP",
+      "Trọng lượng": "202g"
+    },
+    "description": "Hiệu năng mạnh, camera ZEISS chuyên nghiệp."
+  },
+  {
+    "id": 54,
+    "name": "Vivo V50 5G 12GB 256GB",
+    "price": "13990000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/v50.jpg",
+    "image": [
+      "./assets/images/v50.jpg",
+      "./assets/images/v50-2.jpg",
+      "./assets/images/v50-3.jpg"
+    ],
+    "promotion": "Tặng tai nghe Bluetooth",
+    "discount": 8,
+    "specs": {
+      "Màn hình": "6.77 inch AMOLED 120Hz",
+      "Chip": "Snapdragon 7 Gen 3",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "6000mAh",
+      "Camera sau": "50MP + 50MP",
+      "Trọng lượng": "188g"
+    },
+    "description": "Camera selfie 50MP, thiết kế mỏng nhẹ."
+  },
+  {
+    "id": 55,
+    "name": "Vivo V40 5G 12GB 256GB",
+    "price": "11990000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/v40.jpg",
+    "image": [
+      "./assets/images/v40.jpg",
+      "./assets/images/v40-2.jpg",
+      "./assets/images/v40-3.jpg"
+    ],
+    "promotion": "Giảm trực tiếp 1.000.000đ",
+    "discount": 7,
+    "specs": {
+      "Màn hình": "6.78 inch AMOLED 120Hz",
+      "Chip": "Snapdragon 7 Gen 3",
+      "RAM": "12GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "5500mAh",
+      "Camera sau": "50MP + 50MP",
+      "Trọng lượng": "190g"
+    },
+    "description": "Camera ZEISS, pin lớn và sạc nhanh."
+  },
+  {
+    "id": 56,
+    "name": "Vivo Y39 5G 8GB 256GB",
+    "price": "7990000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/y39.jpg",
+    "image": [
+      "./assets/images/y39.jpg",
+      "./assets/images/y39-2.jpg",
+      "./assets/images/y39-3.jpg"
+    ],
+    "promotion": "Tặng ốp lưng chính hãng",
+    "discount": 5,
+    "specs": {
+      "Màn hình": "6.68 inch LCD 120Hz",
+      "Chip": "Snapdragon 4 Gen 2",
+      "RAM": "8GB",
+      "Bộ nhớ": "256GB",
+      "Pin": "6500mAh",
+      "Camera sau": "50MP + 2MP",
+      "Trọng lượng": "199g"
+    },
+    "description": "Pin lớn, hiệu năng ổn định cho học tập và giải trí."
+  },
+  {
+    "id": 57,
+    "name": "Vivo Y29 5G 8GB 128GB",
+    "price": "6490000",
+    "brand": "vivo",
+    "category": "phone",
+    "images": "./assets/images/y29.jpg",
+    "image": [
+      "./assets/images/y29.jpg",
+      "./assets/images/y29-2.jpg",
+      "./assets/images/y29-3.jpg"
+    ],
+    "promotion": "Trả góp 0%, tặng tai nghe",
+    "discount": 5,
+    "specs": {
+      "Màn hình": "6.68 inch LCD 120Hz",
+      "Chip": "Dimensity 6300",
+      "RAM": "8GB",
+      "Bộ nhớ": "128GB",
+      "Pin": "5500mAh",
+      "Camera sau": "50MP + 2MP",
+      "Trọng lượng": "192g"
+    },
+    "description": "Điện thoại Vivo giá tốt với pin bền và màn hình 120Hz."
+  },
+  {
+    "id": 58,
+    "name": "Laptop MacBook Air 15 inch M3",
+    "price": "32990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbook-air-15.jpg",
+    "image": [
+      "./assets/images/macbook-air-15.jpg",
+      "./assets/images/macbook-air-15-2.jpg",
+      "./assets/images/macbook-air-15-3.jpg"
+    ],
+    "promotion": "Tặng voucher 500k",
+    "discount": 10,
+    "description": "Màn hình lớn 15 inch mỏng nhẹ, trải nghiệm giải trí hoàn hảo.",
+    "specs": {
+      "CPU": "Apple M3",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "15.3 inch Liquid Retina",
+      "Pin": "18 giờ",
+      "Webcam": "1080p FaceTime HD",
+      "Trọng lượng": "1.51kg"
+    }
+  },
+  {
+  "id": 59,
+  "name": "Laptop ASUS Vivobook S14 OLED",
+  "price": "21990000",
+  "brand": "asus",
+  "category": "laptop",
+  "images": "./assets/images/asus-vivobooks14.jpg",
+  "image": [
+    "./assets/images/asus-vivobooks14.jpg",
+    "./assets/images/asus-vivobooks14-2.jpg",
+    "./assets/images/asus-vivobooks14-3.jpg"
+  ],
+  "promotion": "Tặng balo ASUS",
+  "discount": 8,
+  "description": "Laptop mỏng nhẹ với màn hình OLED sắc nét.",
+  "specs": {
+    "CPU": "Intel Core Ultra 7",
+    "RAM": "16GB",
+    "SSD": "512GB",
+    "Màn hình": "14 inch OLED",
+    "Pin": "75Wh"
+  }
+  },
+  {
+    "id": 60,
+    "name": "Laptop ASUS TUF Gaming A15",
+    "price": "26990000",
+    "brand": "asus",
+    "category": "laptop",
+    "images": "./assets/images/asus-tufa15.jpg",
+    "image": [
+      "./assets/images/asus-tufa15.jpg",
+      "./assets/images/asus-tufa15-2.jpg",
+      "./assets/images/asus-tufa15-3.jpg"
+    ],
+    "promotion": "Tặng chuột gaming",
+    "discount": 10,
+    "description": "Laptop gaming Ryzen 7 mạnh mẽ.",
+    "specs": {
+      "CPU": "Ryzen 7 8845HS",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4060",
+      "Màn hình": "15.6 inch 144Hz"
+    }
+  },
+  {
+    "id": 61,
+    "name": "Laptop ASUS ROG Zephyrus G14",
+    "price": "42990000",
+    "brand": "asus",
+    "category": "laptop",
+    "images": "./assets/images/rogg14.jpg",
+    "image": [
+      "./assets/images/rogg14.jpg",
+      "./assets/images/rogg14-2.jpg",
+      "./assets/images/rogg14-3.jpg"
+    ],
+    "promotion": "Tặng balo ROG",
+    "discount": 12,
+    "description": "Laptop gaming cao cấp nhỏ gọn.",
+    "specs": {
+      "CPU": "Ryzen AI 9 HX370",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4070",
+      "Màn hình": "14 inch OLED 120Hz"
+    }
+  },
+  {
+  "id": 62,
+  "name": "Laptop Dell Latitude 5450 - 42LT545001 (Ultra 7-155U/ 16GB/ 512GB/ Win 11 Home)",
+  "price": "23990000",
+  "brand": "dell",
+  "category": "laptop",
+  "images": "./assets/images/latitude5450.jpg",
+  "image": [
+    "./assets/images/latitude5450.jpg",
+    "./assets/images/latitude5450-2.jpg",
+    "./assets/images/latitude5450-3.jpg"
+  ],
+  "promotion": "Tặng Office 365",
+  "discount":15,
+  "description": "Laptop doanh nghiệp bền bỉ.",
+  "specs": {
+    "CPU": "Intel Core Ultra 5",
+    "RAM": "16GB",
+    "SSD": "512GB",
+    "Màn hình": "14 inch FHD",
+    "Pin": "54Wh"
+  }
+  },
+  {
+    "id": 63,
+    "name": "Laptop Dell Inspiron 15 3530 J9XFD - Nhập khẩu chính hãng",
+    "price": "18990000",
+    "brand": "dell",
+    "category": "laptop",
+    "images": "./assets/images/inspiron3530.jpg",
+    "image": [
+      "./assets/images/inspiron3530.jpg",
+      "./assets/images/inspiron3530-2.jpg",
+      "./assets/images/inspiron3530-3.jpg"
+    ],
+    "promotion": "Tặng chuột không dây",
+    "discount": 5,
+    "description": "Laptop học tập, văn phòng.",
+    "specs": {
+      "CPU": "Intel Core i5-1334U",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "15.6 inch FHD",
+      "Pin": "41Wh"
+    }
+  },
+  {
+    "id": 64,
+    "name": "Laptop Dell G15 Gaming 5530 P121F001",
+    "price": "29990000",
+    "brand": "dell",
+    "category": "laptop",
+    "images": "./assets/images/dellg15.jpg",
+    "image": [
+      "./assets/images/dellg15.jpg",
+      "./assets/images/dellg15-2.jpg",
+      "./assets/images/dellg15-3.jpg"
+    ],
+    "promotion": "Tặng chuột gaming",
+    "discount": 8,
+    "description": "Laptop gaming RTX 4060.",
+    "specs": {
+      "CPU": "Intel Core i7-13650HX",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4060",
+      "Màn hình": "15.6 inch 165Hz"
+    }
+  },
+  {
+    "id": 65,
+    "name": "MacBook Pro 14 inch M4 12CPU 16GPU 24GB 512GB | Chính hãng Apple Việt",
+    "price": "46990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbookpro14m4.jpg",
+    "image": [
+      "./assets/images/macbookpro14m4.jpg",
+      "./assets/images/macbookpro14m4-2.jpg",
+      "./assets/images/macbookpro14m4-3.jpg"
+    ],
+    "promotion": "Tặng túi chống sốc",
+    "discount": 7,
+    "description": "MacBook Pro hiệu năng cao cho lập trình và đồ họa.",
+    "specs": {
+      "CPU": "Apple M4 Pro",
+      "RAM": "24GB",
+      "SSD": "512GB",
+      "Màn hình": "14.2 inch Liquid Retina XDR",
+      "Pin": "22 giờ"
+    }
+  },
+  {
+    "id": 66,
+    "name": "MacBook Pro 16 inch M4 Max  14CPU 32GPU 36GB 1TB Nano | Chính hãng Apple Việt",
+    "price": "78990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbookpro16.jpg",
+    "image": [
+      "./assets/images/macbookpro16.jpg",
+      "./assets/images/macbookpro16-2.jpg",
+      "./assets/images/macbookpro16-3.jpg"
+    ],
+    "promotion": "Tặng Magic Mouse",
+    "discount": 5,
+    "description": "MacBook Pro mạnh nhất dành cho chuyên nghiệp.",
+    "specs": {
+      "CPU": "Apple M4 Max",
+      "RAM": "36GB",
+      "SSD": "1TB",
+      "Màn hình": "16.2 inch Liquid Retina XDR",
+      "Pin": "24 giờ"
+    }
+  },
+  {
+    "id": 67,
+    "name": "Laptop HP Envy x360 14-FC0089TU A19BZPA",
+    "price": "24990000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/hpenvyx360.jpg",
+    "image": [
+      "./assets/images/hpenvyx360.jpg",
+      "./assets/images/hpenvyx360-2.jpg",
+      "./assets/images/hpenvyx360-3.jpg"
+    ],
+    "promotion": "Tặng bút cảm ứng",
+    "discount": 8,
+    "description": "Laptop xoay gập 360 độ.",
+    "specs": {
+      "CPU": "Intel Core Ultra 7",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "14 inch OLED",
+      "Pin": "68Wh"
+    }
+  },
+  {
+    "id": 68,
+    "name": "Laptop HP Victus 16 -r0298TX - AE0N5PA",
+    "price": "27990000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/hpvictus16.jpg",
+    "image": [
+      "./assets/images/hpvictus16.jpg",
+      "./assets/images/hpvictus16-2.jpg",
+      "./assets/images/hpvictus16-3.jpg"
+    ],
+    "promotion": "Tặng chuột gaming",
+    "discount": 10,
+    "description": "Laptop gaming HP Victus.",
+    "specs": {
+      "CPU": "Ryzen 7 8845HS",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4060",
+      "Màn hình": "16.1 inch 144Hz"
+    }
+  },
+  {
+    "id": 69,
+    "name": "Laptop HP EliteBook 840 G11",
+    "price": "32990000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/elitebook840.jpg",
+    "image": [
+      "./assets/images/elitebook840.jpg",
+      "./assets/images/elitebook840-2.jpg",
+      "./assets/images/elitebook840-3.jpg"
+    ],
+    "promotion": "Tặng Office 365",
+    "discount":9,
+    "description": "Laptop doanh nhân cao cấp.",
+    "specs": {
+      "CPU": "Intel Core Ultra 7",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "Màn hình": "14 inch WUXGA",
+      "Pin": "56Wh"
+    }
+  },
+  {
+  "id": 70,
+  "name": "Laptop Lenovo LOQ 15IRX9",
+  "price": "26990000",
+  "brand": "lenovo",
+  "category": "laptop",
+  "images": "./assets/images/lenovoloq15.jpg",
+  "image": [
+    "./assets/images/lenovoloq15.jpg",
+    "./assets/images/lenovoloq15-2.jpg",
+    "./assets/images/lenovoloq15-3.jpg"
+  ],
+  "promotion": "Tặng chuột gaming",
+  "discount": 8,
+  "description": "Laptop gaming Lenovo LOQ.",
+  "specs": {
+    "CPU": "Intel Core i7-13650HX",
+    "RAM": "16GB",
+    "SSD": "1TB",
+    "GPU": "RTX 4060",
+    "Màn hình": "15.6 inch 144Hz"
+  }
+  },
+  {
+    "id": 71,
+    "name": "Laptop Lenovo Yoga Pro 7",
+    "price": "32990000",
+    "brand": "lenovo",
+    "category": "laptop",
+    "images": "./assets/images/yogapro7.jpg",
+    "image": [
+      "./assets/images/yogapro7.jpg",
+      "./assets/images/yogapro7-2.jpg",
+      "./assets/images/yogapro7-3.jpg"
+    ],
+    "promotion": "Tặng balo Lenovo",
+    "discount": 7,
+    "description": "Laptop cao cấp mỏng nhẹ.",
+    "specs": {
+      "CPU": "Ryzen AI 9",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "Màn hình": "14.5 inch OLED",
+      "Pin": "73Wh"
+    }
+  },
+  {
+    "id": 72,
+    "name": "Laptop Lenovo IdeaPad Slim 5",
+    "price": "19990000",
+    "brand": "lenovo",
+    "category": "laptop",
+    "images": "./assets/images/ideapadslim5.jpg",
+    "image": [
+      "./assets/images/ideapadslim5.jpg",
+      "./assets/images/ideapadslim5-2.jpg",
+      "./assets/images/ideapadslim5-3.jpg"
+    ],
+    "promotion": "Tặng Office Home",
+    "discount": 6,
+    "description": "Laptop học tập và làm việc.",
+    "specs": {
+      "CPU": "Intel Core Ultra 5",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "14 inch WUXGA",
+      "Pin": "60Wh"
+    }
+  }
+]

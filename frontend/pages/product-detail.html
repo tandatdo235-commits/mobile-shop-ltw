@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm - UTH Mobile Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/product-detail.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-main">
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <i class="fa-solid fa-cart-shopping logo-icon"></i>
+                <div class="logo-text">
+                    <span class="logo-brand">SHOP</span>
+                    <span class="logo-sub">Mobile</span>
+                </div>
+            </div>
+            <div class="search-box-hidden"></div>
+            <div class="header-action">
+                <a href="./cart.html" class="action-btn">Giỏ hàng (0) <i class="fa-solid fa-cart-arrow-down"></i></a>
+                <a href="#" class="action-btn">Tài khoản <i class="fa-regular fa-circle-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container page-content">
+        <div class="product-detail-card">
+            <div class="gallery">
+                <button id="prev-btn" class="slider-btn">❮</button>
+                <img id="product-image" alt="Sản phẩm">
+                <button id="next-btn" class="slider-btn">❯</button>
+            </div>
+
+            <div class="detail-info">
+                <h1 id="product-name"></h1>
+                <h2 id="product-price"></h2>
+                
+                <div class="promo-box">
+                    <h4><i class="fa-solid fa-gift"></i> Khuyến mãi</h4>
+                    <p id="product-promotion"></p>
+                </div>
+
+                <p id="product-description"></p>
+
+                <div class="detail-actions">
+                    <button class="buy-btn" id="add-cart-btn"><i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ</button>
+                    <a href="../index.html"><button class="back-btn"><i class="fa-solid fa-arrow-left"></i> Quay lại</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="specs-box">
+            <h3>Thông số kỹ thuật</h3>
+            <table id="product-specs"></table>
+        </div>
+
+        <h2 class="related-title">Sản phẩm liên quan</h2>
+        <div id="related-products" class="product-grid"></div>
+    </div>
+
+    <footer class="footer">
+        <h3>Mobile Shop</h3>
+        <p>Website thương mại điện tử môn Lập Trình Web © 2026</p>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/product-detail.js"></script>
+</body>
+</html>
