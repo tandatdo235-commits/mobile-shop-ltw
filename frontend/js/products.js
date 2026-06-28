@@ -34,6 +34,13 @@ fetch("../assets/mock-data/products.json")
             );
         }
 
+        // Lọc theo từ khóa
+        if (keyword) {
+            products = products.filter(product =>
+                product.name.toLowerCase().includes(keyword.toLowerCase())
+            );
+            }
+
         // Lọc khuyến mãi
         if (discount) {
             products = products.filter(product =>
@@ -133,21 +140,28 @@ function changePage(page) {
 // Tiêu đề
 // ==========================
 function changeTitle() {
-    if (category) {
-        products = products.filter(product =>
-            product.category === category
-        );
-    }
+
     if (brand) {
-        products = products.filter(product =>
-            product.brand === brand
-        );
+
         const brands = {
             iphone: "Điện thoại iPhone",
             samsung: "Điện thoại Samsung",
             xiaomi: "Điện thoại Xiaomi",
             oppo: "Điện thoại OPPO",
-            vivo: "Điện thoại Vivo"
+            vivo: "Điện thoại Vivo",
+
+            dell: "Laptop Dell",
+            hp: "Laptop HP",
+            asus: "Laptop ASUS",
+            acer: "Laptop Acer",
+            lenovo: "Laptop Lenovo",
+            macbook: "MacBook",
+
+            ipad: "iPad",
+            samsung_tablet: "Máy tính bảng Samsung",
+            xiaomi_tablet: "Máy tính bảng Xiaomi",
+            lenovo_tablet: "Máy tính bảng Lenovo",
+            oppo_tablet: "Máy tính bảng OPPO",
         };
 
         title.innerText = brands[brand] || "Danh sách sản phẩm";
@@ -155,16 +169,15 @@ function changeTitle() {
     }
 
     if (category === "phone") {
-        title.innerText = "Danh sách điện thoại";
+        title.innerText = "Điện thoại";
     }
     else if (category === "laptop") {
-        title.innerText = "Danh sách laptop";
+        title.innerText = "Laptop";
     }
     else if (category === "tablet") {
-        title.innerText = "Danh sách máy tính bảng";
+        title.innerText = "Máy tính bảng";
     }
     else {
         title.innerText = "Danh sách sản phẩm";
     }
-
 }

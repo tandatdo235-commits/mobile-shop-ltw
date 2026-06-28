@@ -3,7 +3,6 @@
     "id": 1,
     "name": "iPhone 16 Plus 128GB | Chính hãng VN/A",
     "price": "21990000",
-    "oldPrice":24433333,
     "discount": 5,
     "brand":"iphone",
     "category": "phone",
@@ -279,7 +278,7 @@
     "id": 12,
     "name": "Samsung Galaxy Tab S10 FE Wifi 8GB 128GB",
     "price": "11990000",
-    "brand":"samsung",
+    "brand":"samsung_tablet",
     "category": "tablet",
     "images": "./assets/images/tab-s10.png",
     "image": [
@@ -304,7 +303,7 @@
     "id": 13,
     "name": "Xiaomi Pad 7 Wifi 8GB 256GB",
     "price": "10990000",
-    "brand":"xiaomi",
+    "brand":"xiaomi_tablet",
     "category": "tablet",
     "images": "./assets/images/xiaomi-pad7.jpg",
     "image": [
@@ -604,7 +603,7 @@
     "id": 25,
     "name": "Samsung Galaxy Tab S10 Ultra",
     "price": "26990000",
-    "brand":"samsung",
+    "brand":"samsung_tablet",
     "category": "tablet",
     "images": "./assets/images/tabs10ultra.jpg",
     "image": [
@@ -629,7 +628,7 @@
     "id": 26,
     "name": "Lenovo Tab P12",
     "price": "8990000",
-    "brand":"lenovo",
+    "brand":"lenovo_tablet",
     "category": "tablet",
     "images": "./assets/images/tabp12.jpg",
     "image": [
@@ -654,7 +653,7 @@
     "id": 27,
     "name": "OPPO Pad 3 8GB/128GB",
     "price": "9990000",
-    "brand": "oppo",
+    "brand": "oppo_tablet",
     "category": "tablet",
     "images": "./assets/images/oppo-pad3.jpg",
     "image": [
@@ -679,7 +678,7 @@
     "id": 28,
     "name": "Xiaomi Pad 7 Pro Wifi 12GB 512GB",
     "price": "14990000",
-    "brand": "xiaomi",
+    "brand": "xiaomi_tablet",
     "category": "tablet",
     "images": "./assets/images/xiaomipad7pro.jpg",
     "image": [
@@ -704,7 +703,7 @@
     "id": 29,
     "name": "Lenovo Tab Plus Wifi 8GB 256GB",
     "price": "9990000",
-    "brand": "lenovo",
+    "brand": "lenovo_tablet",
     "category": "tablet",
     "images": "./assets/images/lenovotabplus.jpg",
     "image": [
@@ -1455,6 +1454,328 @@
       "Pin": "18 giờ",
       "Webcam": "1080p FaceTime HD",
       "Trọng lượng": "1.51kg"
+    }
+  },
+  {
+  "id": 59,
+  "name": "Laptop ASUS Vivobook S14 OLED",
+  "price": "21990000",
+  "brand": "asus",
+  "category": "laptop",
+  "images": "./assets/images/asus-vivobooks14.jpg",
+  "image": [
+    "./assets/images/asus-vivobooks14.jpg",
+    "./assets/images/asus-vivobooks14-2.jpg",
+    "./assets/images/asus-vivobooks14-3.jpg"
+  ],
+  "promotion": "Tặng balo ASUS",
+  "discount": 8,
+  "description": "Laptop mỏng nhẹ với màn hình OLED sắc nét.",
+  "specs": {
+    "CPU": "Intel Core Ultra 7",
+    "RAM": "16GB",
+    "SSD": "512GB",
+    "Màn hình": "14 inch OLED",
+    "Pin": "75Wh"
+  }
+  },
+  {
+    "id": 60,
+    "name": "Laptop ASUS TUF Gaming A15",
+    "price": "26990000",
+    "brand": "asus",
+    "category": "laptop",
+    "images": "./assets/images/asus-tufa15.jpg",
+    "image": [
+      "./assets/images/asus-tufa15.jpg",
+      "./assets/images/asus-tufa15-2.jpg",
+      "./assets/images/asus-tufa15-3.jpg"
+    ],
+    "promotion": "Tặng chuột gaming",
+    "discount": 10,
+    "description": "Laptop gaming Ryzen 7 mạnh mẽ.",
+    "specs": {
+      "CPU": "Ryzen 7 8845HS",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4060",
+      "Màn hình": "15.6 inch 144Hz"
+    }
+  },
+  {
+    "id": 61,
+    "name": "Laptop ASUS ROG Zephyrus G14",
+    "price": "42990000",
+    "brand": "asus",
+    "category": "laptop",
+    "images": "./assets/images/rogg14.jpg",
+    "image": [
+      "./assets/images/rogg14.jpg",
+      "./assets/images/rogg14-2.jpg",
+      "./assets/images/rogg14-3.jpg"
+    ],
+    "promotion": "Tặng balo ROG",
+    "discount": 12,
+    "description": "Laptop gaming cao cấp nhỏ gọn.",
+    "specs": {
+      "CPU": "Ryzen AI 9 HX370",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4070",
+      "Màn hình": "14 inch OLED 120Hz"
+    }
+  },
+  {
+  "id": 62,
+  "name": "Laptop Dell Latitude 5450 - 42LT545001 (Ultra 7-155U/ 16GB/ 512GB/ Win 11 Home)",
+  "price": "23990000",
+  "brand": "dell",
+  "category": "laptop",
+  "images": "./assets/images/latitude5450.jpg",
+  "image": [
+    "./assets/images/latitude5450.jpg",
+    "./assets/images/latitude5450-2.jpg",
+    "./assets/images/latitude5450-3.jpg"
+  ],
+  "promotion": "Tặng Office 365",
+  "discount":15,
+  "description": "Laptop doanh nghiệp bền bỉ.",
+  "specs": {
+    "CPU": "Intel Core Ultra 5",
+    "RAM": "16GB",
+    "SSD": "512GB",
+    "Màn hình": "14 inch FHD",
+    "Pin": "54Wh"
+  }
+  },
+  {
+    "id": 63,
+    "name": "Laptop Dell Inspiron 15 3530 J9XFD - Nhập khẩu chính hãng",
+    "price": "18990000",
+    "brand": "dell",
+    "category": "laptop",
+    "images": "./assets/images/inspiron3530.jpg",
+    "image": [
+      "./assets/images/inspiron3530.jpg",
+      "./assets/images/inspiron3530-2.jpg",
+      "./assets/images/inspiron3530-3.jpg"
+    ],
+    "promotion": "Tặng chuột không dây",
+    "discount": 5,
+    "description": "Laptop học tập, văn phòng.",
+    "specs": {
+      "CPU": "Intel Core i5-1334U",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "15.6 inch FHD",
+      "Pin": "41Wh"
+    }
+  },
+  {
+    "id": 64,
+    "name": "Laptop Dell G15 Gaming 5530 P121F001",
+    "price": "29990000",
+    "brand": "dell",
+    "category": "laptop",
+    "images": "./assets/images/dellg15.jpg",
+    "image": [
+      "./assets/images/dellg15.jpg",
+      "./assets/images/dellg15-2.jpg",
+      "./assets/images/dellg15-3.jpg"
+    ],
+    "promotion": "Tặng chuột gaming",
+    "discount": 8,
+    "description": "Laptop gaming RTX 4060.",
+    "specs": {
+      "CPU": "Intel Core i7-13650HX",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4060",
+      "Màn hình": "15.6 inch 165Hz"
+    }
+  },
+  {
+    "id": 65,
+    "name": "MacBook Pro 14 inch M4 12CPU 16GPU 24GB 512GB | Chính hãng Apple Việt",
+    "price": "46990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbookpro14m4.jpg",
+    "image": [
+      "./assets/images/macbookpro14m4.jpg",
+      "./assets/images/macbookpro14m4-2.jpg",
+      "./assets/images/macbookpro14m4-3.jpg"
+    ],
+    "promotion": "Tặng túi chống sốc",
+    "discount": 7,
+    "description": "MacBook Pro hiệu năng cao cho lập trình và đồ họa.",
+    "specs": {
+      "CPU": "Apple M4 Pro",
+      "RAM": "24GB",
+      "SSD": "512GB",
+      "Màn hình": "14.2 inch Liquid Retina XDR",
+      "Pin": "22 giờ"
+    }
+  },
+  {
+    "id": 66,
+    "name": "MacBook Pro 16 inch M4 Max  14CPU 32GPU 36GB 1TB Nano | Chính hãng Apple Việt",
+    "price": "78990000",
+    "brand": "macbook",
+    "category": "laptop",
+    "images": "./assets/images/macbookpro16.jpg",
+    "image": [
+      "./assets/images/macbookpro16.jpg",
+      "./assets/images/macbookpro16-2.jpg",
+      "./assets/images/macbookpro16-3.jpg"
+    ],
+    "promotion": "Tặng Magic Mouse",
+    "discount": 5,
+    "description": "MacBook Pro mạnh nhất dành cho chuyên nghiệp.",
+    "specs": {
+      "CPU": "Apple M4 Max",
+      "RAM": "36GB",
+      "SSD": "1TB",
+      "Màn hình": "16.2 inch Liquid Retina XDR",
+      "Pin": "24 giờ"
+    }
+  },
+  {
+    "id": 67,
+    "name": "Laptop HP Envy x360 14-FC0089TU A19BZPA",
+    "price": "24990000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/hpenvyx360.jpg",
+    "image": [
+      "./assets/images/hpenvyx360.jpg",
+      "./assets/images/hpenvyx360-2.jpg",
+      "./assets/images/hpenvyx360-3.jpg"
+    ],
+    "promotion": "Tặng bút cảm ứng",
+    "discount": 8,
+    "description": "Laptop xoay gập 360 độ.",
+    "specs": {
+      "CPU": "Intel Core Ultra 7",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "14 inch OLED",
+      "Pin": "68Wh"
+    }
+  },
+  {
+    "id": 68,
+    "name": "Laptop HP Victus 16 -r0298TX - AE0N5PA",
+    "price": "27990000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/hpvictus16.jpg",
+    "image": [
+      "./assets/images/hpvictus16.jpg",
+      "./assets/images/hpvictus16-2.jpg",
+      "./assets/images/hpvictus16-3.jpg"
+    ],
+    "promotion": "Tặng chuột gaming",
+    "discount": 10,
+    "description": "Laptop gaming HP Victus.",
+    "specs": {
+      "CPU": "Ryzen 7 8845HS",
+      "RAM": "16GB",
+      "SSD": "1TB",
+      "GPU": "RTX 4060",
+      "Màn hình": "16.1 inch 144Hz"
+    }
+  },
+  {
+    "id": 69,
+    "name": "Laptop HP EliteBook 840 G11",
+    "price": "32990000",
+    "brand": "hp",
+    "category": "laptop",
+    "images": "./assets/images/elitebook840.jpg",
+    "image": [
+      "./assets/images/elitebook840.jpg",
+      "./assets/images/elitebook840-2.jpg",
+      "./assets/images/elitebook840-3.jpg"
+    ],
+    "promotion": "Tặng Office 365",
+    "discount":9,
+    "description": "Laptop doanh nhân cao cấp.",
+    "specs": {
+      "CPU": "Intel Core Ultra 7",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "Màn hình": "14 inch WUXGA",
+      "Pin": "56Wh"
+    }
+  },
+  {
+  "id": 70,
+  "name": "Laptop Lenovo LOQ 15IRX9",
+  "price": "26990000",
+  "brand": "lenovo",
+  "category": "laptop",
+  "images": "./assets/images/lenovoloq15.jpg",
+  "image": [
+    "./assets/images/lenovoloq15.jpg",
+    "./assets/images/lenovoloq15-2.jpg",
+    "./assets/images/lenovoloq15-3.jpg"
+  ],
+  "promotion": "Tặng chuột gaming",
+  "discount": 8,
+  "description": "Laptop gaming Lenovo LOQ.",
+  "specs": {
+    "CPU": "Intel Core i7-13650HX",
+    "RAM": "16GB",
+    "SSD": "1TB",
+    "GPU": "RTX 4060",
+    "Màn hình": "15.6 inch 144Hz"
+  }
+  },
+  {
+    "id": 71,
+    "name": "Laptop Lenovo Yoga Pro 7",
+    "price": "32990000",
+    "brand": "lenovo",
+    "category": "laptop",
+    "images": "./assets/images/yogapro7.jpg",
+    "image": [
+      "./assets/images/yogapro7.jpg",
+      "./assets/images/yogapro7-2.jpg",
+      "./assets/images/yogapro7-3.jpg"
+    ],
+    "promotion": "Tặng balo Lenovo",
+    "discount": 7,
+    "description": "Laptop cao cấp mỏng nhẹ.",
+    "specs": {
+      "CPU": "Ryzen AI 9",
+      "RAM": "32GB",
+      "SSD": "1TB",
+      "Màn hình": "14.5 inch OLED",
+      "Pin": "73Wh"
+    }
+  },
+  {
+    "id": 72,
+    "name": "Laptop Lenovo IdeaPad Slim 5",
+    "price": "19990000",
+    "brand": "lenovo",
+    "category": "laptop",
+    "images": "./assets/images/ideapadslim5.jpg",
+    "image": [
+      "./assets/images/ideapadslim5.jpg",
+      "./assets/images/ideapadslim5-2.jpg",
+      "./assets/images/ideapadslim5-3.jpg"
+    ],
+    "promotion": "Tặng Office Home",
+    "discount": 6,
+    "description": "Laptop học tập và làm việc.",
+    "specs": {
+      "CPU": "Intel Core Ultra 5",
+      "RAM": "16GB",
+      "SSD": "512GB",
+      "Màn hình": "14 inch WUXGA",
+      "Pin": "60Wh"
     }
   }
 ]
