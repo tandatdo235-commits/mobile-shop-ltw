@@ -1,30 +1,31 @@
-document
-.getElementById("search-btn")
-.addEventListener("click", () => {
+const searchBtn = document.getElementById("search-btn");
+const searchInput = document.getElementById("search-input");
 
-    const keyword =
-    document
-    .getElementById("search-input")
-    .value
-    .toLowerCase();
+if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", () => {
+        const keyword = searchInput.value.trim();
+        
+        if (keyword !== "") {
+            // Kiểm tra xem người dùng đang ở thư mục gốc (index) hay thư mục con (pages)
+            const currentPath = window.location.pathname;
+            let targetUrl = "";
 
-    const cards =
-    document.querySelectorAll(".product-card");
+            if (currentPath.includes("/pages/")) {
+                targetUrl = `products.html?search=${encodeURIComponent(keyword)}`;
+            } else {
+                
+                targetUrl = `pages/products.html?search=${encodeURIComponent(keyword)}`;
+            }
 
-    cards.forEach(card => {
-
-        const name =
-        card.querySelector(".product-name")
-        .innerText
-        .toLowerCase();
-
-        if(name.includes(keyword)){
-            card.style.display = "block";
+            // Chuyển hướng sang trang danh sách sản phẩm cùng từ khóa
+            window.location.href = targetUrl;
         }
-        else{
-            card.style.display = "none";
-        }
-
     });
 
-});
+    // Hỗ trợ bấm phím Enter để tìm kiếm
+    searchInput.addEventListener("keyup", (e) => {
+        if (e.key === "Enter") {
+            searchBtn.click();
+        }
+    });
+}

@@ -16,15 +16,19 @@ let currentPage = 1;
 // ==========================
 // Đọc dữ liệu
 // ==========================
-fetch("../assets/mock-data/products.json")
+fetch("https://api-shopmobile-w12y.onrender.com/api/products")
     .then(res => res.json())
     .then(products => {
 
-        // Lọc theo danh mục
+       // Lọc theo danh mục
         if (category) {
-            products = products.filter(product =>
-                product.category && product.category.toLowerCase() === category.toLowerCase()
-            );
+            products = products.filter(product => {
+                // Đồng bộ chữ 'phone' trên URL thành 'smartphone' để khớp với Backend
+                let targetCategory = category.toLowerCase();
+                if (targetCategory === "phone") targetCategory = "smartphone";
+                
+                return product.category && product.category.toLowerCase() === targetCategory;
+            });
         }
 
         // Lọc theo hãng
@@ -61,14 +65,13 @@ fetch("../assets/mock-data/products.json")
 function renderProducts(products) {
     productList.innerHTML = "";
     
+    // Logic phân trang được giữ nguyên
     const start = (currentPage - 1) * productsPerPage;
     const end = start + productsPerPage;
     const currentProducts = products.slice(start, end);
 
     currentProducts.forEach(product => {
-        let imageSrc = Array.isArray(product.image) ? product.image[0] : (product.image || product.images);
-        // Fix đường dẫn ảnh khi ở thư mục pages/
-        imageSrc = imageSrc.replace('./assets', '../assets');
+        let imageSrc = product.thumbnail;
 
         let newPriceNum = Number(product.price);
         let oldPriceNum = product.discount ? Math.round(newPriceNum / (1 - product.discount / 100)) : newPriceNum;
@@ -81,7 +84,7 @@ function renderProducts(products) {
         let promoHTML = product.promotion ? `<p class="promotion-text">${product.promotion}</p>` : '';
 
         productList.innerHTML += `
-        <div class="product-card" onclick="window.location.href='product-detail.html?id=${product.id}'">
+        <div class="product-card" onclick="window.location.href='product-detail.html?id=${product._id}'">
             ${badgeHTML}
             <img src="${imageSrc}" alt="${product.name}">
             
@@ -144,31 +147,23 @@ function changeTitle() {
     if (brand) {
 
         const brands = {
-            iphone: "Điện thoại iPhone",
-            samsung: "Điện thoại Samsung",
-            xiaomi: "Điện thoại Xiaomi",
-            oppo: "Điện thoại OPPO",
+            apple: category === "laptop" ? "MacBook" : (category === "tablet" ? "iPad" : "Sản phẩm Apple"),
+            samsung: category === "tablet" ? "Máy tính bảng Samsung" : "Điện thoại Samsung",
+            xiaomi: category === "tablet" ? "Máy tính bảng Xiaomi" : "Điện thoại Xiaomi",
+            oppo: category === "tablet" ? "Máy tính bảng OPPO" : "Điện thoại OPPO",
+            lenovo: category === "tablet" ? "Máy tính bảng Lenovo" : "Laptop Lenovo",
             vivo: "Điện thoại Vivo",
-
             dell: "Laptop Dell",
             hp: "Laptop HP",
             asus: "Laptop ASUS",
-            acer: "Laptop Acer",
-            lenovo: "Laptop Lenovo",
-            macbook: "MacBook",
-
-            ipad: "iPad",
-            samsung_tablet: "Máy tính bảng Samsung",
-            xiaomi_tablet: "Máy tính bảng Xiaomi",
-            lenovo_tablet: "Máy tính bảng Lenovo",
-            oppo_tablet: "Máy tính bảng OPPO",
+            acer: "Laptop Acer"
         };
 
         title.innerText = brands[brand] || "Danh sách sản phẩm";
         return;
     }
 
-    if (category === "phone") {
+    if (category === "phone" || category === "smartphone") {
         title.innerText = "Điện thoại";
     }
     else if (category === "laptop") {

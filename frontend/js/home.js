@@ -18,24 +18,22 @@ function renderProducts(products){
     tabletList.innerHTML = "";
 
     products.forEach(product => {
-        // Xử lý ảnh (Lấy ảnh đầu tiên nếu là mảng, ưu tiên image rồi đến images)
-        let imageSrc = Array.isArray(product.image) ? product.image[0] : (product.image || product.images);
+        
+        let imageSrc = product.thumbnail;
 
-        // Logic tính giá: Giả sử product.price là giá đã giảm (theo code cũ của bạn)
         let newPriceNum = Number(product.price);
         let oldPriceNum = product.discount ? Math.round(newPriceNum / (1 - product.discount / 100)) : newPriceNum;
 
         let newPriceStr = newPriceNum.toLocaleString("vi-VN");
         let oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
 
-        // Các thành phần HTML động
         let badgeHTML = product.discount ? `<div class="sale-badge">Giảm ${product.discount}%</div>` : '';
         let oldPriceHTML = product.discount ? `<span class="old-price">${oldPriceStr} VNĐ</span>` : '';
         let promoHTML = product.promotion ? `<p class="promotion-text">${product.promotion}</p>` : '';
 
-        // Cấu trúc Card mới (Click vào cả card để xem chi tiết)
+        
         const card = `
-        <div class="product-card" onclick="window.location.href='./pages/product-detail.html?id=${product.id}'">
+        <div class="product-card" onclick="window.location.href='./pages/product-detail.html?id=${product._id}'">
             ${badgeHTML}
             <img src="${imageSrc}" alt="${product.name}">
             
@@ -50,8 +48,8 @@ function renderProducts(products){
         </div>
         `;
 
-        // Phân loại render
-        if(product.category === "phone"){
+        
+        if(product.category === "smartphone" || product.category === "phone"){
             phoneList.innerHTML += card;
             phoneList.parentElement.style.display = "block";
         }
@@ -71,7 +69,7 @@ function renderProducts(products){
 /* ======================
    Load JSON
 ====================== */
-fetch("./assets/mock-data/products.json")
+fetch("https://api-shopmobile-w12y.onrender.com/api/products")
 .then(res => res.json())
 .then(products => {
     allProducts = products;
