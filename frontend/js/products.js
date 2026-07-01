@@ -13,42 +13,40 @@ let allProducts = [];
 const productsPerPage = 10;
 let currentPage = 1;
 
-// ==========================
-// Đọc dữ liệu
-// ==========================
 fetch("https://api-shopmobile-w12y.onrender.com/api/products")
     .then(res => res.json())
     .then(products => {
 
-       // Lọc theo danh mục
         if (category) {
             products = products.filter(product => {
-                // Đồng bộ chữ 'phone' trên URL thành 'smartphone' để khớp với Backend
                 let targetCategory = category.toLowerCase();
                 if (targetCategory === "phone") targetCategory = "smartphone";
-                
-                return product.category && product.category.toLowerCase() === targetCategory;
+
+                return product.category &&
+                    product.category.toLowerCase() === targetCategory;
             });
         }
 
-        // Lọc theo hãng
+        
         if (brand) {
             products = products.filter(product =>
-                product.brand && product.brand.toLowerCase() === brand.toLowerCase()
+                product.brand &&
+                product.brand.toLowerCase() === brand.toLowerCase()
             );
         }
 
-        // Lọc theo từ khóa
+       
         if (keyword) {
             products = products.filter(product =>
                 product.name.toLowerCase().includes(keyword.toLowerCase())
             );
-            }
+        }
 
-        // Lọc khuyến mãi
+       
         if (discount) {
             products = products.filter(product =>
-                product.discount && Number(product.discount) > 0
+                product.discount &&
+                Number(product.discount) > 0
             );
         }
 
@@ -57,53 +55,169 @@ fetch("https://api-shopmobile-w12y.onrender.com/api/products")
         renderProducts(allProducts);
         renderPagination(allProducts);
         changeTitle();
+        updateCartCount();
     });
 
-// ==========================
-// Hiển thị sản phẩm
-// ==========================
 function renderProducts(products) {
+
     productList.innerHTML = "";
-    
-    // Logic phân trang được giữ nguyên
+
     const start = (currentPage - 1) * productsPerPage;
     const end = start + productsPerPage;
+
     const currentProducts = products.slice(start, end);
 
     currentProducts.forEach(product => {
+
         let imageSrc = product.thumbnail;
 
         let newPriceNum = Number(product.price);
-        let oldPriceNum = product.discount ? Math.round(newPriceNum / (1 - product.discount / 100)) : newPriceNum;
+
+        let oldPriceNum = product.discount
+            ? Math.round(newPriceNum / (1 - product.discount / 100))
+            : newPriceNum;
 
         let newPriceStr = newPriceNum.toLocaleString("vi-VN");
         let oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
 
-        let badgeHTML = product.discount ? `<div class="sale-badge">Giảm ${product.discount}%</div>` : '';
-        let oldPriceHTML = product.discount ? `<span class="old-price">${oldPriceStr} VNĐ</span>` : '';
-        let promoHTML = product.promotion ? `<p class="promotion-text">${product.promotion}</p>` : '';
+        let badgeHTML = product.discount
+            ? `<div class="sale-badge">Giảm ${product.discount}%</div>`
+            : "";
+
+        let oldPriceHTML = product.discount
+            ? `<span class="old-price">${oldPriceStr} VNĐ</span>`
+            : "";
+
+        let promoHTML = product.promotion
+            ? `<p class="promotion-text">${product.promotion}</p>`
+            : "";
 
         productList.innerHTML += `
-        <div class="product-card" onclick="window.location.href='product-detail.html?id=${product._id}'">
+
+        <div class="product-card">
+
             ${badgeHTML}
-            <img src="${imageSrc}" alt="${product.name}">
-            
-            <h3 class="product-name">${product.name}</h3>
-            
+
+            <img
+                src="${imageSrc}"
+                alt="${product.name}"
+                onclick="window.location.href='product-detail.html?id=${product._id}'">
+
+            <h3
+                class="product-name"
+                onclick="window.location.href='product-detail.html?id=${product._id}'">
+
+                ${product.name}
+
+            </h3>
+
             <div class="price-box">
-                <span class="new-price">${newPriceStr} VNĐ</span>
+
+                <span class="new-price">
+
+                    ${newPriceStr} VNĐ
+
+                </span>
+
                 ${oldPriceHTML}
+
             </div>
-            
+
             ${promoHTML}
+
+            <button
+                class="btn-add-cart"
+                onclick="addToCart('${product._id}')">
+
+                🛒 Thêm vào giỏ hàng
+
+            </button>
+
         </div>
+
         `;
+
     });
+
 }
+
+function addToCart(id) {
+
+    const product = allProducts.find(p => p._id === id);
+
+    if (!product) {
+
+        alert("Không tìm thấy sản phẩm");
+
+        return;
+
+    }
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const exist = cart.find(item => item.id === id);
+
+    if (exist) {
+
+        exist.quantity++;
+
+    } else {
+
+        cart.push({
+
+            id: product._id,
+
+            name: product.name,
+
+            price: Number(product.price),
+
+            image: product.thumbnail,
+
+            quantity: 1
+
+        });
+
+    }
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+    alert("Đã thêm vào giỏ hàng");
+
+}
+
+function updateCartCount() {
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        total += item.quantity;
+
+    });
+
+    const cartBtn = document.getElementById("cart-count");
+
+    if (cartBtn) {
+
+        cartBtn.innerHTML =
+            `Giỏ hàng (${total}) <i class="fa-solid fa-cart-arrow-down"></i>`;
+
+    }
+
+}
+
 
 // ==========================
 // Phân trang
 // ==========================
+
 function renderPagination(products) {
 
     const pagination =
@@ -123,13 +237,11 @@ function renderPagination(products) {
             ${i}
         </button>
         `;
+
     }
 
 }
 
-// ==========================
-// Đổi trang
-// ==========================
 function changePage(page) {
 
     currentPage = page;
@@ -139,9 +251,6 @@ function changePage(page) {
 
 }
 
-// ==========================
-// Tiêu đề
-// ==========================
 function changeTitle() {
 
     if (brand) {
@@ -160,19 +269,27 @@ function changeTitle() {
         };
 
         title.innerText = brands[brand] || "Danh sách sản phẩm";
+
         return;
+
     }
 
     if (category === "phone" || category === "smartphone") {
+
         title.innerText = "Điện thoại";
-    }
-    else if (category === "laptop") {
+
+    } else if (category === "laptop") {
+
         title.innerText = "Laptop";
-    }
-    else if (category === "tablet") {
+
+    } else if (category === "tablet") {
+
         title.innerText = "Máy tính bảng";
-    }
-    else {
+
+    } else {
+
         title.innerText = "Danh sách sản phẩm";
+
     }
+
 }
