@@ -7,6 +7,19 @@ function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
+function updateCartCount() {
+
+    const total = cart.reduce((sum, item) => {
+        return sum + Number(item.quantity || 1);
+    }, 0);
+
+    const cartCount = document.getElementById("cart-count");
+
+    if (cartCount) {
+        cartCount.textContent = total;
+    }
+}
+
 function renderCart() {
 
     if (!cartItems) return;
@@ -17,13 +30,13 @@ function renderCart() {
 
         cartItems.innerHTML = `
             <tr>
-                <td colspan="6">
+                <td colspan="6" style="padding:30px;text-align:center;">
                     Giỏ hàng của bạn đang trống
                 </td>
             </tr>
         `;
 
-        totalPrice.innerText = "0đ";
+        totalPrice.textContent = "0đ";
 
         updateCartCount();
 
@@ -34,9 +47,15 @@ function renderCart() {
 
     cart.forEach(item => {
 
-        const price = Number(item.price);
+        const id = String(item.id);
 
-        const quantity = Number(item.quantity);
+        const name = item.name || "";
+
+        const image = item.image || "";
+
+        const price = Number(item.price) || 0;
+
+        const quantity = Number(item.quantity) || 1;
 
         total += price * quantity;
 
@@ -44,10 +63,10 @@ function renderCart() {
 
         row.innerHTML = `
             <td>
-                <img src="${item.image}" class="product-img" width="80">
+                <img src="${image}" class="product-img" width="80">
             </td>
 
-            <td>${item.name}</td>
+            <td>${name}</td>
 
             <td>${price.toLocaleString("vi-VN")}đ</td>
 
@@ -55,11 +74,11 @@ function renderCart() {
 
                 <div class="quantity">
 
-                    <button onclick="decrease('${item.id}')">-</button>
+                    <button onclick="decrease('${id}')">-</button>
 
                     <span>${quantity}</span>
 
-                    <button onclick="increase('${item.id}')">+</button>
+                    <button onclick="increase('${id}')">+</button>
 
                 </div>
 
@@ -75,7 +94,7 @@ function renderCart() {
 
                 <button
                     class="remove-btn"
-                    onclick="removeItem('${item.id}')">
+                    onclick="removeItem('${id}')">
 
                     Xóa
 
@@ -88,7 +107,7 @@ function renderCart() {
 
     });
 
-    totalPrice.innerText = total.toLocaleString("vi-VN") + "đ";
+    totalPrice.textContent = total.toLocaleString("vi-VN") + "đ";
 
     saveCart();
 
@@ -96,25 +115,25 @@ function renderCart() {
 
 }
 
-function increase(id){
+function increase(id) {
 
-    const item = cart.find(p => p.id === id);
+    const item = cart.find(p => String(p.id) === String(id));
 
-    if(item){
+    if (!item) return;
 
-        item.quantity++;
+    item.quantity = Number(item.quantity || 1) + 1;
 
-        renderCart();
-
-    }
+    renderCart();
 
 }
 
-function decrease(id){
+function decrease(id) {
 
-    const item = cart.find(p => p.id === id);
+    const item = cart.find(p => String(p.id) === String(id));
 
-    if(item && item.quantity > 1){
+    if (!item) return;
+
+    if (Number(item.quantity) > 1) {
 
         item.quantity--;
 
@@ -124,29 +143,11 @@ function decrease(id){
 
 }
 
-function removeItem(id){
+function removeItem(id) {
 
-    cart = cart.filter(item => item.id !== id);
+    cart = cart.filter(item => String(item.id) !== String(id));
 
     renderCart();
-
-}
-
-function updateCartCount(){
-
-    const count = cart.reduce((sum,item)=>{
-
-        return sum + Number(item.quantity);
-
-    },0);
-
-    const cartCount = document.getElementById("cart-count");
-
-    if(cartCount){
-
-        cartCount.innerText = count;
-
-    }
 
 }
 
