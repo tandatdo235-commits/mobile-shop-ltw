@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <title>Giỏ hàng</title>
 
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body>
-    <h1>Giỏ hàng</h1>
-    <div id="cart-list"></div>
-    <script src="../js/cart.js"></script>
-
-</body>
-<!DOCTYPE html>
-<html lang="vi">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Giỏ hàng</title>
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/cart.css">
+
 </head>
+
 <body>
 
 <div class="container">
 
     <h1 class="page-title">Giỏ hàng của bạn</h1>
 
-    <div id="cart-container">
+    <table class="cart-table">
 
-        <table class="cart-table">
-            <thead>
-                <tr>
-                    <th>Ảnh</th>
-                    <th>Sản phẩm</th>
-                    <th>Giá</th>
-                    <th>Số lượng</th>
-                    <th>Thành tiền</th>
-                    <th>Xóa</th>
-                </tr>
-            </thead>
+        <thead>
 
-            <tbody id="cart-items">
+            <tr>
 
-            </tbody>
-        </table>
+                <th>Ảnh</th>
+                <th>Sản phẩm</th>
+                <th>Giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền</th>
+                <th>Xóa</th>
 
-        <div class="cart-summary">
+            </tr>
 
-            <h2>
-                Tổng tiền:
-                <span id="total-price">0đ</span>
-            </h2>
+        </thead>
 
-            <a href="checkout.html" class="checkout-btn">
-                Thanh toán
-            </a>
+        <tbody id="cart-items">
 
-        </div>
+        </tbody>
+
+    </table>
+
+    <div class="cart-summary">
+
+        <h2>
+
+            Tổng tiền:
+            <span id="total-price">0đ</span>
+
+        </h2>
+
+        <a href="checkout.html" class="checkout-btn">
+
+            Thanh toán
+
+        </a>
 
     </div>
 
@@ -67,4 +64,5 @@
 <script src="../js/cart.js"></script>
 
 </body>
+
 </html>
