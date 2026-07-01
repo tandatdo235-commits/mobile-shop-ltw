@@ -1,172 +1,120 @@
-if(cart.length === 0){
-
-    document.getElementById("cart-items").innerHTML = `
-        <tr>
-            <td colspan="6">
-                Giỏ hàng của bạn đang trống
-            </td>
-        </tr>
-    `;
-
-    document.getElementById("total-price").innerText="0đ";
-
-    return;
-}
-const cart =
-JSON.parse(localStorage.getItem("cart"))
-|| [];
-
-const cartList =
-document.getElementById("cart-list");
-
-let total = 0;
-
-cart.forEach((product,index) => {
-
-    total += Number(product.price);
-
-    cartList.innerHTML += `
-        <div class="cart-item">
-
-            <img
-            src="${product.image.replace("./assets","../assets")}"
-            width="120">
-            <div>
-                <h3>${product.name}</h3>
-                <p>
-                    ${Number(product.price)
-                    .toLocaleString("vi-VN")} đ
-                </p>
-                <button
-                onclick="removeItem(${index})">
-                    Xóa
-                </button>
-
-            </div>
-        </div>
-        <hr>
-    `;
-});
-
-cartList.innerHTML += `
-    <h2>
-        Tổng tiền:
-        ${total.toLocaleString("vi-VN")} đ
-    </h2>
-`;
-
-function removeItem(index){
-
-    cart.splice(index,1);
-
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
-
-    location.reload();
-}
-let cart = JSON.parse(localStorage.getItem("cart")) || [
-
-{
-    id:1,
-    name:"iPhone 16 Pro Max",
-    price:34990000,
-    quantity:1,
-    image:"https://via.placeholder.com/80"
-},
-
-{
-    id:2,
-    name:"MacBook Air M4",
-    price:29990000,
-    quantity:1,
-    image:"https://via.placeholder.com/80"
-}
-
-];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 const cartItems = document.getElementById("cart-items");
 const totalPrice = document.getElementById("total-price");
 
-function saveCart(){
-    localStorage.setItem("cart",JSON.stringify(cart));
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function renderCart(){
+function renderCart() {
 
-    cartItems.innerHTML="";
+    if (!cartItems) return;
 
-    let total=0;
+    cartItems.innerHTML = "";
 
-    cart.forEach(item=>{
+    if (cart.length === 0) {
 
-        const row=document.createElement("tr");
+        cartItems.innerHTML = `
+            <tr>
+                <td colspan="6">
+                    Giỏ hàng của bạn đang trống
+                </td>
+            </tr>
+        `;
 
-        total += item.price * item.quantity;
+        totalPrice.innerText = "0đ";
 
-        row.innerHTML=`
+        updateCartCount();
 
-        <td>
-            <img src="${item.image}" class="product-img">
-        </td>
+        return;
+    }
 
-        <td>${item.name}</td>
+    let total = 0;
 
-        <td>${item.price.toLocaleString()}đ</td>
+    cart.forEach(item => {
 
-        <td>
+        const price = Number(item.price);
 
-            <div class="quantity">
+        const quantity = Number(item.quantity);
 
-                <button onclick="decrease(${item.id})">-</button>
+        total += price * quantity;
 
-                <span>${item.quantity}</span>
+        const row = document.createElement("tr");
 
-                <button onclick="increase(${item.id})">+</button>
+        row.innerHTML = `
+            <td>
+                <img src="${item.image}" class="product-img" width="80">
+            </td>
 
-            </div>
+            <td>${item.name}</td>
 
-        </td>
+            <td>${price.toLocaleString("vi-VN")}đ</td>
 
-        <td>
-            ${(item.price * item.quantity).toLocaleString()}đ
-        </td>
+            <td>
 
-        <td>
-            <button
-                class="remove-btn"
-                onclick="removeItem(${item.id})">
-                Xóa
-            </button>
-        </td>
+                <div class="quantity">
+
+                    <button onclick="decrease('${item.id}')">-</button>
+
+                    <span>${quantity}</span>
+
+                    <button onclick="increase('${item.id}')">+</button>
+
+                </div>
+
+            </td>
+
+            <td>
+
+                ${(price * quantity).toLocaleString("vi-VN")}đ
+
+            </td>
+
+            <td>
+
+                <button
+                    class="remove-btn"
+                    onclick="removeItem('${item.id}')">
+
+                    Xóa
+
+                </button>
+
+            </td>
         `;
 
         cartItems.appendChild(row);
 
     });
 
-    totalPrice.innerText=total.toLocaleString()+"đ";
+    totalPrice.innerText = total.toLocaleString("vi-VN") + "đ";
 
     saveCart();
+
+    updateCartCount();
 
 }
 
 function increase(id){
 
-    const item = cart.find(i=>i.id===id);
+    const item = cart.find(p => p.id === id);
 
-    item.quantity++;
+    if(item){
 
-    renderCart();
+        item.quantity++;
+
+        renderCart();
+
+    }
 
 }
 
 function decrease(id){
 
-    const item = cart.find(i=>i.id===id);
+    const item = cart.find(p => p.id === id);
 
-    if(item.quantity > 1){
+    if(item && item.quantity > 1){
 
         item.quantity--;
 
@@ -178,9 +126,27 @@ function decrease(id){
 
 function removeItem(id){
 
-    cart = cart.filter(item=>item.id!==id);
+    cart = cart.filter(item => item.id !== id);
 
     renderCart();
+
+}
+
+function updateCartCount(){
+
+    const count = cart.reduce((sum,item)=>{
+
+        return sum + Number(item.quantity);
+
+    },0);
+
+    const cartCount = document.getElementById("cart-count");
+
+    if(cartCount){
+
+        cartCount.innerText = count;
+
+    }
 
 }
 
