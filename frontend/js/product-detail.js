@@ -105,9 +105,37 @@ fetch("https://api-shopmobile-w12y.onrender.com/api/products")
 
     // 5. THÊM VÀO GIỎ HÀNG
     document.getElementById("add-cart-btn").addEventListener("click", () => {
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-        cart.push(product);
-        localStorage.setItem("cart", JSON.stringify(cart));
-        alert("Đã thêm vào giỏ hàng!");
-    });
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // kiểm tra sản phẩm đã có trong giỏ chưa
+    const index = cart.findIndex(item => item.id === product._id);
+
+    if(index !== -1){
+
+        cart[index].quantity++;
+
+    }else{
+
+        cart.push({
+
+            id: product._id,
+
+            name: product.name,
+
+            price: Number(product.price),
+
+            quantity: 1,
+
+            image: product.thumbnail
+
+        });
+
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    alert("Đã thêm vào giỏ hàng!");
+
+});
 });
