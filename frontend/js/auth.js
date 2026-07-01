@@ -25,28 +25,39 @@ async function login(email, password) {
         return false;
     }
 
-    var body = { email: email, password: password };
-    var data = await apiRequest('/auth/login', 'POST', body, false);
+    const body = { email, password };
     
-    if (data && data.token) {
-        setAuthData(data.token, email);
-        if (data.user) setUserData(data.user);
-        showToast('Đăng nhập thành công!', 'success');
-        updateAuthUI();
-        if (typeof initGlobalSocket === 'function') {
-            initGlobalSocket();
+    try {
+        const data = await apiRequest('/auth/login', 'POST', body, false);
+        
+        // SỬA Ở ĐÂY: Đổi data.access_token thành data.token
+        if (data && data.token) { 
+            
+            // SỬA Ở ĐÂY: Truyền data.token vào hàm
+            setAuthData(data.token, email); 
+            if (data.user) setUserData(data.user);
+            
+            showToast('Đăng nhập thành công!', 'success');
+            
+            // KIỂM TRA ROLE ĐỂ CHUYỂN HƯỚNG
+            setTimeout(() => {
+                if (data.user && data.user.role === 'admin') {
+                    window.location.href = 'admin/dashboard.html'; 
+                } else {
+                    window.location.href = '../index.html'; 
+                }
+            }, 1000);
+            
+            return true;
+        } else {
+            showToast('Sai email hoặc mật khẩu. Vui lòng thử lại!', 'error');
+            return false;
         }
-        setTimeout(function() { 
-            var referrer = document.referrer;
-            if (referrer && referrer.includes('pages/')) {
-                window.location.href = referrer;
-            } else {
-                window.location.href = '../index.html';
-            }
-        }, 1000);
-        return true;
+    } catch (error) {
+        showToast('Lỗi kết nối máy chủ! Hãy kiểm tra F12.', 'error');
+        console.error("Lỗi đăng nhập:", error);
+        return false;
     }
-    return false;
 }
 
 function logout() {
@@ -69,6 +80,21 @@ function requireAuth() {
     if (!isLoggedIn()) {
         showToast('Vui lòng đăng nhập để tiếp tục', 'error');
         setTimeout(function() { window.location.href = 'login.html'; }, 1000);
+        return false;
+    }
+    return true;
+}
+
+function requireAdmin() {
+    if (!isLoggedIn()) {
+        showToast('Vui lòng đăng nhập để tiếp tục', 'error');
+        setTimeout(function() { window.location.href = '../pages/login.html'; }, 1000);
+        return false;
+    }
+    var userData = getUserData();
+    if (!userData || userData.role !== 'admin') {
+        showToast('Bạn không có quyền truy cập trang này', 'error');
+        setTimeout(function() { window.location.href = '../index.html'; }, 1500);
         return false;
     }
     return true;
@@ -136,13 +162,16 @@ function updateAuthUI() {
     if (isLoggedIn() && !checkTokenExpired()) {
         var userData = getUserData();
         var name = userData?.full_name || userData?.name || 'User';
+        var isAdmin = userData?.role === 'admin';
         
         if (authButtons) {
             authButtons.style.display = 'none';
         }
         if (userInfo) {
             userInfo.style.display = 'flex';
-            if (userNameDisplay) userNameDisplay.textContent = name;
+            if (userNameDisplay) {
+                userNameDisplay.textContent = name + (isAdmin ? ' (Admin)' : '');
+            }
             if (userAvatar) {
                 userAvatar.src = userData?.avatar || '../assets/images/avatar.jpg';
                 userAvatar.onerror = function() { this.src = '../assets/images/default-avatar.png'; };
@@ -163,6 +192,15 @@ function updateAuthUI() {
             document.onclick = function() {
                 dropdown.classList.remove('show');
             };
+        }
+        
+        var adminLink = document.querySelector('.dropdown-menu a[href="../admin/dashboard.html"]');
+        if (adminLink) {
+            if (isAdmin) {
+                adminLink.style.display = 'block';
+            } else {
+                adminLink.style.display = 'none';
+            }
         }
     } else {
         if (authButtons) {
@@ -202,6 +240,7 @@ function createChatBubble() {
             box-shadow: 0 4px 20px rgba(31, 78, 163, 0.4);
             z-index: 9999;
             transition: all 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.2);
         }
         #chat-bubble:hover {
             transform: scale(1.1);
@@ -210,6 +249,7 @@ function createChatBubble() {
         #chat-bubble .chat-bubble-icon i {
             font-size: 28px;
             color: white;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
         #chat-bubble .chat-bubble-ripple {
             position: absolute;
@@ -250,7 +290,9 @@ function createChatBubble() {
 
 document.addEventListener('DOMContentLoaded', function() {
     updateAuthUI();
-    createChatBubble();
+    if (!window.location.pathname.includes('admin')) {
+        createChatBubble();
+    }
     if (isLoggedIn() && typeof initGlobalSocket === 'function') {
         initGlobalSocket();
     }
