@@ -5,30 +5,26 @@
         </div>
         <ul class="nav-menu">
             <li><a href="../index.html">Trang chủ</a></li>
-            <li><a href="../index.html">Điện thoại</a></li>
-            <li><a href="../index.html">Tablet</a></li>
-            <li><a href="../index.html">MacBook & Laptop</a></li>
-            <li><a href="../index.html">Đồng hồ</a></li>
-            <li><a href="../index.html">Phụ kiện</a></li>
-            <li><a href="../index.html">Ưu đãi</a></li>
-            <li><a href="cart.html">🛒 Giỏ hàng</a></li>
-            <li><a href="../index.html">Tin công nghệ</a></li>
+            <li><a href="../pages/products.html?category=smartphone">Điện thoại</a></li>
+            <li><a href="../pages/products.html?category=tablet">Tablet</a></li>
+            <li><a href="../pages/products.html?category=laptop">Laptop</a></li>
+            <li><a href="../pages/products.html?discount=true">Ưu đãi</a></li>
+            <li><a href="../pages/cart.html">Giỏ hàng (<span id="cart-count-header">0</span>)</a></li>
         </ul>
         <div class="auth-buttons" id="authButtons">
-            <a href="login.html" class="btn btn-outline">Đăng nhập</a>
-            <a href="register.html" class="btn btn-primary">Đăng ký</a>
+            <a href="../pages/login.html" class="btn btn-outline">Đăng nhập</a>
+            <a href="../pages/register.html" class="btn btn-primary">Đăng ký</a>
         </div>
         <div class="user-info" id="userInfo" style="display:none;">
             <span class="user-name" id="userNameDisplay"></span>
-            <!-- Đổi thành avatar.jpg -->
-            <img id="userAvatar" src="../assets/images/avatar.jpg" alt="Avatar" class="avatar">
+            <img id="userAvatar" src="../assets/images/avatar.jpg" alt="Avatar" class="avatar" onerror="this.src='../assets/images/default-avatar.png'">
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="profile.html">Hồ sơ</a>
-                <a href="orderhistory.html">Đơn hàng</a>
-                <a href="cart.html">🛒 Giỏ hàng</a>
-                <a href="admin/dashboard.html">Quản trị</a>
-                <a href="chat.html">Hỗ trợ</a>
-                <button onclick="logout()">Đăng xuất</button>
+                <a href="../pages/profile.html">Hồ sơ</a>
+                <a href="../pages/orderhistory.html">Đơn hàng</a>
+                <a href="../pages/cart.html">Giỏ hàng</a>
+                <a href="../pages/chat.html">Hỗ trợ</a>
+                <a href="../admin/dashboard.html">Quản trị</a>
+                <button onclick="handleLogout()">Đăng xuất</button>
             </div>
         </div>
     </div>
