@@ -1,3 +1,17 @@
+if(cart.length === 0){
+
+    document.getElementById("cart-items").innerHTML = `
+        <tr>
+            <td colspan="6">
+                Giỏ hàng của bạn đang trống
+            </td>
+        </tr>
+    `;
+
+    document.getElementById("total-price").innerText="0đ";
+
+    return;
+}
 const cart =
 JSON.parse(localStorage.getItem("cart"))
 || [];
