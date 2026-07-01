@@ -103,17 +103,15 @@ fetch("https://api-shopmobile-w12y.onrender.com/api/products")
         `;
     });
 
-    // 5. THÊM VÀO GIỎ HÀNG
-    document.getElementById("add-cart-btn").addEventListener("click", () => {
+document.getElementById("add-cart-btn").addEventListener("click", () => {
 
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // kiểm tra sản phẩm đã có trong giỏ chưa
-    const index = cart.findIndex(item => item.id === product._id);
+    const exist = cart.find(item => item.id === product._id);
 
-    if(index !== -1){
+    if(exist){
 
-        cart[index].quantity++;
+        exist.quantity++;
 
     }else{
 
@@ -123,11 +121,11 @@ fetch("https://api-shopmobile-w12y.onrender.com/api/products")
 
             name: product.name,
 
+            image: product.thumbnail,
+
             price: Number(product.price),
 
-            quantity: 1,
-
-            image: product.thumbnail
+            quantity: 1
 
         });
 
@@ -135,15 +133,21 @@ fetch("https://api-shopmobile-w12y.onrender.com/api/products")
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
+    updateCartCount();
+
     alert("Đã thêm vào giỏ hàng!");
 
 });
-});
+
 function updateCartCount(){
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    const count = cart.reduce((sum,item)=>sum + item.quantity,0);
+    const count = cart.reduce((sum,item)=>{
+
+        return sum + Number(item.quantity);
+
+    },0);
 
     const cartCount = document.getElementById("cart-count");
 
