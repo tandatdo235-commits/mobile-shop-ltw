@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Quản lý đơn hàng</title>
-
-<link rel="stylesheet" href="../../css/style.css">
-<link rel="stylesheet" href="../../css/admin.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đơn hàng</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/admin.css">
+    <script src="../../js/config.js"></script>
+    <script src="../../js/common.js"></script>
+    <script src="../../js/auth.js"></script>
 </head>
-
 <body>
 
 <div class="admin-layout">
     <aside class="sidebar">
         <h2>ADMIN</h2>
         <ul>
-            <li><a href="dashboard.html">📊 Dashboard</a></li>
-            <li><a href="products.html">📦 Sản phẩm</a></li>
-
-            <li><a href="orders.html" class="active">🛒 Đơn hàng</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="products.html">Sản phẩm</a></li>
+            <li><a href="orders.html" class="active">Đơn hàng</a></li>
         </ul>
-
     </aside>
-    <main class="content">
 
+    <main class="content">
         <h1>Quản lý đơn hàng</h1>
         <div class="table-container">
             <div class="table-header">
@@ -34,12 +30,7 @@
             </div>
 
             <div class="toolbar">
-
-                <input
-                    type="text"
-                    id="searchOrder"
-                    placeholder="Tìm theo mã đơn hoặc tên khách hàng..."
-                >
+                <input type="text" id="searchOrder" placeholder="Tìm theo mã đơn hoặc tên khách hàng...">
                 <select id="statusFilter">
                     <option value="">Tất cả trạng thái</option>
                     <option value="pending">Chờ xử lý</option>
@@ -49,7 +40,6 @@
                 <button>Tìm kiếm</button>
             </div>
 
-           
             <table class="admin-table">
                 <thead>
                     <tr>
@@ -71,7 +61,6 @@
                         <td>COD</td>
                         <td><span class="status pending">Chờ xử lý</span></td>
                         <td><button class="detail-btn">Xem</button></td>
-
                     </tr>
                     <tr>
                         <td>DH002</td>
@@ -81,21 +70,21 @@
                         <td>Momo</td>
                         <td><span class="status success">Đã giao</span></td>
                         <td><button class="detail-btn">Xem</button></td>
-
                     </tr>
-
                 </tbody>
-
             </table>
-
         </div>
-
     </main>
-
 </div>
 
 <script src="../../js/admin.js"></script>
 <script src="../../js/notification.js"></script>
-
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (isLoggedIn() && typeof initGlobalSocket === 'function') {
+            initGlobalSocket();
+        }
+    });
+</script>
 </body>
 </html>

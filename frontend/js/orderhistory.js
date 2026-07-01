@@ -1,5 +1,4 @@
-// orderhistory.js
-const MOCK_ORDERS = [
+var MOCK_ORDERS = [
     {
         id: 1,
         created_at: '2026-06-01T10:30:00',
@@ -42,7 +41,7 @@ async function fetchOrders() {
 }
 
 function renderOrders(orders) {
-    const container = document.getElementById('order-list');
+    var container = document.getElementById('order-list');
     if (!container) return;
 
     if (!orders || orders.length === 0) {
@@ -55,31 +54,36 @@ function renderOrders(orders) {
         return;
     }
 
-    orders.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+    orders.sort(function(a, b) {
+        return new Date(b.created_at) - new Date(a.created_at);
+    });
 
-    const statusMap = {
+    var statusMap = {
         'pending': 'Đang xử lý',
         'processing': 'Đang giao',
         'completed': 'Hoàn thành',
         'cancelled': 'Đã hủy'
     };
-    const statusClass = {
+    var statusClass = {
         'pending': 'status-pending',
         'processing': 'status-processing',
         'completed': 'status-completed',
         'cancelled': 'status-cancelled'
     };
 
-    let html = '';
-    orders.forEach(order => {
-        const statusText = statusMap[order.status] || order.status;
-        const cls = statusClass[order.status] || 'status-pending';
+    var html = '';
+    for (var i = 0; i < orders.length; i++) {
+        var order = orders[i];
+        var statusText = statusMap[order.status] || order.status;
+        var cls = statusClass[order.status] || 'status-pending';
+        var date = new Date(order.created_at).toLocaleDateString('vi-VN');
+        
         html += `
             <div class="order-item">
                 <div class="order-header">
                     <div>
                         <span class="order-id">#${order.id}</span>
-                        <span class="order-date">${new Date(order.created_at).toLocaleDateString('vi-VN')}</span>
+                        <span class="order-date">${date}</span>
                     </div>
                     <span class="order-status ${cls}">${statusText}</span>
                 </div>
@@ -93,19 +97,21 @@ function renderOrders(orders) {
                 </div>
                 <div id="order-items-${order.id}" class="order-items">
                     <ul>
-                        ${order.items.map(item => `<li>${item.product_name} x ${item.quantity} - ${item.price.toLocaleString('vi-VN')} đ</li>`).join('')}
+                        ${order.items.map(function(item) {
+                            return '<li>' + item.product_name + ' x ' + item.quantity + ' - ' + item.price.toLocaleString('vi-VN') + ' đ</li>';
+                        }).join('')}
                     </ul>
                 </div>
             </div>
         `;
-    });
+    }
 
     container.innerHTML = html;
 
-    document.querySelectorAll('.toggle-detail').forEach(btn => {
+    document.querySelectorAll('.toggle-detail').forEach(function(btn) {
         btn.addEventListener('click', function() {
-            const id = this.getAttribute('data-id');
-            const itemsDiv = document.getElementById(`order-items-${id}`);
+            var id = this.getAttribute('data-id');
+            var itemsDiv = document.getElementById('order-items-' + id);
             if (itemsDiv) {
                 itemsDiv.classList.toggle('show');
                 this.textContent = itemsDiv.classList.contains('show') ? 'Thu gọn' : 'Xem chi tiết';
@@ -116,6 +122,6 @@ function renderOrders(orders) {
 
 document.addEventListener('DOMContentLoaded', async function() {
     if (!requireAuth()) return;
-    const orders = await fetchOrders();
+    var orders = await fetchOrders();
     renderOrders(orders);
 });

@@ -1,155 +1,148 @@
-let allProducts = [];
+var allProducts = [];
 
-/* ======================
-   Render sản phẩm (Giao diện mới)
-====================== */
-function renderProducts(products){
-    const phoneList = document.getElementById("phone-list");
-    const laptopList = document.getElementById("laptop-list");
-    const tabletList = document.getElementById("tablet-list");
+function renderProducts(products) {
+    var phoneList = document.getElementById("phone-list");
+    var laptopList = document.getElementById("laptop-list");
+    var tabletList = document.getElementById("tablet-list");
 
-    // Ẩn tất cả section trước khi render
-    document.querySelectorAll(".product-section").forEach(section => {
-        section.style.display = "none";
-    });
+    var sections = document.querySelectorAll(".product-section");
+    for (var i = 0; i < sections.length; i++) {
+        sections[i].style.display = "none";
+    }
 
     phoneList.innerHTML = "";
     laptopList.innerHTML = "";
     tabletList.innerHTML = "";
 
-    products.forEach(product => {
+    for (var i = 0; i < products.length; i++) {
+        var product = products[i];
         
-        let imageSrc = product.thumbnail;
+        var imageSrc = product.thumbnail;
+        var newPriceNum = Number(product.price);
+        var oldPriceNum = product.discount ? Math.round(newPriceNum / (1 - product.discount / 100)) : newPriceNum;
 
-        let newPriceNum = Number(product.price);
-        let oldPriceNum = product.discount ? Math.round(newPriceNum / (1 - product.discount / 100)) : newPriceNum;
+        var newPriceStr = newPriceNum.toLocaleString("vi-VN");
+        var oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
 
-        let newPriceStr = newPriceNum.toLocaleString("vi-VN");
-        let oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
+        var badgeHTML = product.discount ? '<div class="sale-badge">Giảm ' + product.discount + '%</div>' : '';
+        var oldPriceHTML = product.discount ? '<span class="old-price">' + oldPriceStr + ' VNĐ</span>' : '';
+        var promoHTML = product.promotion ? '<p class="promotion-text">' + product.promotion + '</p>' : '';
 
-        let badgeHTML = product.discount ? `<div class="sale-badge">Giảm ${product.discount}%</div>` : '';
-        let oldPriceHTML = product.discount ? `<span class="old-price">${oldPriceStr} VNĐ</span>` : '';
-        let promoHTML = product.promotion ? `<p class="promotion-text">${product.promotion}</p>` : '';
-
-        
-        const card = `
+        var card = `
         <div class="product-card" onclick="window.location.href='./pages/product-detail.html?id=${product._id}'">
             ${badgeHTML}
             <img src="${imageSrc}" alt="${product.name}">
-            
             <h3 class="product-name">${product.name}</h3>
-            
             <div class="price-box">
                 <span class="new-price">${newPriceStr} VNĐ</span>
                 ${oldPriceHTML}
             </div>
-            
             ${promoHTML}
         </div>
         `;
 
-        
-        if(product.category === "smartphone" || product.category === "phone"){
+        if (product.category === "smartphone" || product.category === "phone") {
             phoneList.innerHTML += card;
             phoneList.parentElement.style.display = "block";
         }
 
-        if(product.category === "laptop"){
+        if (product.category === "laptop") {
             laptopList.innerHTML += card;
             laptopList.parentElement.style.display = "block";
         }
 
-        if(product.category === "tablet"){
+        if (product.category === "tablet") {
             tabletList.innerHTML += card;
             tabletList.parentElement.style.display = "block";
         }
-    });
+    }
 }
 
-/* ======================
-   Load JSON
-====================== */
 fetch("https://api-shopmobile-w12y.onrender.com/api/products")
-.then(res => res.json())
-.then(products => {
+.then(function(res) { return res.json(); })
+.then(function(products) {
     allProducts = products;
     renderProducts(products);
 });
 
-/* ======================
-   Banner Slider
-====================== */
-const banners = [
+var banners = [
     "./assets/images/banner1.png",
     "./assets/images/banner2.png",
     "./assets/images/banner3.png"
 ];
 
-let currentBanner = 0;
-const bannerImage = document.getElementById("banner-image");
-const dots = document.querySelectorAll(".dot");
+var currentBanner = 0;
+var bannerImage = document.getElementById("banner-image");
+var dots = document.querySelectorAll(".dot");
 
-function showBanner(index){
-    if(!bannerImage) return;
-    // Kiểm tra xem ảnh có tồn tại thực tế không, tạm thời dùng src mảng
+function showBanner(index) {
+    if (!bannerImage) return;
     bannerImage.src = banners[index];
-    dots.forEach(dot => dot.classList.remove("active"));
-    if(dots[index]){
+    for (var i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+    }
+    if (dots[index]) {
         dots[index].classList.add("active");
     }
 }
 
-if(bannerImage){
-    setInterval(() => {
+if (bannerImage) {
+    setInterval(function() {
         currentBanner++;
-        if(currentBanner >= banners.length){
+        if (currentBanner >= banners.length) {
             currentBanner = 0;
         }
         showBanner(currentBanner);
     }, 3000);
 
-    dots.forEach((dot,index) => {
-        dot.addEventListener("click", () => {
-            currentBanner = index;
-            showBanner(currentBanner);
-        });
+    for (var i = 0; i < dots.length; i++) {
+        (function(index) {
+            dots[index].addEventListener("click", function() {
+                currentBanner = index;
+                showBanner(currentBanner);
+            });
+        })(i);
+    }
+}
+
+var searchBtn = document.getElementById("search-btn");
+var searchInput = document.getElementById("search-input");
+
+if (searchBtn && searchInput) {
+    searchBtn.addEventListener("click", function() {
+        var keyword = searchInput.value.toLowerCase();
+        var filtered = [];
+        for (var i = 0; i < allProducts.length; i++) {
+            if (allProducts[i].name.toLowerCase().includes(keyword)) {
+                filtered.push(allProducts[i]);
+            }
+        }
+        renderProducts(filtered);
+    });
+
+    searchInput.addEventListener("keyup", function(e) {
+        if (e.key === "Enter") {
+            searchBtn.click();
+        }
     });
 }
 
-/* ======================
-   Search
-====================== */
-document.getElementById("search-btn").addEventListener("click", () => {
-    const keyword = document.getElementById("search-input").value.toLowerCase();
-    const filtered = allProducts.filter(product =>
-        product.name.toLowerCase().includes(keyword)
-    );
-    renderProducts(filtered);
-});
-
-document.getElementById("search-input").addEventListener("keyup", (e) => {
-    if(e.key === "Enter"){
-        document.getElementById("search-btn").click();
-    }
-});
-
-/* ======================
-   Sidebar Accordion (Đóng/mở danh mục)
-====================== */
-document.querySelectorAll('.menu-header').forEach(header => {
-    header.addEventListener('click', () => {
-        const submenu = header.nextElementSibling;
-        const icon = header.querySelector('.toggle-icon');
-        
-        // Bật/tắt hiển thị submenu
-        if(submenu.style.display === 'none' || submenu.style.display === '') {
-            submenu.style.display = 'block';
-            icon.classList.remove('fa-chevron-down');
-            icon.classList.add('fa-chevron-up');
-        } else {
-            submenu.style.display = 'none';
-            icon.classList.remove('fa-chevron-up');
-            icon.classList.add('fa-chevron-down');
-        }
-    });
-});
+var menuHeaders = document.querySelectorAll('.menu-header');
+for (var i = 0; i < menuHeaders.length; i++) {
+    (function(header) {
+        header.addEventListener('click', function() {
+            var submenu = header.nextElementSibling;
+            var icon = header.querySelector('.toggle-icon');
+            
+            if (submenu.style.display === 'none' || submenu.style.display === '') {
+                submenu.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                submenu.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+    })(menuHeaders[i]);
+}

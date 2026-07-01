@@ -3,43 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat hỗ trợ</title>
+    <title>Chat ho tro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/chat.css">
-    <script src="../js/config.js"></script>
-    <script src="../js/common.js"></script>
-    <script src="../js/auth.js"></script>
-    <script src="../js/chat.js"></script>
 </head>
 <body>
     <div id="header-container"></div>
 
     <main class="container">
         <div class="breadcrumb">
-            <a href="index.html">Trang chủ</a> / Hỗ trợ
+            <a href="../index.html">Trang chu</a> / Ho tro truc tuyen
         </div>
-        <div class="chat-container">
-            <div class="chat-header">
-                <h3>Chat với nhân viên hỗ trợ</h3>
-                <span class="status"><span class="dot"></span> Đang hoạt động</span>
+
+        <div class="chat-wrapper">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <div class="chat-header-left">
+                        <img src="../assets/images/avatar.jpg" alt="Support" class="chat-avatar">
+                        <div>
+                            <h3>Ho tro truc tuyen</h3>
+                            <span class="status"><span class="dot"></span> Dang hoat dong</span>
+                        </div>
+                    </div>
+                    <div class="chat-header-right">
+                        <span class="chat-time" id="chat-time"></span>
+                        <button class="btn-chat-close" onclick="window.location.href='../index.html'">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="chat-messages" class="chat-messages"></div>
+
+                <div class="chat-input-area">
+                    <input type="text" id="chat-input" placeholder="Nhap tin nhan cua ban..." autocomplete="off">
+                    <button id="send-btn" class="chat-send-btn">
+                        <i class="fa-regular fa-paper-plane"></i> Gui
+                    </button>
+                </div>
             </div>
-            <div id="chat-messages" class="chat-messages"></div>
-            <div class="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Nhập tin nhắn...">
-                <button id="send-btn">Gửi</button>
+
+            <div class="chat-quick-replies">
+                <span class="quick-label">Cau hoi nhanh:</span>
+                <button class="quick-reply" data-msg="Toi muon hoi ve don hang">Don hang</button>
+                <button class="quick-reply" data-msg="Gia san pham nhu the nao">Gia ca</button>
+                <button class="quick-reply" data-msg="Chinh sach bao hanh ra sao">Bao hanh</button>
+                <button class="quick-reply" data-msg="Thoi gian giao hang">Giao hang</button>
             </div>
         </div>
     </main>
 
     <div id="footer-container"></div>
 
+    <style>
+        .chat-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .chat-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .chat-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        .chat-header-left h3 {
+            font-size: 17px;
+            color: white;
+            margin: 0;
+        }
+        .chat-header-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .chat-time {
+            color: rgba(255,255,255,0.7);
+            font-size: 13px;
+        }
+        .btn-chat-close {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+        }
+        .btn-chat-close:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .chat-send-btn {
+            background: #1f4ea3;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 10px 24px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .chat-send-btn:hover {
+            background: #3a6fc9;
+        }
+        .chat-quick-replies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+            padding: 12px 0;
+            align-items: center;
+        }
+        .quick-label {
+            font-size: 13px;
+            color: #4b5563;
+            font-weight: 600;
+            margin-right: 4px;
+        }
+        .quick-reply {
+            padding: 6px 16px;
+            border-radius: 20px;
+            border: 1.5px solid #d1d5db;
+            background: white;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.3s;
+            color: #374151;
+        }
+        .quick-reply:hover {
+            border-color: #1f4ea3;
+            background: #1f4ea3;
+            color: white;
+        }
+        @media (max-width: 768px) {
+            .chat-wrapper {
+                padding: 0 4px;
+            }
+            .chat-quick-replies {
+                gap: 6px;
+            }
+            .quick-reply {
+                font-size: 12px;
+                padding: 5px 12px;
+            }
+            .chat-send-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+    </style>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/chat.js"></script>
     <script>
         fetch('../components/header.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('header-container').innerHTML = data);
+            .then(function(res) { return res.text(); })
+            .then(function(data) {
+                document.getElementById('header-container').innerHTML = data;
+                if (typeof updateAuthUI === 'function') {
+                    updateAuthUI();
+                }
+            });
         fetch('../components/footer.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(function(res) { return res.text(); })
+            .then(function(data) { document.getElementById('footer-container').innerHTML = data; });
+
+        document.querySelectorAll('.quick-reply').forEach(function(btn) {
+            btn.onclick = function() {
+                var msg = this.getAttribute('data-msg');
+                var input = document.getElementById('chat-input');
+                if (input) {
+                    input.value = msg;
+                    var sendBtn = document.getElementById('send-btn');
+                    if (sendBtn) sendBtn.click();
+                }
+            };
+        });
+
+        function updateChatTime() {
+            var now = new Date();
+            var hours = String(now.getHours()).padStart(2, '0');
+            var minutes = String(now.getMinutes()).padStart(2, '0');
+            var timeStr = hours + ':' + minutes;
+            var el = document.getElementById('chat-time');
+            if (el) el.textContent = timeStr;
+        }
+        updateChatTime();
+        setInterval(updateChatTime, 30000);
     </script>
 </body>
 </html>

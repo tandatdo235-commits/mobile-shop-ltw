@@ -3,156 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ</title>
+    <title>UTH Mobile Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="category-list">
+                <div class="menu-item">
+                    <div class="menu-header" style="border-bottom: 1px solid #f0f0f0; padding: 12px 20px;">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="../index.html" style="flex:1; margin-left:10px; text-decoration:none; color:#333;">Trang chu</a>
+                    </div>
+                    <div class="menu-header">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Dien thoai</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=smartphone&brand=apple">iPhone</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=samsung">Samsung</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=xiaomi">Xiaomi</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=oppo">Oppo</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=vivo">Vivo</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-laptop"></i>
+                        <span>Laptop</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=laptop&brand=asus">Asus</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=apple">Macbook</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=dell">Dell</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=hp">HP</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=lenovo">Lenovo</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-bullhorn"></i> 
+                        <span>May tinh bang</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=tablet&brand=samsung">Samsung</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=apple">iPad</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=xiaomi">Xiaomi</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=lenovo">Lenovo</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=oppo">Oppo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="banner">
+                <img id="banner-image" src="./assets/images/banner1.jpg" alt="banner" onerror="this.src='https://via.placeholder.com/1200x350?text=UTH+Mobile+Shop'">
+                <div class="banner-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <h2 class="section-title">Dien thoai</h2>
+                <div id="phone-list" class="product-grid"></div>
+            </section>
+
+            <section class="product-section">
+                <h2 class="section-title">Laptop</h2>
+                <div id="laptop-list" class="product-grid"></div>
+            </section>
+
+            <section class="product-section">
+                <h2 class="section-title">May tinh bang</h2>
+                <div id="tablet-list" class="product-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <h3>Mobile Shop</h3>
+        <p>Website thuong mai dien tu mon Lap Trinh Web</p>
+        <p>2026 Mobile Shop. All Rights Reserved.</p>
+    </footer>
+
     <script src="../js/config.js"></script>
     <script src="../js/common.js"></script>
     <script src="../js/auth.js"></script>
-</head>
-<body>
-    <div id="header-container"></div>
-
-    <main class="container" style="text-align:center; padding: 60px 20px;">
-        <h1 style="font-size: 36px; color: var(--gray-800);">Chào mừng đến với UTH Shop</h1>
-        <p style="font-size: 18px; color: var(--gray-600); margin-top: 12px;">Điện thoại, Laptop, Máy tính bảng và phụ kiện chính hãng</p>
-        <div style="margin-top: 30px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-            <a href="login.html" class="btn btn-primary">Đăng nhập</a>
-            <a href="register.html" class="btn btn-outline">Đăng ký</a>
-            <a href="profile.html" class="btn btn-primary">Hồ sơ</a>
-            <a href="orderhistory.html" class="btn btn-primary">Đơn hàng</a>
-            <a href="cart.html" class="btn btn-primary">🛒 Giỏ hàng</a>
-            <a href="admin/dashboard.html" class="btn btn-primary">Quản trị</a>
-            <a href="chat.html" class="btn btn-primary">Chat hỗ trợ</a>
-        </div>
-    </main>
-
-    <div id="footer-container"></div>
+    <script src="../js/search.js"></script>
+    <script src="../js/home.js"></script>
 
     <script>
-        fetch('../components/header.html')
-            .then(res => {
-                if (!res.ok) throw new Error('Không tìm thấy header.html');
-                return res.text();
-            })
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                updateUI();
-            })
-            .catch(() => {
-                document.getElementById('header-container').innerHTML = `
-                    <header>
-                        <div class="header-container">
-                            <div class="logo"><a href="index.html">UTH</a></div>
-                            <ul class="nav-menu">
-                                <li><a href="index.html">Trang chủ</a></li>
-                                <li><a href="#">Điện thoại</a></li>
-                                <li><a href="#">Tablet</a></li>
-                                <li><a href="#">MacBook & Laptop</a></li>
-                            </ul>
-                            <div class="auth-buttons" id="authButtons">
-                                <a href="login.html" class="btn btn-outline">Đăng nhập</a>
-                                <a href="register.html" class="btn btn-primary">Đăng ký</a>
-                            </div>
-                            <div class="user-info" id="userInfo" style="display:none;">
-                                <span class="user-name" id="userNameDisplay"></span>
-                                <img src="../assets/images/avatar.jpg" style="display:none;">
-                                <div class="dropdown-menu" id="dropdownMenu">
-                                    <a href="profile.html">Hồ sơ</a>
-                                    <a href="orderhistory.html">Đơn hàng</a>
-                                    <a href="chat.html">Hỗ trợ</a>
-                                    <button onclick="logout()">Đăng xuất</button>
-                                </div>
-                            </div>
-                        </div>
-                    </header>
-                `;
-                updateUI();
-            });
+        function updateCartCount() {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var count = document.getElementById('cart-count');
+            if (count) count.textContent = cart.length;
+        }
 
-        fetch('../components/footer.html')
-            .then(res => {
-                if (!res.ok) throw new Error('Không tìm thấy footer.html');
-                return res.text();
-            })
-            .then(data => document.getElementById('footer-container').innerHTML = data)
-            .catch(() => {
-                document.getElementById('footer-container').innerHTML = `
-                    <footer>
-                        <div class="footer-container">
-                            <div class="footer-col">
-                                <h3>UTH</h3>
-                                <p>Cửa hàng điện thoại, laptop và phụ kiện chính hãng.</p>
-                            </div>
-                            <div class="footer-col">
-                                <h3>Danh mục</h3>
-                                <a href="#">Điện thoại</a>
-                                <a href="#">Laptop</a>
-                                <a href="#">Máy tính bảng</a>
-                                <a href="#">Phụ kiện</a>
-                            </div>
-                            <div class="footer-col">
-                                <h3>Hỗ trợ</h3>
-                                <a href="#">Chính sách bảo hành</a>
-                                <a href="#">Vận chuyển</a>
-                                <a href="#">Đổi trả</a>
-                                <a href="#">Liên hệ</a>
-                            </div>
-                            <div class="footer-col">
-                                <h3>Kết nối</h3>
-                                <p>hotline@uthshop.vn</p>
-                                <p>1900 1234</p>
-                                <div style="display: flex; gap: 12px; margin-top: 8px;">
-                                    <a href="#">FB</a>
-                                    <a href="#">YT</a>
-                                    <a href="#">IG</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-bottom">
-                            &copy; 2026 UTH. Bản quyền thuộc về chúng tôi.
-                        </div>
-                    </footer>
-                `;
-            });
-
-        function updateUI() {
+        function updateAuthUI() {
+            var authText = document.getElementById('auth-text');
+            var authLink = document.getElementById('auth-link');
+            
             if (typeof isLoggedIn !== 'undefined' && isLoggedIn()) {
-                const email = typeof getUserEmail !== 'undefined' ? getUserEmail() : null;
-                const userData = typeof getUserData !== 'undefined' ? getUserData() : null;
-                const name = userData?.full_name || email?.split('@')[0] || 'User';
-                
-                const authButtons = document.getElementById('authButtons');
-                const userInfo = document.getElementById('userInfo');
-                
-                if (authButtons) authButtons.style.display = 'none';
-                if (userInfo) {
-                    userInfo.style.display = 'flex';
-                    const nameDisplay = document.getElementById('userNameDisplay');
-                    if (nameDisplay) nameDisplay.textContent = name;
-                    
-                    const avatar = document.getElementById('userAvatar');
-                    if (avatar) {
-                        avatar.src = userData?.avatar || '../assets/images/avatar.jpg';
-                    }
-                    
-                    const dropdown = document.getElementById('dropdownMenu');
-                    if (avatar && dropdown) {
-                        avatar.addEventListener('click', function(e) {
-                            e.stopPropagation();
-                            dropdown.classList.toggle('show');
-                        });
-                        document.addEventListener('click', function() {
-                            dropdown.classList.remove('show');
-                        });
-                    }
-                }
+                var userData = getUserData();
+                var name = userData?.full_name || userData?.name || 'User';
+                if (authText) authText.textContent = name;
+                if (authLink) authLink.href = './pages/profile.html';
             } else {
-                const authButtons = document.getElementById('authButtons');
-                const userInfo = document.getElementById('userInfo');
-                if (authButtons) authButtons.style.display = 'flex';
-                if (userInfo) userInfo.style.display = 'none';
+                if (authText) authText.textContent = 'Dang nhap';
+                if (authLink) authLink.href = './pages/login.html';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            updateAuthUI();
+            if (typeof createChatBubble === 'function') {
+                createChatBubble();
+            }
+            if (isLoggedIn() && typeof initGlobalSocket === 'function') {
+                initGlobalSocket();
+            }
+        });
+
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'cart') {
+                updateCartCount();
+            }
+            if (e.key === 'user_data' || e.key === 'token') {
+                updateAuthUI();
+            }
+        });
+
+        fetch('../components/header.html')
+            .then(function(res) { return res.text(); })
+            .then(function(data) {
+                document.getElementById('header-container').innerHTML = data;
+                if (typeof updateAuthUI === 'function') {
+                    updateAuthUI();
+                }
+            });
     </script>
 
 </body>

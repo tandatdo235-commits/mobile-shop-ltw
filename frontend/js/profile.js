@@ -21,17 +21,15 @@ function displayProfile(user) {
     document.getElementById('info-joined').textContent = user.created_at ? new Date(user.created_at).toLocaleDateString('vi-VN') : 'Chưa có';
     document.getElementById('info-role').textContent = user.role === 'admin' ? 'Quản trị viên' : 'Thành viên';
 
-
     document.getElementById('stat-orders').textContent = user.total_orders || 0;
     document.getElementById('stat-reviews').textContent = user.total_reviews || 0;
     document.getElementById('stat-favorites').textContent = user.total_favorites || 0;
     document.getElementById('stat-points').textContent = user.loyalty_points || 0;
 }
 
-// cập nhật thông tin cá nhân
 async function updateProfile(data) {
     if (!requireAuth()) return false;
-    const result = await apiRequest('/auth/profile', 'PUT', data);
+    var result = await apiRequest('/auth/profile', 'PUT', data);
     if (result) {
         showToast('Cập nhật thành công!', 'success');
         setUserData(result);
@@ -41,10 +39,9 @@ async function updateProfile(data) {
     return false;
 }
 
-// Hàm đổi avatar
 async function updateAvatar(avatarData) {
     if (!requireAuth()) return false;
-    const result = await apiRequest('/auth/avatar', 'POST', { avatar: avatarData });
+    var result = await apiRequest('/auth/avatar', 'POST', { avatar: avatarData });
     if (result) {
         setUserData(result);
         return result;
@@ -53,9 +50,9 @@ async function updateAvatar(avatarData) {
 }
 
 function setupAvatarUpload() {
-    const avatarInput = document.getElementById('avatar-input');
-    const avatarImg = document.getElementById('profile-avatar');
-    const avatarBtn = document.getElementById('change-avatar-btn');
+    var avatarInput = document.getElementById('avatar-input');
+    var avatarImg = document.getElementById('profile-avatar');
+    var avatarBtn = document.getElementById('change-avatar-btn');
 
     if (avatarBtn && avatarInput) {
         avatarBtn.addEventListener('click', function() {
@@ -65,7 +62,7 @@ function setupAvatarUpload() {
 
     if (avatarInput) {
         avatarInput.addEventListener('change', async function(e) {
-            const file = e.target.files[0];
+            var file = e.target.files[0];
             if (!file) return;
 
             if (!file.type.startsWith('image/')) {
@@ -78,15 +75,15 @@ function setupAvatarUpload() {
                 return;
             }
 
-            const reader = new FileReader();
+            var reader = new FileReader();
             reader.onload = async function(event) {
-                const avatarData = event.target.result;
+                var avatarData = event.target.result;
                 if (avatarImg) avatarImg.src = avatarData;
 
-                const result = await updateAvatar(avatarData);
+                var result = await updateAvatar(avatarData);
                 if (result) {
                     showToast('Cập nhật avatar thành công!', 'success');
-                    const updatedUser = await getProfile();
+                    var updatedUser = await getProfile();
                     if (updatedUser) displayProfile(updatedUser);
                 }
             };
@@ -95,69 +92,69 @@ function setupAvatarUpload() {
     }
 }
 
-// Load đơn hàng vào tab
 async function loadOrdersIntoProfile() {
-    const orderContainer = document.getElementById('order-list');
+    var orderContainer = document.getElementById('order-list');
     if (!orderContainer) return;
 
     try {
         if (typeof fetchOrders === 'function') {
-            const orders = await fetchOrders();
+            var orders = await fetchOrders();
             if (orders && orders.length > 0) {
-                let html = '';
-                orders.slice(0, 3).forEach(order => {
-                    const statusMap = {
+                var html = '';
+                for (var i = 0; i < Math.min(orders.length, 3); i++) {
+                    var order = orders[i];
+                    var statusMap = {
                         'pending': 'Đang xử lý',
                         'processing': 'Đang giao',
                         'completed': 'Hoàn thành',
                         'cancelled': 'Đã hủy'
                     };
-                    const statusText = statusMap[order.status] || order.status;
+                    var statusText = statusMap[order.status] || order.status;
+                    var date = new Date(order.created_at).toLocaleDateString('vi-VN');
                     html += `
                         <div class="order-item" style="padding: 12px; margin-bottom: 8px; border-left: 3px solid var(--primary);">
                             <div style="display:flex; justify-content:space-between; flex-wrap:wrap;">
                                 <strong>#${order.id}</strong>
-                                <span>${new Date(order.created_at).toLocaleDateString('vi-VN')}</span>
+                                <span>${date}</span>
                                 <span class="order-status ${order.status}">${statusText}</span>
                             </div>
                             <div>Tổng: ${order.total_price.toLocaleString('vi-VN')} đ</div>
                         </div>
                     `;
-                });
-                html += `<a href="orderhistory.html" class="btn btn-primary btn-sm">Xem tất cả</a>`;
+                }
+                html += '<a href="orderhistory.html" class="btn btn-primary btn-sm">Xem tất cả</a>';
                 orderContainer.innerHTML = html;
             } else {
-                orderContainer.innerHTML = `<p style="color: var(--gray-600);">Chưa có đơn hàng nào.</p>`;
+                orderContainer.innerHTML = '<p style="color: var(--gray-600);">Chưa có đơn hàng nào.</p>';
             }
         } else {
-            orderContainer.innerHTML = `<p style="color: var(--gray-600);">Chưa có đơn hàng nào.</p>`;
+            orderContainer.innerHTML = '<p style="color: var(--gray-600);">Chưa có đơn hàng nào.</p>';
         }
     } catch (error) {
-        orderContainer.innerHTML = `<p style="color: var(--gray-600);">Không thể tải đơn hàng.</p>`;
+        orderContainer.innerHTML = '<p style="color: var(--gray-600);">Không thể tải đơn hàng.</p>';
     }
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
     if (!requireAuth()) return;
 
-    let user = getUserData();
+    var user = getUserData();
     if (user) displayProfile(user);
 
-    const freshUser = await getProfile();
+    var freshUser = await getProfile();
     if (freshUser) displayProfile(freshUser);
 
     setupAvatarUpload();
     await loadOrdersIntoProfile();
 
-    // chỉnh sửa thông tin cá nhân
-    const editBtn = document.getElementById('edit-profile-btn');
+    var editBtn = document.getElementById('edit-profile-btn');
     if (editBtn) {
         editBtn.addEventListener('click', function() {
-            const form = document.getElementById('edit-form');
+            var form = document.getElementById('edit-form');
             if (form) {
                 form.classList.toggle('show');
                 if (form.classList.contains('show')) {
-                    const userData = getUserData();
+                    var userData = getUserData();
                     document.getElementById('edit-name').value = userData?.full_name || '';
                     document.getElementById('edit-phone').value = userData?.phone || '';
                     document.getElementById('edit-address').value = userData?.address || '';
@@ -166,19 +163,19 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
 
-    const updateBtn = document.getElementById('update-profile-btn');
+    var updateBtn = document.getElementById('update-profile-btn');
     if (updateBtn) {
         updateBtn.addEventListener('click', async function() {
-            const name = document.getElementById('edit-name').value.trim();
-            const phone = document.getElementById('edit-phone').value.trim();
-            const address = document.getElementById('edit-address').value.trim();
+            var name = document.getElementById('edit-name').value.trim();
+            var phone = document.getElementById('edit-phone').value.trim();
+            var address = document.getElementById('edit-address').value.trim();
 
             if (!name) {
                 showToast('Họ tên không được để trống');
                 return;
             }
 
-            await updateProfile({ full_name: name, phone, address });
+            await updateProfile({ full_name: name, phone: phone, address: address });
             document.getElementById('edit-form').classList.remove('show');
         });
     }

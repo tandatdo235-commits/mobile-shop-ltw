@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lịch sử đơn hàng</title>
+    <title>Lich su don hang</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/orderhistory.css">
     <script src="../js/config.js"></script>
@@ -16,11 +16,11 @@
 
     <main class="container">
         <div class="breadcrumb">
-            <a href="index.html">Trang chủ</a> / Lịch sử đơn hàng
+            <a href="../index.html">Trang chu</a> / Lich su don hang
         </div>
-        <h1 class="page-title">Lịch sử đơn hàng</h1>
+        <h1 class="page-title">Lich su don hang</h1>
         <div id="order-list">
-            <p style="color: var(--gray-600); font-family: Arial, sans-serif;">Đang tải...</p>
+            <p style="color: #4b5563;">Dang tai...</p>
         </div>
     </main>
 
@@ -28,11 +28,16 @@
 
     <script>
         fetch('../components/header.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('header-container').innerHTML = data);
+            .then(function(res) { return res.text(); })
+            .then(function(data) {
+                document.getElementById('header-container').innerHTML = data;
+                if (typeof updateAuthUI === 'function') {
+                    updateAuthUI();
+                }
+            });
         fetch('../components/footer.html')
-            .then(res => res.text())
-            .then(data => document.getElementById('footer-container').innerHTML = data);
+            .then(function(res) { return res.text(); })
+            .then(function(data) { document.getElementById('footer-container').innerHTML = data; });
     </script>
 </body>
 </html>

@@ -1,10 +1,10 @@
-const CONFIG = {
-    API_BASE_URL: 'http://localhost:8000/api',
-    TOKEN_KEY: 'access_token',
+var CONFIG = {
+    API_BASE_URL: 'http://localhost:8080/api',
+    WS_URL: 'ws://localhost:8080',
+    TOKEN_KEY: 'token',
     USER_EMAIL_KEY: 'user_email',
     USER_DATA_KEY: 'user_data',
-    // Chế độ mock để test khi backend chưa sẵn sàng
-    USE_MOCK: true // Set false khi có backend thật
+    USE_MOCK: true
 };
 
 function getToken() {
@@ -31,7 +31,7 @@ function clearAuthData() {
 }
 
 function getUserData() {
-    const data = localStorage.getItem(CONFIG.USER_DATA_KEY);
+    var data = localStorage.getItem(CONFIG.USER_DATA_KEY);
     return data ? JSON.parse(data) : null;
 }
 

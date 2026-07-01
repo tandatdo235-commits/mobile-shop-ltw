@@ -1,162 +1,159 @@
-const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
+var params = new URLSearchParams(window.location.search);
+var productId = params.get("id");
 
 fetch("https://api-shopmobile-w12y.onrender.com/api/products")
-.then(res => res.json())
-.then(products => {
+.then(function(res) { return res.json(); })
+.then(function(products) {
 
-    const product = products.find(p => p._id == productId);
-    console.log(product);
+    var product = null;
+    for (var i = 0; i < products.length; i++) {
+        if (products[i]._id == productId || products[i].id == productId) {
+            product = products[i];
+            break;
+        }
+    }
 
-    if(!product) {
-        console.error("Không tìm thấy sản phẩm!");
+    if (!product) {
+        document.getElementById('product-name').innerText = 'Không tìm thấy sản phẩm';
         return;
     }
 
-    // 1. SỬA PHẦN GALLERY ẢNH (Bỏ replace, dùng đúng mảng images từ API)
-    let currentImage = 0;
-    const images = (product.images && product.images.length > 0) ? product.images : [product.thumbnail];
+    var currentImage = 0;
+    var images = (product.images && product.images.length > 0) ? product.images : [product.thumbnail];
     
     document.getElementById("product-image").src = images[currentImage];
 
-    document.getElementById("next-btn").addEventListener("click", () => {
+    document.getElementById("next-btn").addEventListener("click", function() {
         currentImage++;
-        if(currentImage >= images.length){
+        if (currentImage >= images.length) {
             currentImage = 0;
         }
         document.getElementById("product-image").src = images[currentImage];
     });
 
-    document.getElementById("prev-btn").addEventListener("click", () => {
+    document.getElementById("prev-btn").addEventListener("click", function() {
         currentImage--;
-        if(currentImage < 0){
+        if (currentImage < 0) {
             currentImage = images.length - 1;
         }
         document.getElementById("product-image").src = images[currentImage];
     });
 
-    // 2. THÔNG TIN SẢN PHẨM
     document.getElementById("product-name").innerText = product.name;
     document.getElementById("product-price").innerText = Number(product.price).toLocaleString("vi-VN") + " đ";
     document.getElementById("product-description").innerText = product.description || "Sản phẩm chính hãng, bảo hành đầy đủ.";
     document.getElementById("product-promotion").innerText = product.promotion || "Không có khuyến mãi";
 
-    // 3. THÔNG SỐ KỸ THUẬT
-    const specsTable = document.getElementById("product-specs");
+    var specsTable = document.getElementById("product-specs");
     if (product.specs) {
-        const dict = {
-            "screen": "Màn hình", "chip": "Chip xử lý", "ram": "RAM",
-            "storage": "Bộ nhớ trong", "battery": "Pin & Sạc", 
-            "camera": "Camera", "weight": "Trọng lượng"
+        var dict = {
+            "screen": "Màn hình", 
+            "chip": "Chip xử lý", 
+            "ram": "RAM",
+            "storage": "Bộ nhớ trong", 
+            "battery": "Pin và Sạc", 
+            "camera": "Camera", 
+            "weight": "Trọng lượng"
         };
 
-        let specsHTML = "";
-        for (let key in product.specs) {
-            let viKey = dict[key] || key;
-            specsHTML += `
-            <tr>
-                <th>${viKey}</th>
-                <td>${product.specs[key]}</td>
-            </tr>
-            `;
+        var specsHTML = "";
+        for (var key in product.specs) {
+            if (product.specs.hasOwnProperty(key)) {
+                var viKey = dict[key] || key;
+                specsHTML += `
+                <tr>
+                    <th>${viKey}</th>
+                    <td>${product.specs[key]}</td>
+                </tr>
+                `;
+            }
         }
         specsTable.innerHTML = specsHTML;
     }
 
-    // 4. SẢN PHẨM LIÊN QUAN 
-    const relatedProducts = products.filter(item =>
-        item.category === product.category &&
-        item._id !== product._id
-    );
+    var relatedProducts = [];
+    for (var i = 0; i < products.length; i++) {
+        if (products[i].category === product.category && products[i]._id !== product._id) {
+            relatedProducts.push(products[i]);
+        }
+    }
 
-    const relatedBox = document.getElementById("related-products");
+    var relatedBox = document.getElementById("related-products");
     
-    relatedProducts.forEach(item => { 
-        let imageSrc = item.thumbnail;
+    for (var i = 0; i < relatedProducts.length; i++) {
+        var item = relatedProducts[i];
+        var imageSrc = item.thumbnail;
 
-        let newPriceNum = Number(item.price);
-        let oldPriceNum = item.discount ? Math.round(newPriceNum / (1 - item.discount / 100)) : newPriceNum;
+        var newPriceNum = Number(item.price);
+        var oldPriceNum = item.discount ? Math.round(newPriceNum / (1 - item.discount / 100)) : newPriceNum;
 
-        let newPriceStr = newPriceNum.toLocaleString("vi-VN");
-        let oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
+        var newPriceStr = newPriceNum.toLocaleString("vi-VN");
+        var oldPriceStr = oldPriceNum.toLocaleString("vi-VN");
 
-        let badgeHTML = item.discount ? `<div class="sale-badge">Giảm ${item.discount}%</div>` : '';
-        let oldPriceHTML = item.discount ? `<span class="old-price">${oldPriceStr} VNĐ</span>` : '';
-        let promoHTML = item.promotion ? `<p class="promotion-text">${item.promotion}</p>` : '';
+        var badgeHTML = item.discount ? '<div class="sale-badge">Giảm ' + item.discount + '%</div>' : '';
+        var oldPriceHTML = item.discount ? '<span class="old-price">' + oldPriceStr + ' VNĐ</span>' : '';
+        var promoHTML = item.promotion ? '<p class="promotion-text">' + item.promotion + '</p>' : '';
 
-        
         relatedBox.innerHTML += `
         <a href="product-detail.html?id=${item._id}" class="related-card-link">
             <div class="product-card">
                 ${badgeHTML}
                 <img src="${imageSrc}" alt="${item.name}">
                 <h3 class="product-name">${item.name}</h3>
-                
                 <div class="price-box">
                     <span class="new-price">${newPriceStr} VNĐ</span>
                     ${oldPriceHTML}
                 </div>
-                
                 ${promoHTML}
             </div>
         </a>
         `;
+    }
+
+    document.getElementById("add-cart-btn").addEventListener("click", function() {
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        var exist = null;
+        var productIdStr = String(product._id || product.id);
+        
+        for (var i = 0; i < cart.length; i++) {
+            if (String(cart[i].id) === productIdStr) {
+                exist = cart[i];
+                break;
+            }
+        }
+
+        if (exist) {
+            exist.quantity = Number(exist.quantity || 1) + 1;
+        } else {
+            cart.push({
+                id: product._id || product.id,
+                name: product.name,
+                image: product.thumbnail,
+                price: Number(product.price),
+                quantity: 1
+            });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showToast("Đã thêm vào giỏ hàng", "success");
     });
 
-document.getElementById("add-cart-btn").addEventListener("click", () => {
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const exist = cart.find(item => item.id === product._id);
-
-    if(exist){
-
-        exist.quantity++;
-
-    }else{
-
-        cart.push({
-
-            id: product._id,
-
-            name: product.name,
-
-            image: product.thumbnail,
-
-            price: Number(product.price),
-
-            quantity: 1
-
-        });
-
+    function updateCartCount() {
+        var cart = JSON.parse(localStorage.getItem("cart")) || [];
+        var count = 0;
+        for (var i = 0; i < cart.length; i++) {
+            count = count + Number(cart[i].quantity);
+        }
+        var cartCount = document.getElementById("cart-count");
+        if (cartCount) {
+            cartCount.innerText = count;
+        }
+        var headerCount = document.getElementById("cart-count-header");
+        if (headerCount) {
+            headerCount.innerText = count;
+        }
     }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
 
     updateCartCount();
-
-    alert("Đã thêm vào giỏ hàng!");
-
 });
-
-function updateCartCount(){
-
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    const count = cart.reduce((sum,item)=>{
-
-        return sum + Number(item.quantity);
-
-    },0);
-
-    const cartCount = document.getElementById("cart-count");
-
-    if(cartCount){
-
-        cartCount.innerText = count;
-
-    }
-
-}
-
-updateCartCount();
