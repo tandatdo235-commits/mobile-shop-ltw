@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTH Mobile Shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/home.css">
+</head>
+<body>
+
+    <div id="header-container"></div>
+
+    <div class="main-layout">
+
+        <aside class="sidebar">
+            <div class="category-list">
+                <div class="menu-item">
+                    <div class="menu-header" style="border-bottom: 1px solid #f0f0f0; padding: 12px 20px;">
+                        <i class="fa-solid fa-house"></i>
+                        <a href="../index.html" style="flex:1; margin-left:10px; text-decoration:none; color:#333;">Trang chu</a>
+                    </div>
+                    <div class="menu-header">
+                        <i class="fa-regular fa-user"></i>
+                        <span>Dien thoai</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=smartphone&brand=apple">iPhone</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=samsung">Samsung</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=xiaomi">Xiaomi</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=oppo">Oppo</a></li>
+                        <li><a href="pages/products.html?category=smartphone&brand=vivo">Vivo</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-laptop"></i>
+                        <span>Laptop</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=laptop&brand=asus">Asus</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=apple">Macbook</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=dell">Dell</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=hp">HP</a></li>
+                        <li><a href="pages/products.html?category=laptop&brand=lenovo">Lenovo</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-item">
+                    <div class="menu-header">
+                        <i class="fa-solid fa-bullhorn"></i> 
+                        <span>May tinh bang</span>
+                        <i class="fa-solid fa-chevron-up toggle-icon"></i>
+                    </div>
+                    <ul class="submenu">
+                        <li><a href="pages/products.html?category=tablet&brand=samsung">Samsung</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=apple">iPad</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=xiaomi">Xiaomi</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=lenovo">Lenovo</a></li>
+                        <li><a href="pages/products.html?category=tablet&brand=oppo">Oppo</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="banner">
+                <img id="banner-image" src="./assets/images/banner1.jpg" alt="banner" onerror="this.src='https://via.placeholder.com/1200x350?text=UTH+Mobile+Shop'">
+                <div class="banner-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </section>
+
+            <section class="product-section">
+                <h2 class="section-title">Dien thoai</h2>
+                <div id="phone-list" class="product-grid"></div>
+            </section>
+
+            <section class="product-section">
+                <h2 class="section-title">Laptop</h2>
+                <div id="laptop-list" class="product-grid"></div>
+            </section>
+
+            <section class="product-section">
+                <h2 class="section-title">May tinh bang</h2>
+                <div id="tablet-list" class="product-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <h3>Mobile Shop</h3>
+        <p>Website thuong mai dien tu mon Lap Trinh Web</p>
+        <p>2026 Mobile Shop. All Rights Reserved.</p>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/home.js"></script>
+
+    <script>
+        function updateCartCount() {
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            var count = document.getElementById('cart-count');
+            if (count) count.textContent = cart.length;
+        }
+
+        function updateAuthUI() {
+            var authText = document.getElementById('auth-text');
+            var authLink = document.getElementById('auth-link');
+            
+            if (typeof isLoggedIn !== 'undefined' && isLoggedIn()) {
+                var userData = getUserData();
+                var name = userData?.full_name || userData?.name || 'User';
+                if (authText) authText.textContent = name;
+                if (authLink) authLink.href = './pages/profile.html';
+            } else {
+                if (authText) authText.textContent = 'Dang nhap';
+                if (authLink) authLink.href = './pages/login.html';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            updateAuthUI();
+            if (typeof createChatBubble === 'function') {
+                createChatBubble();
+            }
+            if (isLoggedIn() && typeof initGlobalSocket === 'function') {
+                initGlobalSocket();
+            }
+        });
+
+        window.addEventListener('storage', function(e) {
+            if (e.key === 'cart') {
+                updateCartCount();
+            }
+            if (e.key === 'user_data' || e.key === 'token') {
+                updateAuthUI();
+            }
+        });
+
+        fetch('../components/header.html')
+            .then(function(res) { return res.text(); })
+            .then(function(data) {
+                document.getElementById('header-container').innerHTML = data;
+                if (typeof updateAuthUI === 'function') {
+                    updateAuthUI();
+                }
+            });
+    </script>
+
+</body>
+</html>
