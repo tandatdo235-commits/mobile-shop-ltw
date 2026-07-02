@@ -35,12 +35,12 @@
     border-radius:8px;
     cursor:pointer;
 }
-.product-detail{
+.product-detail-card{
     max-width:1200px;
     margin:30px auto;
     display:flex;
-    gap:40px;
     align-items:flex-start;
+    gap:40px;
 }
 #product-name{
     font-size: 36px;
@@ -54,14 +54,23 @@
     object-fit:contain;
 }
 .slider-btn{
-    width:40px;
-    height:40px;
+    width:60px;
+    height:60px;
     border:none;
     border-radius:50%;
     background:#c40000;
     color:white;
-    font-size:20px;
+    font-size:30px;
+    font-weight:bold;
     cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.3s;
+}
+.slider-btn:hover{
+    background:#a00000;
+    transform:scale(1.1);
 }
 
 #prev-btn{
@@ -210,16 +219,12 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
-
 .gallery{
+    flex:0 0 500px;
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:15px;
-}
-.gallery img{
-    width:350px;
-    height:350px;
-    object-fit:contain;
 }
 
 .thumb{
